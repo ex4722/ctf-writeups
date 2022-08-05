@@ -994,3 +994,5 @@ Once we do this we get another binary and we just need to rinse and repeat. One 
 YOU FOUND THE HOLY GRAIL!
 flag{Y0u_f1g4t_w311_sir_knig4t_7461834}
 `
+
+Huge thank you to playoff-rondo for showing me this challenge was well as ~~pushing~~ encouraging me through the suffering 
