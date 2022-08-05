@@ -996,3 +996,4 @@ flag{Y0u_f1g4t_w311_sir_knig4t_7461834}
 `
 
 Huge thank you to playoff-rondo for showing me this challenge was well as ~~pushing~~ encouraging me through the suffering 
+Questions or feedback? Feel free to reach out sofire=bad#6525 on discord
