@@ -250,4 +250,4 @@ b"412C70B0412C72C22C40B12C22C42C14E0B22C14E2CB2C70B32CB2C749460B449464F4C0B54F4C
 ```
 
 NOTE:
-The original exploit use pinja a homebrew combination of pwn tools and binary ninja's debugger. Pwn2.py uses the regular version of pwn tools.
+The original exploit use pinja a homebrew combination of pwn tools and binary ninja's debugger. If you happen to own Binary Ninja commerial and would like to try it out <https://github.com/ex4722/pinja>.Pwn2.py uses the regular version of pwn tools.
