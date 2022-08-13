@@ -1,0 +1,33 @@
+Now that we know the valid charset is only Uppercase hex characters we need to find possible instructions we can use. I heard that capstone disasselmber was great for this but pwn tools disasm function was just so much easier to use. Using permuations from itertools I generated all possible permuations of the character set and then disasssemled them. I originally did them one by one but this flooded by tmp direcotry and took a longer time. Instead I added them together and padded it with nops to avoid instruction collisons. From the initial outpu tmost of the instrucitons seem to be nops which can be expected. Grepped those out we see many bad instruction that are single bytes as well as REx instruction. Rex is a prefix for 64 bit and alone won'tbe that helpful. Besides those their are a lot of xor instructions which is not a suprise as <http://ref.x86asm.net/coder64.html#x41> shows that most of the range is xor. After more grepping we can get only the uniq lines. Looking at these optocdes one thing that jumps out to me is that we have a lot of xor instruction that reference registers. Hence we should probally check whats in registers after out initial execution.
+
+
+
+Using this template script we can dump the registers. One thing to note is that this is using pinja a homebrew library to merge pwn tools and binary ninja. I had to do some patchinghere as rbx is the wrong value, on the remote and eveyr other writeup shows its csu_init but on my system its 0. I think this is because I'musing a new version of ubuntu. Rax and rsi both point to the start of our shellcode, rdx seems to point to the end of it. Rbx points to the csu_init. Rcx points into the bss at a string of possible characters.  The rest of the registers don't have that much value as rdi and the stack ones point into the stack. 
+
+My idea for this challenge would be to get a write primiaive to add a short stager shellcode. THis would just read in more data which will be real shellcode. However in order to write this stager we needs to be able to create bits and then write them into memory. originally I though I would need to have full contorl over 2 regsters, one is the data to write and the other is the address to write to.  However looking at the instructions (300 line) their is a xor to rdx + value. Rdx is a pointer to the end of out shellcode so if we write their it would execute. The default NULL byte is acutally xor [rax] defrernce, hence we just need to make sure rax is valid memory and it would be effectly a nop. Now that we have the ability to write to a area that will later get executed we need to control rax. Further donw (line 1000) we can xor rax with any of the hex charactters so that looks primisng. However with just these bytes we don't have the full range of charactesr. 
+
+Scrolling fauthr donw 587, we see this instruction, it xors al with the address at rbx + a offset. Rbx is teh csu_address, that means these instrctions will give bytes inside of the csu. Using gdb we can dump teh csu to see what bytes are avaiilble. 
+
+One thing to note is that our range is the specifc bytes only so we need to be careful not to add unindexable bytes into our array. I padded those with nulls but we will need to fix that later.
+
+With both arrays we can try to generate all other bytes of our stager now. Rsi and rax both point to our buffer and we never changes rsi so it should still point to our shellcode. The syscall for read is 0 and rdx is already a giant number for read count. Hence we just need to nul out rdi and rax to get a read syscall.
+
+
+With the other array we now need to figure out the correct combination of xoring to get a valid byte. I tried to figure this out manually but z3 was a much better solution. First we create 2 varibles, the two values we wish to xor, we could do more but i tried 2 first and it worked all the time. We need to add constarints to the values to point into valid optocdes or the csu. Finall we add a constaint to make sure the xored is equal to our target. After that we can get the model and reutnr the output.
+
+
+Now that we have the two values to XOR we just need to generate shellcode on the fly for our stager. It is noted that we only have limited space as we can only write to the buffer from 0x30 to 0x39 - 0x41 but it should be fine, our shellcode is extremeley short. The value of the csu was set to 0 when its not accseable, this means that when we want a null byte it will get the wrong index, hence I harded a if check to make sure it returned a real null. 
+
+
+Running this we can see all the shellcode generated as well as how seeing how rax changes over time. Dumping the regsiters overtime shows use that rax is changing but it seems like its a bit off. It sets the first value correclty but afterwards its a bit off. grpe for dump rax. 
+
+Each pair shows the setup for one byte written, the first one looks corerct and the values match up. However for the second one seems to be xoring it self correclty but the output value still looks wrong. 
+
+We can check that we xored the correct value by checking the 2nd and 3rd value, the output value is part of the solution. You may have noticed it already but here is the mistake. The xor assumes that the register starts out at 0,hence rax is already filled with the value of the last write so the next few rights will always be incorect. In order to fix this we could account for this in z3 and pas in 3 values or we could just cance it out. In xor x ^ y ^ x ^ y is still 0 so we can just rexor the value to clear out the register. After clearing out the reigser and checking the rax value it seems to be what we expected, checking the shellcode buffer we have to stager !
+
+grep for Checking shellcode
+
+
+Once we continue the process we stop at a different adress and it seems to stop on our fake nop. Checking the rax value shows that its not a valid memory adress again. THis is because we are using xor eax, DWORD PTR. when we xor eax it clears out the upper bits too. Uisng rappel we can confirm this fact. Lucklily the byte varient of the instrctions is also valid so we can change eax to al and DWORD PTR to BYTE PTR. After this change it runs! It should read shellcode into our buffer, it reads into beigning so we need to spent a nop sled to make sure we hit the rip.
+
+grep for final

@@ -161,7 +161,7 @@ Since rsi is already pointing to the shellcode buffer can just not touch it for 
 
 I had to keep in mind that we only have access to a certain range so used this to cycle through csu_init and grab only the bytes we have access to
 ```python 
-for i in range(0x31, 0x50 ):
+for i in range(0x30, 0x50 ):
     if i in opts:
         csu.append((u8(p.bv.read( p.bv.symbols['__libc_csu_init'][0].address+i, 1))))
     else:
@@ -171,7 +171,7 @@ for i in range(0x31, 0x50 ):
 This gave us a pretty nice range of opcodes, in the end, we had all of these
 
 ```python 
-csu = [0x74, 0x1B, 0x31, 0xDB, 0xF, 0x1F, 0x0, 0x4C, 0x89, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x41, 0xFF, 0x14, 0xDF, 0x48, 0x83, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]
+csu = [0x3, 0x74, 0x1B, 0x31, 0xDB, 0xF, 0x1F, 0x0, 0x4C, 0x89, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x41, 0xFF, 0x14, 0xDF, 0x48, 0x83, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0]
 opts= b"0123456789ABCDEF"
 ```
 
@@ -198,7 +198,6 @@ With these two in hand, we could construct a shellcode that would xor the output
 
 <h3>Things to Note:</h3>
 
-- Lists in python are 0-based, the indexes into the csu might be one-off depending on how you add the values. Adding a 0 to pad the beginning of the csu array fixed this.
 - The original csu xor optode didn't work as XORing eax would result in the upper bits of rax also getting nulled out. Without the upper bits of rax the nop sled would be invalid. Luckily the single byte version was also valid shellcode
 
     `xor eax, DWORD PTR [rbx+0x30]`

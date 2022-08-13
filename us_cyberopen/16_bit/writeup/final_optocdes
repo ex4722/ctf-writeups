@@ -1,0 +1,2447 @@
+30 31                   xor    BYTE PTR [rcx], dh
+30 32                   xor    BYTE PTR [rdx], dh
+30 33                   xor    BYTE PTR [rbx], dh
+30 34 31                xor    BYTE PTR [rcx+rsi*1], dh
+30 34 32                xor    BYTE PTR [rdx+rsi*1], dh
+30 34 33                xor    BYTE PTR [rbx+rsi*1], dh
+30 34 36                xor    BYTE PTR [rsi+rsi*1], dh
+30 34 37                xor    BYTE PTR [rdi+rsi*1], dh
+30 34 38                xor    BYTE PTR [rax+rdi*1], dh
+30 34 39                xor    BYTE PTR [rcx+rdi*1], dh
+30 34 41                xor    BYTE PTR [rcx+rax*2], dh
+30 34 42                xor    BYTE PTR [rdx+rax*2], dh
+30 34 43                xor    BYTE PTR [rbx+rax*2], dh
+30 34 44                xor    BYTE PTR [rsp+rax*2], dh
+30 34 46                xor    BYTE PTR [rsi+rax*2], dh
+30 36                   xor    BYTE PTR [rsi], dh
+30 37                   xor    BYTE PTR [rdi], dh
+30 38                   xor    BYTE PTR [rax], bh
+30 39                   xor    BYTE PTR [rcx], bh
+30 41 31                xor    BYTE PTR [rcx+0x31], al
+30 41 32                xor    BYTE PTR [rcx+0x32], al
+30 41 33                xor    BYTE PTR [rcx+0x33], al
+30 41 34                xor    BYTE PTR [rcx+0x34], al
+30 41 35                xor    BYTE PTR [rcx+0x35], al
+30 41 36                xor    BYTE PTR [rcx+0x36], al
+30 41 37                xor    BYTE PTR [rcx+0x37], al
+30 41 38                xor    BYTE PTR [rcx+0x38], al
+30 41 39                xor    BYTE PTR [rcx+0x39], al
+30 41 42                xor    BYTE PTR [rcx+0x42], al
+30 41 43                xor    BYTE PTR [rcx+0x43], al
+30 41 44                xor    BYTE PTR [rcx+0x44], al
+30 41 45                xor    BYTE PTR [rcx+0x45], al
+30 41 46                xor    BYTE PTR [rcx+0x46], al
+30 42 31                xor    BYTE PTR [rdx+0x31], al
+30 42 32                xor    BYTE PTR [rdx+0x32], al
+30 42 33                xor    BYTE PTR [rdx+0x33], al
+30 42 34                xor    BYTE PTR [rdx+0x34], al
+30 42 35                xor    BYTE PTR [rdx+0x35], al
+30 42 36                xor    BYTE PTR [rdx+0x36], al
+30 42 37                xor    BYTE PTR [rdx+0x37], al
+30 42 38                xor    BYTE PTR [rdx+0x38], al
+30 42 39                xor    BYTE PTR [rdx+0x39], al
+30 42 41                xor    BYTE PTR [rdx+0x41], al
+30 42 43                xor    BYTE PTR [rdx+0x43], al
+30 42 44                xor    BYTE PTR [rdx+0x44], al
+30 42 45                xor    BYTE PTR [rdx+0x45], al
+30 42 46                xor    BYTE PTR [rdx+0x46], al
+30 43 31                xor    BYTE PTR [rbx+0x31], al
+30 43 32                xor    BYTE PTR [rbx+0x32], al
+30 43 33                xor    BYTE PTR [rbx+0x33], al
+30 43 34                xor    BYTE PTR [rbx+0x34], al
+30 43 35                xor    BYTE PTR [rbx+0x35], al
+30 43 36                xor    BYTE PTR [rbx+0x36], al
+30 43 37                xor    BYTE PTR [rbx+0x37], al
+30 43 38                xor    BYTE PTR [rbx+0x38], al
+30 43 39                xor    BYTE PTR [rbx+0x39], al
+30 43 41                xor    BYTE PTR [rbx+0x41], al
+30 43 42                xor    BYTE PTR [rbx+0x42], al
+30 43 44                xor    BYTE PTR [rbx+0x44], al
+30 43 45                xor    BYTE PTR [rbx+0x45], al
+30 43 46                xor    BYTE PTR [rbx+0x46], al
+30 44 31 32             xor    BYTE PTR [rcx+rsi*1+0x32], al
+30 44 31 33             xor    BYTE PTR [rcx+rsi*1+0x33], al
+30 44 31 34             xor    BYTE PTR [rcx+rsi*1+0x34], al
+30 44 31 35             xor    BYTE PTR [rcx+rsi*1+0x35], al
+30 44 31 36             xor    BYTE PTR [rcx+rsi*1+0x36], al
+30 44 31 37             xor    BYTE PTR [rcx+rsi*1+0x37], al
+30 44 31 38             xor    BYTE PTR [rcx+rsi*1+0x38], al
+30 44 31 39             xor    BYTE PTR [rcx+rsi*1+0x39], al
+30 44 31 41             xor    BYTE PTR [rcx+rsi*1+0x41], al
+30 44 31 42             xor    BYTE PTR [rcx+rsi*1+0x42], al
+30 44 31 43             xor    BYTE PTR [rcx+rsi*1+0x43], al
+30 44 31 45             xor    BYTE PTR [rcx+rsi*1+0x45], al
+30 44 31 46             xor    BYTE PTR [rcx+rsi*1+0x46], al
+30 44 32 31             xor    BYTE PTR [rdx+rsi*1+0x31], al
+30 44 32 33             xor    BYTE PTR [rdx+rsi*1+0x33], al
+30 44 32 34             xor    BYTE PTR [rdx+rsi*1+0x34], al
+30 44 32 35             xor    BYTE PTR [rdx+rsi*1+0x35], al
+30 44 32 36             xor    BYTE PTR [rdx+rsi*1+0x36], al
+30 44 32 37             xor    BYTE PTR [rdx+rsi*1+0x37], al
+30 44 32 38             xor    BYTE PTR [rdx+rsi*1+0x38], al
+30 44 32 39             xor    BYTE PTR [rdx+rsi*1+0x39], al
+30 44 32 41             xor    BYTE PTR [rdx+rsi*1+0x41], al
+30 44 32 42             xor    BYTE PTR [rdx+rsi*1+0x42], al
+30 44 32 43             xor    BYTE PTR [rdx+rsi*1+0x43], al
+30 44 32 45             xor    BYTE PTR [rdx+rsi*1+0x45], al
+30 44 32 46             xor    BYTE PTR [rdx+rsi*1+0x46], al
+30 44 33 31             xor    BYTE PTR [rbx+rsi*1+0x31], al
+30 44 33 32             xor    BYTE PTR [rbx+rsi*1+0x32], al
+30 44 33 34             xor    BYTE PTR [rbx+rsi*1+0x34], al
+30 44 33 35             xor    BYTE PTR [rbx+rsi*1+0x35], al
+30 44 33 36             xor    BYTE PTR [rbx+rsi*1+0x36], al
+30 44 33 37             xor    BYTE PTR [rbx+rsi*1+0x37], al
+30 44 33 38             xor    BYTE PTR [rbx+rsi*1+0x38], al
+30 44 33 39             xor    BYTE PTR [rbx+rsi*1+0x39], al
+30 44 33 41             xor    BYTE PTR [rbx+rsi*1+0x41], al
+30 44 33 42             xor    BYTE PTR [rbx+rsi*1+0x42], al
+30 44 33 43             xor    BYTE PTR [rbx+rsi*1+0x43], al
+30 44 33 45             xor    BYTE PTR [rbx+rsi*1+0x45], al
+30 44 33 46             xor    BYTE PTR [rbx+rsi*1+0x46], al
+30 44 34 31             xor    BYTE PTR [rsp+rsi*1+0x31], al
+30 44 34 32             xor    BYTE PTR [rsp+rsi*1+0x32], al
+30 44 34 33             xor    BYTE PTR [rsp+rsi*1+0x33], al
+30 44 34 35             xor    BYTE PTR [rsp+rsi*1+0x35], al
+30 44 34 36             xor    BYTE PTR [rsp+rsi*1+0x36], al
+30 44 34 37             xor    BYTE PTR [rsp+rsi*1+0x37], al
+30 44 34 38             xor    BYTE PTR [rsp+rsi*1+0x38], al
+30 44 34 39             xor    BYTE PTR [rsp+rsi*1+0x39], al
+30 44 34 41             xor    BYTE PTR [rsp+rsi*1+0x41], al
+30 44 34 42             xor    BYTE PTR [rsp+rsi*1+0x42], al
+30 44 34 43             xor    BYTE PTR [rsp+rsi*1+0x43], al
+30 44 34 45             xor    BYTE PTR [rsp+rsi*1+0x45], al
+30 44 34 46             xor    BYTE PTR [rsp+rsi*1+0x46], al
+30 44 35 31             xor    BYTE PTR [rbp+rsi*1+0x31], al
+30 44 35 32             xor    BYTE PTR [rbp+rsi*1+0x32], al
+30 44 35 33             xor    BYTE PTR [rbp+rsi*1+0x33], al
+30 44 35 34             xor    BYTE PTR [rbp+rsi*1+0x34], al
+30 44 35 36             xor    BYTE PTR [rbp+rsi*1+0x36], al
+30 44 35 37             xor    BYTE PTR [rbp+rsi*1+0x37], al
+30 44 35 38             xor    BYTE PTR [rbp+rsi*1+0x38], al
+30 44 35 39             xor    BYTE PTR [rbp+rsi*1+0x39], al
+30 44 35 41             xor    BYTE PTR [rbp+rsi*1+0x41], al
+30 44 35 42             xor    BYTE PTR [rbp+rsi*1+0x42], al
+30 44 35 43             xor    BYTE PTR [rbp+rsi*1+0x43], al
+30 44 35 45             xor    BYTE PTR [rbp+rsi*1+0x45], al
+30 44 35 46             xor    BYTE PTR [rbp+rsi*1+0x46], al
+30 44 36 31             xor    BYTE PTR [rsi+rsi*1+0x31], al
+30 44 36 32             xor    BYTE PTR [rsi+rsi*1+0x32], al
+30 44 36 33             xor    BYTE PTR [rsi+rsi*1+0x33], al
+30 44 36 34             xor    BYTE PTR [rsi+rsi*1+0x34], al
+30 44 36 35             xor    BYTE PTR [rsi+rsi*1+0x35], al
+30 44 36 37             xor    BYTE PTR [rsi+rsi*1+0x37], al
+30 44 36 38             xor    BYTE PTR [rsi+rsi*1+0x38], al
+30 44 36 39             xor    BYTE PTR [rsi+rsi*1+0x39], al
+30 44 36 41             xor    BYTE PTR [rsi+rsi*1+0x41], al
+30 44 36 42             xor    BYTE PTR [rsi+rsi*1+0x42], al
+30 44 36 43             xor    BYTE PTR [rsi+rsi*1+0x43], al
+30 44 36 45             xor    BYTE PTR [rsi+rsi*1+0x45], al
+30 44 36 46             xor    BYTE PTR [rsi+rsi*1+0x46], al
+30 44 37 31             xor    BYTE PTR [rdi+rsi*1+0x31], al
+30 44 37 32             xor    BYTE PTR [rdi+rsi*1+0x32], al
+30 44 37 33             xor    BYTE PTR [rdi+rsi*1+0x33], al
+30 44 37 34             xor    BYTE PTR [rdi+rsi*1+0x34], al
+30 44 37 35             xor    BYTE PTR [rdi+rsi*1+0x35], al
+30 44 37 36             xor    BYTE PTR [rdi+rsi*1+0x36], al
+30 44 37 38             xor    BYTE PTR [rdi+rsi*1+0x38], al
+30 44 37 39             xor    BYTE PTR [rdi+rsi*1+0x39], al
+30 44 37 41             xor    BYTE PTR [rdi+rsi*1+0x41], al
+30 44 37 42             xor    BYTE PTR [rdi+rsi*1+0x42], al
+30 44 37 43             xor    BYTE PTR [rdi+rsi*1+0x43], al
+30 44 37 45             xor    BYTE PTR [rdi+rsi*1+0x45], al
+30 44 37 46             xor    BYTE PTR [rdi+rsi*1+0x46], al
+30 44 38 31             xor    BYTE PTR [rax+rdi*1+0x31], al
+30 44 38 32             xor    BYTE PTR [rax+rdi*1+0x32], al
+30 44 38 33             xor    BYTE PTR [rax+rdi*1+0x33], al
+30 44 38 34             xor    BYTE PTR [rax+rdi*1+0x34], al
+30 44 38 35             xor    BYTE PTR [rax+rdi*1+0x35], al
+30 44 38 36             xor    BYTE PTR [rax+rdi*1+0x36], al
+30 44 38 37             xor    BYTE PTR [rax+rdi*1+0x37], al
+30 44 38 39             xor    BYTE PTR [rax+rdi*1+0x39], al
+30 44 38 41             xor    BYTE PTR [rax+rdi*1+0x41], al
+30 44 38 42             xor    BYTE PTR [rax+rdi*1+0x42], al
+30 44 38 45             xor    BYTE PTR [rax+rdi*1+0x45], al
+30 44 38 46             xor    BYTE PTR [rax+rdi*1+0x46], al
+30 44 39 31             xor    BYTE PTR [rcx+rdi*1+0x31], al
+30 44 39 32             xor    BYTE PTR [rcx+rdi*1+0x32], al
+30 44 39 33             xor    BYTE PTR [rcx+rdi*1+0x33], al
+30 44 39 34             xor    BYTE PTR [rcx+rdi*1+0x34], al
+30 44 39 35             xor    BYTE PTR [rcx+rdi*1+0x35], al
+30 44 39 36             xor    BYTE PTR [rcx+rdi*1+0x36], al
+30 44 39 37             xor    BYTE PTR [rcx+rdi*1+0x37], al
+30 44 39 38             xor    BYTE PTR [rcx+rdi*1+0x38], al
+30 44 39 41             xor    BYTE PTR [rcx+rdi*1+0x41], al
+30 44 39 42             xor    BYTE PTR [rcx+rdi*1+0x42], al
+30 44 39 43             xor    BYTE PTR [rcx+rdi*1+0x43], al
+30 44 39 45             xor    BYTE PTR [rcx+rdi*1+0x45], al
+30 44 39 46             xor    BYTE PTR [rcx+rdi*1+0x46], al
+30 44 41 31             xor    BYTE PTR [rcx+rax*2+0x31], al
+30 44 41 32             xor    BYTE PTR [rcx+rax*2+0x32], al
+30 44 41 33             xor    BYTE PTR [rcx+rax*2+0x33], al
+30 44 41 34             xor    BYTE PTR [rcx+rax*2+0x34], al
+30 44 41 35             xor    BYTE PTR [rcx+rax*2+0x35], al
+30 44 41 36             xor    BYTE PTR [rcx+rax*2+0x36], al
+30 44 41 37             xor    BYTE PTR [rcx+rax*2+0x37], al
+30 44 41 38             xor    BYTE PTR [rcx+rax*2+0x38], al
+30 44 41 39             xor    BYTE PTR [rcx+rax*2+0x39], al
+30 44 41 42             xor    BYTE PTR [rcx+rax*2+0x42], al
+30 44 41 43             xor    BYTE PTR [rcx+rax*2+0x43], al
+30 44 41 45             xor    BYTE PTR [rcx+rax*2+0x45], al
+30 44 41 46             xor    BYTE PTR [rcx+rax*2+0x46], al
+30 44 42 31             xor    BYTE PTR [rdx+rax*2+0x31], al
+30 44 42 32             xor    BYTE PTR [rdx+rax*2+0x32], al
+30 44 42 33             xor    BYTE PTR [rdx+rax*2+0x33], al
+30 44 42 34             xor    BYTE PTR [rdx+rax*2+0x34], al
+30 44 42 35             xor    BYTE PTR [rdx+rax*2+0x35], al
+30 44 42 36             xor    BYTE PTR [rdx+rax*2+0x36], al
+30 44 42 37             xor    BYTE PTR [rdx+rax*2+0x37], al
+30 44 42 38             xor    BYTE PTR [rdx+rax*2+0x38], al
+30 44 42 39             xor    BYTE PTR [rdx+rax*2+0x39], al
+30 44 42 41             xor    BYTE PTR [rdx+rax*2+0x41], al
+30 44 42 43             xor    BYTE PTR [rdx+rax*2+0x43], al
+30 44 42 45             xor    BYTE PTR [rdx+rax*2+0x45], al
+30 44 42 46             xor    BYTE PTR [rdx+rax*2+0x46], al
+30 44 43 31             xor    BYTE PTR [rbx+rax*2+0x31], al
+30 44 43 32             xor    BYTE PTR [rbx+rax*2+0x32], al
+30 44 43 33             xor    BYTE PTR [rbx+rax*2+0x33], al
+30 44 43 34             xor    BYTE PTR [rbx+rax*2+0x34], al
+30 44 43 35             xor    BYTE PTR [rbx+rax*2+0x35], al
+30 44 43 36             xor    BYTE PTR [rbx+rax*2+0x36], al
+30 44 43 37             xor    BYTE PTR [rbx+rax*2+0x37], al
+30 44 43 38             xor    BYTE PTR [rbx+rax*2+0x38], al
+30 44 43 39             xor    BYTE PTR [rbx+rax*2+0x39], al
+30 44 43 41             xor    BYTE PTR [rbx+rax*2+0x41], al
+30 44 43 42             xor    BYTE PTR [rbx+rax*2+0x42], al
+30 44 43 45             xor    BYTE PTR [rbx+rax*2+0x45], al
+30 44 43 46             xor    BYTE PTR [rbx+rax*2+0x46], al
+30 44 45 31             xor    BYTE PTR [rbp+rax*2+0x31], al
+30 44 45 32             xor    BYTE PTR [rbp+rax*2+0x32], al
+30 44 45 33             xor    BYTE PTR [rbp+rax*2+0x33], al
+30 44 45 34             xor    BYTE PTR [rbp+rax*2+0x34], al
+30 44 45 35             xor    BYTE PTR [rbp+rax*2+0x35], al
+30 44 45 36             xor    BYTE PTR [rbp+rax*2+0x36], al
+30 44 45 37             xor    BYTE PTR [rbp+rax*2+0x37], al
+30 44 45 38             xor    BYTE PTR [rbp+rax*2+0x38], al
+30 44 45 39             xor    BYTE PTR [rbp+rax*2+0x39], al
+30 44 45 41             xor    BYTE PTR [rbp+rax*2+0x41], al
+30 44 45 42             xor    BYTE PTR [rbp+rax*2+0x42], al
+30 44 45 43             xor    BYTE PTR [rbp+rax*2+0x43], al
+30 44 45 46             xor    BYTE PTR [rbp+rax*2+0x46], al
+30 44 46 31             xor    BYTE PTR [rsi+rax*2+0x31], al
+30 44 46 32             xor    BYTE PTR [rsi+rax*2+0x32], al
+30 44 46 33             xor    BYTE PTR [rsi+rax*2+0x33], al
+30 44 46 34             xor    BYTE PTR [rsi+rax*2+0x34], al
+30 44 46 35             xor    BYTE PTR [rsi+rax*2+0x35], al
+30 44 46 36             xor    BYTE PTR [rsi+rax*2+0x36], al
+30 44 46 37             xor    BYTE PTR [rsi+rax*2+0x37], al
+30 44 46 38             xor    BYTE PTR [rsi+rax*2+0x38], al
+30 44 46 39             xor    BYTE PTR [rsi+rax*2+0x39], al
+30 44 46 41             xor    BYTE PTR [rsi+rax*2+0x41], al
+30 44 46 42             xor    BYTE PTR [rsi+rax*2+0x42], al
+30 44 46 43             xor    BYTE PTR [rsi+rax*2+0x43], al
+30 44 46 45             xor    BYTE PTR [rsi+rax*2+0x45], al
+30 45 31                xor    BYTE PTR [rbp+0x31], al
+30 45 32                xor    BYTE PTR [rbp+0x32], al
+30 45 33                xor    BYTE PTR [rbp+0x33], al
+30 45 34                xor    BYTE PTR [rbp+0x34], al
+30 45 35                xor    BYTE PTR [rbp+0x35], al
+30 45 36                xor    BYTE PTR [rbp+0x36], al
+30 45 37                xor    BYTE PTR [rbp+0x37], al
+30 45 38                xor    BYTE PTR [rbp+0x38], al
+30 45 39                xor    BYTE PTR [rbp+0x39], al
+30 45 41                xor    BYTE PTR [rbp+0x41], al
+30 45 42                xor    BYTE PTR [rbp+0x42], al
+30 45 43                xor    BYTE PTR [rbp+0x43], al
+30 45 44                xor    BYTE PTR [rbp+0x44], al
+30 45 46                xor    BYTE PTR [rbp+0x46], al
+30 46 31                xor    BYTE PTR [rsi+0x31], al
+30 46 32                xor    BYTE PTR [rsi+0x32], al
+30 46 33                xor    BYTE PTR [rsi+0x33], al
+30 46 34                xor    BYTE PTR [rsi+0x34], al
+30 46 35                xor    BYTE PTR [rsi+0x35], al
+30 46 36                xor    BYTE PTR [rsi+0x36], al
+30 46 37                xor    BYTE PTR [rsi+0x37], al
+30 46 38                xor    BYTE PTR [rsi+0x38], al
+30 46 39                xor    BYTE PTR [rsi+0x39], al
+30 46 41                xor    BYTE PTR [rsi+0x41], al
+30 46 42                xor    BYTE PTR [rsi+0x42], al
+30 46 43                xor    BYTE PTR [rsi+0x43], al
+30 46 44                xor    BYTE PTR [rsi+0x44], al
+30 46 45                xor    BYTE PTR [rsi+0x45], al
+31 30                   xor    DWORD PTR [rax], esi
+31 32                   xor    DWORD PTR [rdx], esi
+31 33                   xor    DWORD PTR [rbx], esi
+31 34 30                xor    DWORD PTR [rax+rsi*1], esi
+31 34 32                xor    DWORD PTR [rdx+rsi*1], esi
+31 34 33                xor    DWORD PTR [rbx+rsi*1], esi
+31 34 36                xor    DWORD PTR [rsi+rsi*1], esi
+31 34 37                xor    DWORD PTR [rdi+rsi*1], esi
+31 34 38                xor    DWORD PTR [rax+rdi*1], esi
+31 34 39                xor    DWORD PTR [rcx+rdi*1], esi
+31 34 41                xor    DWORD PTR [rcx+rax*2], esi
+31 34 42                xor    DWORD PTR [rdx+rax*2], esi
+31 34 43                xor    DWORD PTR [rbx+rax*2], esi
+31 34 44                xor    DWORD PTR [rsp+rax*2], esi
+31 34 46                xor    DWORD PTR [rsi+rax*2], esi
+31 36                   xor    DWORD PTR [rsi], esi
+31 37                   xor    DWORD PTR [rdi], esi
+31 38                   xor    DWORD PTR [rax], edi
+31 39                   xor    DWORD PTR [rcx], edi
+31 41 30                xor    DWORD PTR [rcx+0x30], eax
+31 41 32                xor    DWORD PTR [rcx+0x32], eax
+31 41 33                xor    DWORD PTR [rcx+0x33], eax
+31 41 34                xor    DWORD PTR [rcx+0x34], eax
+31 41 35                xor    DWORD PTR [rcx+0x35], eax
+31 41 36                xor    DWORD PTR [rcx+0x36], eax
+31 41 37                xor    DWORD PTR [rcx+0x37], eax
+31 41 38                xor    DWORD PTR [rcx+0x38], eax
+31 41 39                xor    DWORD PTR [rcx+0x39], eax
+31 41 42                xor    DWORD PTR [rcx+0x42], eax
+31 41 43                xor    DWORD PTR [rcx+0x43], eax
+31 41 44                xor    DWORD PTR [rcx+0x44], eax
+31 41 45                xor    DWORD PTR [rcx+0x45], eax
+31 41 46                xor    DWORD PTR [rcx+0x46], eax
+31 42 30                xor    DWORD PTR [rdx+0x30], eax
+31 42 32                xor    DWORD PTR [rdx+0x32], eax
+31 42 33                xor    DWORD PTR [rdx+0x33], eax
+31 42 34                xor    DWORD PTR [rdx+0x34], eax
+31 42 35                xor    DWORD PTR [rdx+0x35], eax
+31 42 36                xor    DWORD PTR [rdx+0x36], eax
+31 42 37                xor    DWORD PTR [rdx+0x37], eax
+31 42 38                xor    DWORD PTR [rdx+0x38], eax
+31 42 39                xor    DWORD PTR [rdx+0x39], eax
+31 42 41                xor    DWORD PTR [rdx+0x41], eax
+31 42 43                xor    DWORD PTR [rdx+0x43], eax
+31 42 44                xor    DWORD PTR [rdx+0x44], eax
+31 42 45                xor    DWORD PTR [rdx+0x45], eax
+31 42 46                xor    DWORD PTR [rdx+0x46], eax
+31 43 30                xor    DWORD PTR [rbx+0x30], eax
+31 43 32                xor    DWORD PTR [rbx+0x32], eax
+31 43 33                xor    DWORD PTR [rbx+0x33], eax
+31 43 34                xor    DWORD PTR [rbx+0x34], eax
+31 43 35                xor    DWORD PTR [rbx+0x35], eax
+31 43 36                xor    DWORD PTR [rbx+0x36], eax
+31 43 37                xor    DWORD PTR [rbx+0x37], eax
+31 43 38                xor    DWORD PTR [rbx+0x38], eax
+31 43 39                xor    DWORD PTR [rbx+0x39], eax
+31 43 41                xor    DWORD PTR [rbx+0x41], eax
+31 43 42                xor    DWORD PTR [rbx+0x42], eax
+31 43 44                xor    DWORD PTR [rbx+0x44], eax
+31 43 45                xor    DWORD PTR [rbx+0x45], eax
+31 43 46                xor    DWORD PTR [rbx+0x46], eax
+31 44 30 32             xor    DWORD PTR [rax+rsi*1+0x32], eax
+31 44 30 33             xor    DWORD PTR [rax+rsi*1+0x33], eax
+31 44 30 34             xor    DWORD PTR [rax+rsi*1+0x34], eax
+31 44 30 35             xor    DWORD PTR [rax+rsi*1+0x35], eax
+31 44 30 36             xor    DWORD PTR [rax+rsi*1+0x36], eax
+31 44 30 37             xor    DWORD PTR [rax+rsi*1+0x37], eax
+31 44 30 38             xor    DWORD PTR [rax+rsi*1+0x38], eax
+31 44 30 39             xor    DWORD PTR [rax+rsi*1+0x39], eax
+31 44 30 41             xor    DWORD PTR [rax+rsi*1+0x41], eax
+31 44 30 42             xor    DWORD PTR [rax+rsi*1+0x42], eax
+31 44 30 43             xor    DWORD PTR [rax+rsi*1+0x43], eax
+31 44 30 45             xor    DWORD PTR [rax+rsi*1+0x45], eax
+31 44 30 46             xor    DWORD PTR [rax+rsi*1+0x46], eax
+31 44 32 30             xor    DWORD PTR [rdx+rsi*1+0x30], eax
+31 44 32 33             xor    DWORD PTR [rdx+rsi*1+0x33], eax
+31 44 32 34             xor    DWORD PTR [rdx+rsi*1+0x34], eax
+31 44 32 35             xor    DWORD PTR [rdx+rsi*1+0x35], eax
+31 44 32 36             xor    DWORD PTR [rdx+rsi*1+0x36], eax
+31 44 32 37             xor    DWORD PTR [rdx+rsi*1+0x37], eax
+31 44 32 38             xor    DWORD PTR [rdx+rsi*1+0x38], eax
+31 44 32 39             xor    DWORD PTR [rdx+rsi*1+0x39], eax
+31 44 32 41             xor    DWORD PTR [rdx+rsi*1+0x41], eax
+31 44 32 42             xor    DWORD PTR [rdx+rsi*1+0x42], eax
+31 44 32 43             xor    DWORD PTR [rdx+rsi*1+0x43], eax
+31 44 32 45             xor    DWORD PTR [rdx+rsi*1+0x45], eax
+31 44 32 46             xor    DWORD PTR [rdx+rsi*1+0x46], eax
+31 44 33 30             xor    DWORD PTR [rbx+rsi*1+0x30], eax
+31 44 33 32             xor    DWORD PTR [rbx+rsi*1+0x32], eax
+31 44 33 34             xor    DWORD PTR [rbx+rsi*1+0x34], eax
+31 44 33 35             xor    DWORD PTR [rbx+rsi*1+0x35], eax
+31 44 33 36             xor    DWORD PTR [rbx+rsi*1+0x36], eax
+31 44 33 37             xor    DWORD PTR [rbx+rsi*1+0x37], eax
+31 44 33 38             xor    DWORD PTR [rbx+rsi*1+0x38], eax
+31 44 33 39             xor    DWORD PTR [rbx+rsi*1+0x39], eax
+31 44 33 41             xor    DWORD PTR [rbx+rsi*1+0x41], eax
+31 44 33 42             xor    DWORD PTR [rbx+rsi*1+0x42], eax
+31 44 33 43             xor    DWORD PTR [rbx+rsi*1+0x43], eax
+31 44 33 45             xor    DWORD PTR [rbx+rsi*1+0x45], eax
+31 44 33 46             xor    DWORD PTR [rbx+rsi*1+0x46], eax
+31 44 34 30             xor    DWORD PTR [rsp+rsi*1+0x30], eax
+31 44 34 32             xor    DWORD PTR [rsp+rsi*1+0x32], eax
+31 44 34 33             xor    DWORD PTR [rsp+rsi*1+0x33], eax
+31 44 34 35             xor    DWORD PTR [rsp+rsi*1+0x35], eax
+31 44 34 36             xor    DWORD PTR [rsp+rsi*1+0x36], eax
+31 44 34 37             xor    DWORD PTR [rsp+rsi*1+0x37], eax
+31 44 34 38             xor    DWORD PTR [rsp+rsi*1+0x38], eax
+31 44 34 39             xor    DWORD PTR [rsp+rsi*1+0x39], eax
+31 44 34 41             xor    DWORD PTR [rsp+rsi*1+0x41], eax
+31 44 34 42             xor    DWORD PTR [rsp+rsi*1+0x42], eax
+31 44 34 43             xor    DWORD PTR [rsp+rsi*1+0x43], eax
+31 44 34 45             xor    DWORD PTR [rsp+rsi*1+0x45], eax
+31 44 34 46             xor    DWORD PTR [rsp+rsi*1+0x46], eax
+31 44 35 30             xor    DWORD PTR [rbp+rsi*1+0x30], eax
+31 44 35 32             xor    DWORD PTR [rbp+rsi*1+0x32], eax
+31 44 35 33             xor    DWORD PTR [rbp+rsi*1+0x33], eax
+31 44 35 34             xor    DWORD PTR [rbp+rsi*1+0x34], eax
+31 44 35 36             xor    DWORD PTR [rbp+rsi*1+0x36], eax
+31 44 35 37             xor    DWORD PTR [rbp+rsi*1+0x37], eax
+31 44 35 38             xor    DWORD PTR [rbp+rsi*1+0x38], eax
+31 44 35 41             xor    DWORD PTR [rbp+rsi*1+0x41], eax
+31 44 35 42             xor    DWORD PTR [rbp+rsi*1+0x42], eax
+31 44 35 43             xor    DWORD PTR [rbp+rsi*1+0x43], eax
+31 44 35 45             xor    DWORD PTR [rbp+rsi*1+0x45], eax
+31 44 35 46             xor    DWORD PTR [rbp+rsi*1+0x46], eax
+31 44 36 30             xor    DWORD PTR [rsi+rsi*1+0x30], eax
+31 44 36 32             xor    DWORD PTR [rsi+rsi*1+0x32], eax
+31 44 36 33             xor    DWORD PTR [rsi+rsi*1+0x33], eax
+31 44 36 34             xor    DWORD PTR [rsi+rsi*1+0x34], eax
+31 44 36 35             xor    DWORD PTR [rsi+rsi*1+0x35], eax
+31 44 36 37             xor    DWORD PTR [rsi+rsi*1+0x37], eax
+31 44 36 38             xor    DWORD PTR [rsi+rsi*1+0x38], eax
+31 44 36 39             xor    DWORD PTR [rsi+rsi*1+0x39], eax
+31 44 36 41             xor    DWORD PTR [rsi+rsi*1+0x41], eax
+31 44 36 42             xor    DWORD PTR [rsi+rsi*1+0x42], eax
+31 44 36 43             xor    DWORD PTR [rsi+rsi*1+0x43], eax
+31 44 36 45             xor    DWORD PTR [rsi+rsi*1+0x45], eax
+31 44 36 46             xor    DWORD PTR [rsi+rsi*1+0x46], eax
+31 44 37 30             xor    DWORD PTR [rdi+rsi*1+0x30], eax
+31 44 37 32             xor    DWORD PTR [rdi+rsi*1+0x32], eax
+31 44 37 33             xor    DWORD PTR [rdi+rsi*1+0x33], eax
+31 44 37 34             xor    DWORD PTR [rdi+rsi*1+0x34], eax
+31 44 37 35             xor    DWORD PTR [rdi+rsi*1+0x35], eax
+31 44 37 36             xor    DWORD PTR [rdi+rsi*1+0x36], eax
+31 44 37 38             xor    DWORD PTR [rdi+rsi*1+0x38], eax
+31 44 37 39             xor    DWORD PTR [rdi+rsi*1+0x39], eax
+31 44 37 41             xor    DWORD PTR [rdi+rsi*1+0x41], eax
+31 44 37 42             xor    DWORD PTR [rdi+rsi*1+0x42], eax
+31 44 37 43             xor    DWORD PTR [rdi+rsi*1+0x43], eax
+31 44 37 45             xor    DWORD PTR [rdi+rsi*1+0x45], eax
+31 44 37 46             xor    DWORD PTR [rdi+rsi*1+0x46], eax
+31 44 38 30             xor    DWORD PTR [rax+rdi*1+0x30], eax
+31 44 38 32             xor    DWORD PTR [rax+rdi*1+0x32], eax
+31 44 38 33             xor    DWORD PTR [rax+rdi*1+0x33], eax
+31 44 38 34             xor    DWORD PTR [rax+rdi*1+0x34], eax
+31 44 38 35             xor    DWORD PTR [rax+rdi*1+0x35], eax
+31 44 38 36             xor    DWORD PTR [rax+rdi*1+0x36], eax
+31 44 38 37             xor    DWORD PTR [rax+rdi*1+0x37], eax
+31 44 38 39             xor    DWORD PTR [rax+rdi*1+0x39], eax
+31 44 38 41             xor    DWORD PTR [rax+rdi*1+0x41], eax
+31 44 38 42             xor    DWORD PTR [rax+rdi*1+0x42], eax
+31 44 38 43             xor    DWORD PTR [rax+rdi*1+0x43], eax
+31 44 38 45             xor    DWORD PTR [rax+rdi*1+0x45], eax
+31 44 38 46             xor    DWORD PTR [rax+rdi*1+0x46], eax
+31 44 39 32             xor    DWORD PTR [rcx+rdi*1+0x32], eax
+31 44 39 33             xor    DWORD PTR [rcx+rdi*1+0x33], eax
+31 44 39 34             xor    DWORD PTR [rcx+rdi*1+0x34], eax
+31 44 39 35             xor    DWORD PTR [rcx+rdi*1+0x35], eax
+31 44 39 36             xor    DWORD PTR [rcx+rdi*1+0x36], eax
+31 44 39 37             xor    DWORD PTR [rcx+rdi*1+0x37], eax
+31 44 39 38             xor    DWORD PTR [rcx+rdi*1+0x38], eax
+31 44 39 41             xor    DWORD PTR [rcx+rdi*1+0x41], eax
+31 44 39 42             xor    DWORD PTR [rcx+rdi*1+0x42], eax
+31 44 39 43             xor    DWORD PTR [rcx+rdi*1+0x43], eax
+31 44 39 45             xor    DWORD PTR [rcx+rdi*1+0x45], eax
+31 44 39 46             xor    DWORD PTR [rcx+rdi*1+0x46], eax
+31 44 41 30             xor    DWORD PTR [rcx+rax*2+0x30], eax
+31 44 41 32             xor    DWORD PTR [rcx+rax*2+0x32], eax
+31 44 41 33             xor    DWORD PTR [rcx+rax*2+0x33], eax
+31 44 41 34             xor    DWORD PTR [rcx+rax*2+0x34], eax
+31 44 41 35             xor    DWORD PTR [rcx+rax*2+0x35], eax
+31 44 41 36             xor    DWORD PTR [rcx+rax*2+0x36], eax
+31 44 41 37             xor    DWORD PTR [rcx+rax*2+0x37], eax
+31 44 41 38             xor    DWORD PTR [rcx+rax*2+0x38], eax
+31 44 41 39             xor    DWORD PTR [rcx+rax*2+0x39], eax
+31 44 41 42             xor    DWORD PTR [rcx+rax*2+0x42], eax
+31 44 41 43             xor    DWORD PTR [rcx+rax*2+0x43], eax
+31 44 41 45             xor    DWORD PTR [rcx+rax*2+0x45], eax
+31 44 41 46             xor    DWORD PTR [rcx+rax*2+0x46], eax
+31 44 42 30             xor    DWORD PTR [rdx+rax*2+0x30], eax
+31 44 42 32             xor    DWORD PTR [rdx+rax*2+0x32], eax
+31 44 42 33             xor    DWORD PTR [rdx+rax*2+0x33], eax
+31 44 42 34             xor    DWORD PTR [rdx+rax*2+0x34], eax
+31 44 42 35             xor    DWORD PTR [rdx+rax*2+0x35], eax
+31 44 42 36             xor    DWORD PTR [rdx+rax*2+0x36], eax
+31 44 42 37             xor    DWORD PTR [rdx+rax*2+0x37], eax
+31 44 42 38             xor    DWORD PTR [rdx+rax*2+0x38], eax
+31 44 42 39             xor    DWORD PTR [rdx+rax*2+0x39], eax
+31 44 42 41             xor    DWORD PTR [rdx+rax*2+0x41], eax
+31 44 42 43             xor    DWORD PTR [rdx+rax*2+0x43], eax
+31 44 42 45             xor    DWORD PTR [rdx+rax*2+0x45], eax
+31 44 42 46             xor    DWORD PTR [rdx+rax*2+0x46], eax
+31 44 43 30             xor    DWORD PTR [rbx+rax*2+0x30], eax
+31 44 43 32             xor    DWORD PTR [rbx+rax*2+0x32], eax
+31 44 43 33             xor    DWORD PTR [rbx+rax*2+0x33], eax
+31 44 43 34             xor    DWORD PTR [rbx+rax*2+0x34], eax
+31 44 43 35             xor    DWORD PTR [rbx+rax*2+0x35], eax
+31 44 43 36             xor    DWORD PTR [rbx+rax*2+0x36], eax
+31 44 43 37             xor    DWORD PTR [rbx+rax*2+0x37], eax
+31 44 43 38             xor    DWORD PTR [rbx+rax*2+0x38], eax
+31 44 43 39             xor    DWORD PTR [rbx+rax*2+0x39], eax
+31 44 43 41             xor    DWORD PTR [rbx+rax*2+0x41], eax
+31 44 43 42             xor    DWORD PTR [rbx+rax*2+0x42], eax
+31 44 43 45             xor    DWORD PTR [rbx+rax*2+0x45], eax
+31 44 43 46             xor    DWORD PTR [rbx+rax*2+0x46], eax
+31 44 45 30             xor    DWORD PTR [rbp+rax*2+0x30], eax
+31 44 45 32             xor    DWORD PTR [rbp+rax*2+0x32], eax
+31 44 45 33             xor    DWORD PTR [rbp+rax*2+0x33], eax
+31 44 45 34             xor    DWORD PTR [rbp+rax*2+0x34], eax
+31 44 45 35             xor    DWORD PTR [rbp+rax*2+0x35], eax
+31 44 45 36             xor    DWORD PTR [rbp+rax*2+0x36], eax
+31 44 45 37             xor    DWORD PTR [rbp+rax*2+0x37], eax
+31 44 45 38             xor    DWORD PTR [rbp+rax*2+0x38], eax
+31 44 45 39             xor    DWORD PTR [rbp+rax*2+0x39], eax
+31 44 45 41             xor    DWORD PTR [rbp+rax*2+0x41], eax
+31 44 45 42             xor    DWORD PTR [rbp+rax*2+0x42], eax
+31 44 45 43             xor    DWORD PTR [rbp+rax*2+0x43], eax
+31 44 45 46             xor    DWORD PTR [rbp+rax*2+0x46], eax
+31 44 46 30             xor    DWORD PTR [rsi+rax*2+0x30], eax
+31 44 46 32             xor    DWORD PTR [rsi+rax*2+0x32], eax
+31 44 46 33             xor    DWORD PTR [rsi+rax*2+0x33], eax
+31 44 46 34             xor    DWORD PTR [rsi+rax*2+0x34], eax
+31 44 46 35             xor    DWORD PTR [rsi+rax*2+0x35], eax
+31 44 46 36             xor    DWORD PTR [rsi+rax*2+0x36], eax
+31 44 46 37             xor    DWORD PTR [rsi+rax*2+0x37], eax
+31 44 46 38             xor    DWORD PTR [rsi+rax*2+0x38], eax
+31 44 46 39             xor    DWORD PTR [rsi+rax*2+0x39], eax
+31 44 46 41             xor    DWORD PTR [rsi+rax*2+0x41], eax
+31 44 46 42             xor    DWORD PTR [rsi+rax*2+0x42], eax
+31 44 46 43             xor    DWORD PTR [rsi+rax*2+0x43], eax
+31 44 46 45             xor    DWORD PTR [rsi+rax*2+0x45], eax
+31 45 30                xor    DWORD PTR [rbp+0x30], eax
+31 45 32                xor    DWORD PTR [rbp+0x32], eax
+31 45 33                xor    DWORD PTR [rbp+0x33], eax
+31 45 34                xor    DWORD PTR [rbp+0x34], eax
+31 45 35                xor    DWORD PTR [rbp+0x35], eax
+31 45 36                xor    DWORD PTR [rbp+0x36], eax
+31 45 37                xor    DWORD PTR [rbp+0x37], eax
+31 45 38                xor    DWORD PTR [rbp+0x38], eax
+31 45 39                xor    DWORD PTR [rbp+0x39], eax
+31 45 41                xor    DWORD PTR [rbp+0x41], eax
+31 45 42                xor    DWORD PTR [rbp+0x42], eax
+31 45 43                xor    DWORD PTR [rbp+0x43], eax
+31 45 44                xor    DWORD PTR [rbp+0x44], eax
+31 45 46                xor    DWORD PTR [rbp+0x46], eax
+31 46 30                xor    DWORD PTR [rsi+0x30], eax
+31 46 32                xor    DWORD PTR [rsi+0x32], eax
+31 46 33                xor    DWORD PTR [rsi+0x33], eax
+31 46 34                xor    DWORD PTR [rsi+0x34], eax
+31 46 35                xor    DWORD PTR [rsi+0x35], eax
+31 46 36                xor    DWORD PTR [rsi+0x36], eax
+31 46 37                xor    DWORD PTR [rsi+0x37], eax
+31 46 38                xor    DWORD PTR [rsi+0x38], eax
+31 46 39                xor    DWORD PTR [rsi+0x39], eax
+31 46 41                xor    DWORD PTR [rsi+0x41], eax
+31 46 42                xor    DWORD PTR [rsi+0x42], eax
+31 46 43                xor    DWORD PTR [rsi+0x43], eax
+31 46 44                xor    DWORD PTR [rsi+0x44], eax
+31 46 45                xor    DWORD PTR [rsi+0x45], eax
+32 30                   xor    dh, BYTE PTR [rax]
+32 31                   xor    dh, BYTE PTR [rcx]
+32 33                   xor    dh, BYTE PTR [rbx]
+32 34 30                xor    dh, BYTE PTR [rax+rsi*1]
+32 34 31                xor    dh, BYTE PTR [rcx+rsi*1]
+32 34 33                xor    dh, BYTE PTR [rbx+rsi*1]
+32 34 36                xor    dh, BYTE PTR [rsi+rsi*1]
+32 34 37                xor    dh, BYTE PTR [rdi+rsi*1]
+32 34 38                xor    dh, BYTE PTR [rax+rdi*1]
+32 34 39                xor    dh, BYTE PTR [rcx+rdi*1]
+32 34 41                xor    dh, BYTE PTR [rcx+rax*2]
+32 34 42                xor    dh, BYTE PTR [rdx+rax*2]
+32 34 43                xor    dh, BYTE PTR [rbx+rax*2]
+32 34 44                xor    dh, BYTE PTR [rsp+rax*2]
+32 34 46                xor    dh, BYTE PTR [rsi+rax*2]
+32 36                   xor    dh, BYTE PTR [rsi]
+32 37                   xor    dh, BYTE PTR [rdi]
+32 38                   xor    bh, BYTE PTR [rax]
+32 39                   xor    bh, BYTE PTR [rcx]
+32 41 30                xor    al, BYTE PTR [rcx+0x30]
+32 41 31                xor    al, BYTE PTR [rcx+0x31]
+32 41 33                xor    al, BYTE PTR [rcx+0x33]
+32 41 34                xor    al, BYTE PTR [rcx+0x34]
+32 41 35                xor    al, BYTE PTR [rcx+0x35]
+32 41 36                xor    al, BYTE PTR [rcx+0x36]
+32 41 37                xor    al, BYTE PTR [rcx+0x37]
+32 41 38                xor    al, BYTE PTR [rcx+0x38]
+32 41 39                xor    al, BYTE PTR [rcx+0x39]
+32 41 42                xor    al, BYTE PTR [rcx+0x42]
+32 41 43                xor    al, BYTE PTR [rcx+0x43]
+32 41 44                xor    al, BYTE PTR [rcx+0x44]
+32 41 45                xor    al, BYTE PTR [rcx+0x45]
+32 41 46                xor    al, BYTE PTR [rcx+0x46]
+32 42 30                xor    al, BYTE PTR [rdx+0x30]
+32 42 31                xor    al, BYTE PTR [rdx+0x31]
+32 42 33                xor    al, BYTE PTR [rdx+0x33]
+32 42 34                xor    al, BYTE PTR [rdx+0x34]
+32 42 35                xor    al, BYTE PTR [rdx+0x35]
+32 42 36                xor    al, BYTE PTR [rdx+0x36]
+32 42 37                xor    al, BYTE PTR [rdx+0x37]
+32 42 38                xor    al, BYTE PTR [rdx+0x38]
+32 42 39                xor    al, BYTE PTR [rdx+0x39]
+32 42 41                xor    al, BYTE PTR [rdx+0x41]
+32 42 43                xor    al, BYTE PTR [rdx+0x43]
+32 42 44                xor    al, BYTE PTR [rdx+0x44]
+32 42 45                xor    al, BYTE PTR [rdx+0x45]
+32 42 46                xor    al, BYTE PTR [rdx+0x46]
+32 43 30                xor    al, BYTE PTR [rbx+0x30]
+32 43 31                xor    al, BYTE PTR [rbx+0x31]
+32 43 33                xor    al, BYTE PTR [rbx+0x33]
+32 43 34                xor    al, BYTE PTR [rbx+0x34]
+32 43 35                xor    al, BYTE PTR [rbx+0x35]
+32 43 36                xor    al, BYTE PTR [rbx+0x36]
+32 43 37                xor    al, BYTE PTR [rbx+0x37]
+32 43 38                xor    al, BYTE PTR [rbx+0x38]
+32 43 39                xor    al, BYTE PTR [rbx+0x39]
+32 43 41                xor    al, BYTE PTR [rbx+0x41]
+32 43 42                xor    al, BYTE PTR [rbx+0x42]
+32 43 44                xor    al, BYTE PTR [rbx+0x44]
+32 43 45                xor    al, BYTE PTR [rbx+0x45]
+32 43 46                xor    al, BYTE PTR [rbx+0x46]
+32 44 30 31             xor    al, BYTE PTR [rax+rsi*1+0x31]
+32 44 30 33             xor    al, BYTE PTR [rax+rsi*1+0x33]
+32 44 30 34             xor    al, BYTE PTR [rax+rsi*1+0x34]
+32 44 30 35             xor    al, BYTE PTR [rax+rsi*1+0x35]
+32 44 30 36             xor    al, BYTE PTR [rax+rsi*1+0x36]
+32 44 30 37             xor    al, BYTE PTR [rax+rsi*1+0x37]
+32 44 30 38             xor    al, BYTE PTR [rax+rsi*1+0x38]
+32 44 30 41             xor    al, BYTE PTR [rax+rsi*1+0x41]
+32 44 30 42             xor    al, BYTE PTR [rax+rsi*1+0x42]
+32 44 30 43             xor    al, BYTE PTR [rax+rsi*1+0x43]
+32 44 30 45             xor    al, BYTE PTR [rax+rsi*1+0x45]
+32 44 30 46             xor    al, BYTE PTR [rax+rsi*1+0x46]
+32 44 31 30             xor    al, BYTE PTR [rcx+rsi*1+0x30]
+32 44 31 33             xor    al, BYTE PTR [rcx+rsi*1+0x33]
+32 44 31 34             xor    al, BYTE PTR [rcx+rsi*1+0x34]
+32 44 31 35             xor    al, BYTE PTR [rcx+rsi*1+0x35]
+32 44 31 37             xor    al, BYTE PTR [rcx+rsi*1+0x37]
+32 44 31 38             xor    al, BYTE PTR [rcx+rsi*1+0x38]
+32 44 31 39             xor    al, BYTE PTR [rcx+rsi*1+0x39]
+32 44 31 41             xor    al, BYTE PTR [rcx+rsi*1+0x41]
+32 44 31 42             xor    al, BYTE PTR [rcx+rsi*1+0x42]
+32 44 31 43             xor    al, BYTE PTR [rcx+rsi*1+0x43]
+32 44 31 45             xor    al, BYTE PTR [rcx+rsi*1+0x45]
+32 44 31 46             xor    al, BYTE PTR [rcx+rsi*1+0x46]
+32 44 33 30             xor    al, BYTE PTR [rbx+rsi*1+0x30]
+32 44 33 31             xor    al, BYTE PTR [rbx+rsi*1+0x31]
+32 44 33 34             xor    al, BYTE PTR [rbx+rsi*1+0x34]
+32 44 33 35             xor    al, BYTE PTR [rbx+rsi*1+0x35]
+32 44 33 36             xor    al, BYTE PTR [rbx+rsi*1+0x36]
+32 44 33 37             xor    al, BYTE PTR [rbx+rsi*1+0x37]
+32 44 33 38             xor    al, BYTE PTR [rbx+rsi*1+0x38]
+32 44 33 39             xor    al, BYTE PTR [rbx+rsi*1+0x39]
+32 44 33 41             xor    al, BYTE PTR [rbx+rsi*1+0x41]
+32 44 33 42             xor    al, BYTE PTR [rbx+rsi*1+0x42]
+32 44 33 43             xor    al, BYTE PTR [rbx+rsi*1+0x43]
+32 44 33 45             xor    al, BYTE PTR [rbx+rsi*1+0x45]
+32 44 33 46             xor    al, BYTE PTR [rbx+rsi*1+0x46]
+32 44 34 30             xor    al, BYTE PTR [rsp+rsi*1+0x30]
+32 44 34 31             xor    al, BYTE PTR [rsp+rsi*1+0x31]
+32 44 34 33             xor    al, BYTE PTR [rsp+rsi*1+0x33]
+32 44 34 35             xor    al, BYTE PTR [rsp+rsi*1+0x35]
+32 44 34 36             xor    al, BYTE PTR [rsp+rsi*1+0x36]
+32 44 34 37             xor    al, BYTE PTR [rsp+rsi*1+0x37]
+32 44 34 38             xor    al, BYTE PTR [rsp+rsi*1+0x38]
+32 44 34 39             xor    al, BYTE PTR [rsp+rsi*1+0x39]
+32 44 34 41             xor    al, BYTE PTR [rsp+rsi*1+0x41]
+32 44 34 42             xor    al, BYTE PTR [rsp+rsi*1+0x42]
+32 44 34 43             xor    al, BYTE PTR [rsp+rsi*1+0x43]
+32 44 34 45             xor    al, BYTE PTR [rsp+rsi*1+0x45]
+32 44 34 46             xor    al, BYTE PTR [rsp+rsi*1+0x46]
+32 44 35 30             xor    al, BYTE PTR [rbp+rsi*1+0x30]
+32 44 35 31             xor    al, BYTE PTR [rbp+rsi*1+0x31]
+32 44 35 33             xor    al, BYTE PTR [rbp+rsi*1+0x33]
+32 44 35 34             xor    al, BYTE PTR [rbp+rsi*1+0x34]
+32 44 35 36             xor    al, BYTE PTR [rbp+rsi*1+0x36]
+32 44 35 37             xor    al, BYTE PTR [rbp+rsi*1+0x37]
+32 44 35 38             xor    al, BYTE PTR [rbp+rsi*1+0x38]
+32 44 35 39             xor    al, BYTE PTR [rbp+rsi*1+0x39]
+32 44 35 41             xor    al, BYTE PTR [rbp+rsi*1+0x41]
+32 44 35 42             xor    al, BYTE PTR [rbp+rsi*1+0x42]
+32 44 35 43             xor    al, BYTE PTR [rbp+rsi*1+0x43]
+32 44 35 45             xor    al, BYTE PTR [rbp+rsi*1+0x45]
+32 44 35 46             xor    al, BYTE PTR [rbp+rsi*1+0x46]
+32 44 36 30             xor    al, BYTE PTR [rsi+rsi*1+0x30]
+32 44 36 31             xor    al, BYTE PTR [rsi+rsi*1+0x31]
+32 44 36 33             xor    al, BYTE PTR [rsi+rsi*1+0x33]
+32 44 36 34             xor    al, BYTE PTR [rsi+rsi*1+0x34]
+32 44 36 35             xor    al, BYTE PTR [rsi+rsi*1+0x35]
+32 44 36 37             xor    al, BYTE PTR [rsi+rsi*1+0x37]
+32 44 36 38             xor    al, BYTE PTR [rsi+rsi*1+0x38]
+32 44 36 39             xor    al, BYTE PTR [rsi+rsi*1+0x39]
+32 44 36 41             xor    al, BYTE PTR [rsi+rsi*1+0x41]
+32 44 36 42             xor    al, BYTE PTR [rsi+rsi*1+0x42]
+32 44 36 43             xor    al, BYTE PTR [rsi+rsi*1+0x43]
+32 44 36 45             xor    al, BYTE PTR [rsi+rsi*1+0x45]
+32 44 36 46             xor    al, BYTE PTR [rsi+rsi*1+0x46]
+32 44 37 30             xor    al, BYTE PTR [rdi+rsi*1+0x30]
+32 44 37 31             xor    al, BYTE PTR [rdi+rsi*1+0x31]
+32 44 37 33             xor    al, BYTE PTR [rdi+rsi*1+0x33]
+32 44 37 34             xor    al, BYTE PTR [rdi+rsi*1+0x34]
+32 44 37 35             xor    al, BYTE PTR [rdi+rsi*1+0x35]
+32 44 37 36             xor    al, BYTE PTR [rdi+rsi*1+0x36]
+32 44 37 38             xor    al, BYTE PTR [rdi+rsi*1+0x38]
+32 44 37 39             xor    al, BYTE PTR [rdi+rsi*1+0x39]
+32 44 37 41             xor    al, BYTE PTR [rdi+rsi*1+0x41]
+32 44 37 42             xor    al, BYTE PTR [rdi+rsi*1+0x42]
+32 44 37 43             xor    al, BYTE PTR [rdi+rsi*1+0x43]
+32 44 37 45             xor    al, BYTE PTR [rdi+rsi*1+0x45]
+32 44 37 46             xor    al, BYTE PTR [rdi+rsi*1+0x46]
+32 44 38 30             xor    al, BYTE PTR [rax+rdi*1+0x30]
+32 44 38 31             xor    al, BYTE PTR [rax+rdi*1+0x31]
+32 44 38 33             xor    al, BYTE PTR [rax+rdi*1+0x33]
+32 44 38 34             xor    al, BYTE PTR [rax+rdi*1+0x34]
+32 44 38 35             xor    al, BYTE PTR [rax+rdi*1+0x35]
+32 44 38 36             xor    al, BYTE PTR [rax+rdi*1+0x36]
+32 44 38 37             xor    al, BYTE PTR [rax+rdi*1+0x37]
+32 44 38 39             xor    al, BYTE PTR [rax+rdi*1+0x39]
+32 44 38 41             xor    al, BYTE PTR [rax+rdi*1+0x41]
+32 44 38 42             xor    al, BYTE PTR [rax+rdi*1+0x42]
+32 44 38 43             xor    al, BYTE PTR [rax+rdi*1+0x43]
+32 44 38 45             xor    al, BYTE PTR [rax+rdi*1+0x45]
+32 44 38 46             xor    al, BYTE PTR [rax+rdi*1+0x46]
+32 44 39 30             xor    al, BYTE PTR [rcx+rdi*1+0x30]
+32 44 39 31             xor    al, BYTE PTR [rcx+rdi*1+0x31]
+32 44 39 33             xor    al, BYTE PTR [rcx+rdi*1+0x33]
+32 44 39 34             xor    al, BYTE PTR [rcx+rdi*1+0x34]
+32 44 39 35             xor    al, BYTE PTR [rcx+rdi*1+0x35]
+32 44 39 36             xor    al, BYTE PTR [rcx+rdi*1+0x36]
+32 44 39 37             xor    al, BYTE PTR [rcx+rdi*1+0x37]
+32 44 39 38             xor    al, BYTE PTR [rcx+rdi*1+0x38]
+32 44 39 41             xor    al, BYTE PTR [rcx+rdi*1+0x41]
+32 44 39 42             xor    al, BYTE PTR [rcx+rdi*1+0x42]
+32 44 39 43             xor    al, BYTE PTR [rcx+rdi*1+0x43]
+32 44 39 45             xor    al, BYTE PTR [rcx+rdi*1+0x45]
+32 44 39 46             xor    al, BYTE PTR [rcx+rdi*1+0x46]
+32 44 41 30             xor    al, BYTE PTR [rcx+rax*2+0x30]
+32 44 41 31             xor    al, BYTE PTR [rcx+rax*2+0x31]
+32 44 41 33             xor    al, BYTE PTR [rcx+rax*2+0x33]
+32 44 41 34             xor    al, BYTE PTR [rcx+rax*2+0x34]
+32 44 41 35             xor    al, BYTE PTR [rcx+rax*2+0x35]
+32 44 41 36             xor    al, BYTE PTR [rcx+rax*2+0x36]
+32 44 41 37             xor    al, BYTE PTR [rcx+rax*2+0x37]
+32 44 41 38             xor    al, BYTE PTR [rcx+rax*2+0x38]
+32 44 41 39             xor    al, BYTE PTR [rcx+rax*2+0x39]
+32 44 41 42             xor    al, BYTE PTR [rcx+rax*2+0x42]
+32 44 41 43             xor    al, BYTE PTR [rcx+rax*2+0x43]
+32 44 41 45             xor    al, BYTE PTR [rcx+rax*2+0x45]
+32 44 41 46             xor    al, BYTE PTR [rcx+rax*2+0x46]
+32 44 42 30             xor    al, BYTE PTR [rdx+rax*2+0x30]
+32 44 42 31             xor    al, BYTE PTR [rdx+rax*2+0x31]
+32 44 42 33             xor    al, BYTE PTR [rdx+rax*2+0x33]
+32 44 42 34             xor    al, BYTE PTR [rdx+rax*2+0x34]
+32 44 42 35             xor    al, BYTE PTR [rdx+rax*2+0x35]
+32 44 42 36             xor    al, BYTE PTR [rdx+rax*2+0x36]
+32 44 42 37             xor    al, BYTE PTR [rdx+rax*2+0x37]
+32 44 42 38             xor    al, BYTE PTR [rdx+rax*2+0x38]
+32 44 42 39             xor    al, BYTE PTR [rdx+rax*2+0x39]
+32 44 42 41             xor    al, BYTE PTR [rdx+rax*2+0x41]
+32 44 42 43             xor    al, BYTE PTR [rdx+rax*2+0x43]
+32 44 42 45             xor    al, BYTE PTR [rdx+rax*2+0x45]
+32 44 42 46             xor    al, BYTE PTR [rdx+rax*2+0x46]
+32 44 43 30             xor    al, BYTE PTR [rbx+rax*2+0x30]
+32 44 43 31             xor    al, BYTE PTR [rbx+rax*2+0x31]
+32 44 43 34             xor    al, BYTE PTR [rbx+rax*2+0x34]
+32 44 43 35             xor    al, BYTE PTR [rbx+rax*2+0x35]
+32 44 43 36             xor    al, BYTE PTR [rbx+rax*2+0x36]
+32 44 43 37             xor    al, BYTE PTR [rbx+rax*2+0x37]
+32 44 43 38             xor    al, BYTE PTR [rbx+rax*2+0x38]
+32 44 43 39             xor    al, BYTE PTR [rbx+rax*2+0x39]
+32 44 43 41             xor    al, BYTE PTR [rbx+rax*2+0x41]
+32 44 43 42             xor    al, BYTE PTR [rbx+rax*2+0x42]
+32 44 43 45             xor    al, BYTE PTR [rbx+rax*2+0x45]
+32 44 43 46             xor    al, BYTE PTR [rbx+rax*2+0x46]
+32 44 45 30             xor    al, BYTE PTR [rbp+rax*2+0x30]
+32 44 45 31             xor    al, BYTE PTR [rbp+rax*2+0x31]
+32 44 45 33             xor    al, BYTE PTR [rbp+rax*2+0x33]
+32 44 45 34             xor    al, BYTE PTR [rbp+rax*2+0x34]
+32 44 45 35             xor    al, BYTE PTR [rbp+rax*2+0x35]
+32 44 45 36             xor    al, BYTE PTR [rbp+rax*2+0x36]
+32 44 45 37             xor    al, BYTE PTR [rbp+rax*2+0x37]
+32 44 45 38             xor    al, BYTE PTR [rbp+rax*2+0x38]
+32 44 45 39             xor    al, BYTE PTR [rbp+rax*2+0x39]
+32 44 45 41             xor    al, BYTE PTR [rbp+rax*2+0x41]
+32 44 45 42             xor    al, BYTE PTR [rbp+rax*2+0x42]
+32 44 45 43             xor    al, BYTE PTR [rbp+rax*2+0x43]
+32 44 45 46             xor    al, BYTE PTR [rbp+rax*2+0x46]
+32 44 46 30             xor    al, BYTE PTR [rsi+rax*2+0x30]
+32 44 46 31             xor    al, BYTE PTR [rsi+rax*2+0x31]
+32 44 46 33             xor    al, BYTE PTR [rsi+rax*2+0x33]
+32 44 46 34             xor    al, BYTE PTR [rsi+rax*2+0x34]
+32 44 46 35             xor    al, BYTE PTR [rsi+rax*2+0x35]
+32 44 46 36             xor    al, BYTE PTR [rsi+rax*2+0x36]
+32 44 46 37             xor    al, BYTE PTR [rsi+rax*2+0x37]
+32 44 46 38             xor    al, BYTE PTR [rsi+rax*2+0x38]
+32 44 46 39             xor    al, BYTE PTR [rsi+rax*2+0x39]
+32 44 46 41             xor    al, BYTE PTR [rsi+rax*2+0x41]
+32 44 46 42             xor    al, BYTE PTR [rsi+rax*2+0x42]
+32 44 46 43             xor    al, BYTE PTR [rsi+rax*2+0x43]
+32 44 46 45             xor    al, BYTE PTR [rsi+rax*2+0x45]
+32 45 30                xor    al, BYTE PTR [rbp+0x30]
+32 45 31                xor    al, BYTE PTR [rbp+0x31]
+32 45 33                xor    al, BYTE PTR [rbp+0x33]
+32 45 34                xor    al, BYTE PTR [rbp+0x34]
+32 45 35                xor    al, BYTE PTR [rbp+0x35]
+32 45 36                xor    al, BYTE PTR [rbp+0x36]
+32 45 37                xor    al, BYTE PTR [rbp+0x37]
+32 45 38                xor    al, BYTE PTR [rbp+0x38]
+32 45 39                xor    al, BYTE PTR [rbp+0x39]
+32 45 41                xor    al, BYTE PTR [rbp+0x41]
+32 45 42                xor    al, BYTE PTR [rbp+0x42]
+32 45 43                xor    al, BYTE PTR [rbp+0x43]
+32 45 44                xor    al, BYTE PTR [rbp+0x44]
+32 45 46                xor    al, BYTE PTR [rbp+0x46]
+32 46 30                xor    al, BYTE PTR [rsi+0x30]
+32 46 31                xor    al, BYTE PTR [rsi+0x31]
+32 46 33                xor    al, BYTE PTR [rsi+0x33]
+32 46 34                xor    al, BYTE PTR [rsi+0x34]
+32 46 35                xor    al, BYTE PTR [rsi+0x35]
+32 46 36                xor    al, BYTE PTR [rsi+0x36]
+32 46 37                xor    al, BYTE PTR [rsi+0x37]
+32 46 38                xor    al, BYTE PTR [rsi+0x38]
+32 46 39                xor    al, BYTE PTR [rsi+0x39]
+32 46 41                xor    al, BYTE PTR [rsi+0x41]
+32 46 42                xor    al, BYTE PTR [rsi+0x42]
+32 46 43                xor    al, BYTE PTR [rsi+0x43]
+32 46 44                xor    al, BYTE PTR [rsi+0x44]
+32 46 45                xor    al, BYTE PTR [rsi+0x45]
+33 30                   xor    esi, DWORD PTR [rax]
+33 31                   xor    esi, DWORD PTR [rcx]
+33 32                   xor    esi, DWORD PTR [rdx]
+33 34 30                xor    esi, DWORD PTR [rax+rsi*1]
+33 34 31                xor    esi, DWORD PTR [rcx+rsi*1]
+33 34 32                xor    esi, DWORD PTR [rdx+rsi*1]
+33 34 36                xor    esi, DWORD PTR [rsi+rsi*1]
+33 34 37                xor    esi, DWORD PTR [rdi+rsi*1]
+33 34 38                xor    esi, DWORD PTR [rax+rdi*1]
+33 34 39                xor    esi, DWORD PTR [rcx+rdi*1]
+33 34 41                xor    esi, DWORD PTR [rcx+rax*2]
+33 34 42                xor    esi, DWORD PTR [rdx+rax*2]
+33 34 43                xor    esi, DWORD PTR [rbx+rax*2]
+33 34 44                xor    esi, DWORD PTR [rsp+rax*2]
+33 34 46                xor    esi, DWORD PTR [rsi+rax*2]
+33 36                   xor    esi, DWORD PTR [rsi]
+33 37                   xor    esi, DWORD PTR [rdi]
+33 38                   xor    edi, DWORD PTR [rax]
+33 39                   xor    edi, DWORD PTR [rcx]
+33 41 30                xor    eax, DWORD PTR [rcx+0x30]
+33 41 31                xor    eax, DWORD PTR [rcx+0x31]
+33 41 32                xor    eax, DWORD PTR [rcx+0x32]
+33 41 34                xor    eax, DWORD PTR [rcx+0x34]
+33 41 35                xor    eax, DWORD PTR [rcx+0x35]
+33 41 36                xor    eax, DWORD PTR [rcx+0x36]
+33 41 37                xor    eax, DWORD PTR [rcx+0x37]
+33 41 38                xor    eax, DWORD PTR [rcx+0x38]
+33 41 39                xor    eax, DWORD PTR [rcx+0x39]
+33 41 42                xor    eax, DWORD PTR [rcx+0x42]
+33 41 43                xor    eax, DWORD PTR [rcx+0x43]
+33 41 44                xor    eax, DWORD PTR [rcx+0x44]
+33 41 45                xor    eax, DWORD PTR [rcx+0x45]
+33 41 46                xor    eax, DWORD PTR [rcx+0x46]
+33 42 30                xor    eax, DWORD PTR [rdx+0x30]
+33 42 31                xor    eax, DWORD PTR [rdx+0x31]
+33 42 32                xor    eax, DWORD PTR [rdx+0x32]
+33 42 34                xor    eax, DWORD PTR [rdx+0x34]
+33 42 35                xor    eax, DWORD PTR [rdx+0x35]
+33 42 36                xor    eax, DWORD PTR [rdx+0x36]
+33 42 37                xor    eax, DWORD PTR [rdx+0x37]
+33 42 38                xor    eax, DWORD PTR [rdx+0x38]
+33 42 39                xor    eax, DWORD PTR [rdx+0x39]
+33 42 41                xor    eax, DWORD PTR [rdx+0x41]
+33 42 43                xor    eax, DWORD PTR [rdx+0x43]
+33 42 44                xor    eax, DWORD PTR [rdx+0x44]
+33 42 45                xor    eax, DWORD PTR [rdx+0x45]
+33 42 46                xor    eax, DWORD PTR [rdx+0x46]
+33 43 30                xor    eax, DWORD PTR [rbx+0x30]
+33 43 31                xor    eax, DWORD PTR [rbx+0x31]
+33 43 32                xor    eax, DWORD PTR [rbx+0x32]
+33 43 34                xor    eax, DWORD PTR [rbx+0x34]
+33 43 35                xor    eax, DWORD PTR [rbx+0x35]
+33 43 36                xor    eax, DWORD PTR [rbx+0x36]
+33 43 37                xor    eax, DWORD PTR [rbx+0x37]
+33 43 38                xor    eax, DWORD PTR [rbx+0x38]
+33 43 39                xor    eax, DWORD PTR [rbx+0x39]
+33 43 41                xor    eax, DWORD PTR [rbx+0x41]
+33 43 42                xor    eax, DWORD PTR [rbx+0x42]
+33 43 44                xor    eax, DWORD PTR [rbx+0x44]
+33 43 45                xor    eax, DWORD PTR [rbx+0x45]
+33 43 46                xor    eax, DWORD PTR [rbx+0x46]
+33 44 30 31             xor    eax, DWORD PTR [rax+rsi*1+0x31]
+33 44 30 32             xor    eax, DWORD PTR [rax+rsi*1+0x32]
+33 44 30 34             xor    eax, DWORD PTR [rax+rsi*1+0x34]
+33 44 30 35             xor    eax, DWORD PTR [rax+rsi*1+0x35]
+33 44 30 36             xor    eax, DWORD PTR [rax+rsi*1+0x36]
+33 44 30 37             xor    eax, DWORD PTR [rax+rsi*1+0x37]
+33 44 30 38             xor    eax, DWORD PTR [rax+rsi*1+0x38]
+33 44 30 39             xor    eax, DWORD PTR [rax+rsi*1+0x39]
+33 44 30 41             xor    eax, DWORD PTR [rax+rsi*1+0x41]
+33 44 30 42             xor    eax, DWORD PTR [rax+rsi*1+0x42]
+33 44 30 43             xor    eax, DWORD PTR [rax+rsi*1+0x43]
+33 44 30 45             xor    eax, DWORD PTR [rax+rsi*1+0x45]
+33 44 30 46             xor    eax, DWORD PTR [rax+rsi*1+0x46]
+33 44 31 30             xor    eax, DWORD PTR [rcx+rsi*1+0x30]
+33 44 31 32             xor    eax, DWORD PTR [rcx+rsi*1+0x32]
+33 44 31 34             xor    eax, DWORD PTR [rcx+rsi*1+0x34]
+33 44 31 35             xor    eax, DWORD PTR [rcx+rsi*1+0x35]
+33 44 31 36             xor    eax, DWORD PTR [rcx+rsi*1+0x36]
+33 44 31 37             xor    eax, DWORD PTR [rcx+rsi*1+0x37]
+33 44 31 38             xor    eax, DWORD PTR [rcx+rsi*1+0x38]
+33 44 31 39             xor    eax, DWORD PTR [rcx+rsi*1+0x39]
+33 44 31 41             xor    eax, DWORD PTR [rcx+rsi*1+0x41]
+33 44 31 42             xor    eax, DWORD PTR [rcx+rsi*1+0x42]
+33 44 31 43             xor    eax, DWORD PTR [rcx+rsi*1+0x43]
+33 44 31 45             xor    eax, DWORD PTR [rcx+rsi*1+0x45]
+33 44 31 46             xor    eax, DWORD PTR [rcx+rsi*1+0x46]
+33 44 32 30             xor    eax, DWORD PTR [rdx+rsi*1+0x30]
+33 44 32 31             xor    eax, DWORD PTR [rdx+rsi*1+0x31]
+33 44 32 34             xor    eax, DWORD PTR [rdx+rsi*1+0x34]
+33 44 32 35             xor    eax, DWORD PTR [rdx+rsi*1+0x35]
+33 44 32 36             xor    eax, DWORD PTR [rdx+rsi*1+0x36]
+33 44 32 37             xor    eax, DWORD PTR [rdx+rsi*1+0x37]
+33 44 32 38             xor    eax, DWORD PTR [rdx+rsi*1+0x38]
+33 44 32 39             xor    eax, DWORD PTR [rdx+rsi*1+0x39]
+33 44 32 41             xor    eax, DWORD PTR [rdx+rsi*1+0x41]
+33 44 32 42             xor    eax, DWORD PTR [rdx+rsi*1+0x42]
+33 44 32 43             xor    eax, DWORD PTR [rdx+rsi*1+0x43]
+33 44 32 45             xor    eax, DWORD PTR [rdx+rsi*1+0x45]
+33 44 32 46             xor    eax, DWORD PTR [rdx+rsi*1+0x46]
+33 44 34 30             xor    eax, DWORD PTR [rsp+rsi*1+0x30]
+33 44 34 31             xor    eax, DWORD PTR [rsp+rsi*1+0x31]
+33 44 34 32             xor    eax, DWORD PTR [rsp+rsi*1+0x32]
+33 44 34 35             xor    eax, DWORD PTR [rsp+rsi*1+0x35]
+33 44 34 36             xor    eax, DWORD PTR [rsp+rsi*1+0x36]
+33 44 34 37             xor    eax, DWORD PTR [rsp+rsi*1+0x37]
+33 44 34 38             xor    eax, DWORD PTR [rsp+rsi*1+0x38]
+33 44 34 39             xor    eax, DWORD PTR [rsp+rsi*1+0x39]
+33 44 34 41             xor    eax, DWORD PTR [rsp+rsi*1+0x41]
+33 44 34 42             xor    eax, DWORD PTR [rsp+rsi*1+0x42]
+33 44 34 43             xor    eax, DWORD PTR [rsp+rsi*1+0x43]
+33 44 34 45             xor    eax, DWORD PTR [rsp+rsi*1+0x45]
+33 44 34 46             xor    eax, DWORD PTR [rsp+rsi*1+0x46]
+33 44 35 30             xor    eax, DWORD PTR [rbp+rsi*1+0x30]
+33 44 35 31             xor    eax, DWORD PTR [rbp+rsi*1+0x31]
+33 44 35 32             xor    eax, DWORD PTR [rbp+rsi*1+0x32]
+33 44 35 34             xor    eax, DWORD PTR [rbp+rsi*1+0x34]
+33 44 35 36             xor    eax, DWORD PTR [rbp+rsi*1+0x36]
+33 44 35 37             xor    eax, DWORD PTR [rbp+rsi*1+0x37]
+33 44 35 38             xor    eax, DWORD PTR [rbp+rsi*1+0x38]
+33 44 35 39             xor    eax, DWORD PTR [rbp+rsi*1+0x39]
+33 44 35 41             xor    eax, DWORD PTR [rbp+rsi*1+0x41]
+33 44 35 42             xor    eax, DWORD PTR [rbp+rsi*1+0x42]
+33 44 35 43             xor    eax, DWORD PTR [rbp+rsi*1+0x43]
+33 44 35 45             xor    eax, DWORD PTR [rbp+rsi*1+0x45]
+33 44 35 46             xor    eax, DWORD PTR [rbp+rsi*1+0x46]
+33 44 36 30             xor    eax, DWORD PTR [rsi+rsi*1+0x30]
+33 44 36 31             xor    eax, DWORD PTR [rsi+rsi*1+0x31]
+33 44 36 32             xor    eax, DWORD PTR [rsi+rsi*1+0x32]
+33 44 36 34             xor    eax, DWORD PTR [rsi+rsi*1+0x34]
+33 44 36 35             xor    eax, DWORD PTR [rsi+rsi*1+0x35]
+33 44 36 37             xor    eax, DWORD PTR [rsi+rsi*1+0x37]
+33 44 36 38             xor    eax, DWORD PTR [rsi+rsi*1+0x38]
+33 44 36 39             xor    eax, DWORD PTR [rsi+rsi*1+0x39]
+33 44 36 41             xor    eax, DWORD PTR [rsi+rsi*1+0x41]
+33 44 36 42             xor    eax, DWORD PTR [rsi+rsi*1+0x42]
+33 44 36 43             xor    eax, DWORD PTR [rsi+rsi*1+0x43]
+33 44 36 45             xor    eax, DWORD PTR [rsi+rsi*1+0x45]
+33 44 36 46             xor    eax, DWORD PTR [rsi+rsi*1+0x46]
+33 44 37 30             xor    eax, DWORD PTR [rdi+rsi*1+0x30]
+33 44 37 31             xor    eax, DWORD PTR [rdi+rsi*1+0x31]
+33 44 37 32             xor    eax, DWORD PTR [rdi+rsi*1+0x32]
+33 44 37 34             xor    eax, DWORD PTR [rdi+rsi*1+0x34]
+33 44 37 35             xor    eax, DWORD PTR [rdi+rsi*1+0x35]
+33 44 37 36             xor    eax, DWORD PTR [rdi+rsi*1+0x36]
+33 44 37 38             xor    eax, DWORD PTR [rdi+rsi*1+0x38]
+33 44 37 39             xor    eax, DWORD PTR [rdi+rsi*1+0x39]
+33 44 37 41             xor    eax, DWORD PTR [rdi+rsi*1+0x41]
+33 44 37 42             xor    eax, DWORD PTR [rdi+rsi*1+0x42]
+33 44 37 43             xor    eax, DWORD PTR [rdi+rsi*1+0x43]
+33 44 37 45             xor    eax, DWORD PTR [rdi+rsi*1+0x45]
+33 44 37 46             xor    eax, DWORD PTR [rdi+rsi*1+0x46]
+33 44 38 30             xor    eax, DWORD PTR [rax+rdi*1+0x30]
+33 44 38 31             xor    eax, DWORD PTR [rax+rdi*1+0x31]
+33 44 38 32             xor    eax, DWORD PTR [rax+rdi*1+0x32]
+33 44 38 34             xor    eax, DWORD PTR [rax+rdi*1+0x34]
+33 44 38 35             xor    eax, DWORD PTR [rax+rdi*1+0x35]
+33 44 38 36             xor    eax, DWORD PTR [rax+rdi*1+0x36]
+33 44 38 37             xor    eax, DWORD PTR [rax+rdi*1+0x37]
+33 44 38 39             xor    eax, DWORD PTR [rax+rdi*1+0x39]
+33 44 38 41             xor    eax, DWORD PTR [rax+rdi*1+0x41]
+33 44 38 42             xor    eax, DWORD PTR [rax+rdi*1+0x42]
+33 44 38 43             xor    eax, DWORD PTR [rax+rdi*1+0x43]
+33 44 38 45             xor    eax, DWORD PTR [rax+rdi*1+0x45]
+33 44 39 30             xor    eax, DWORD PTR [rcx+rdi*1+0x30]
+33 44 39 31             xor    eax, DWORD PTR [rcx+rdi*1+0x31]
+33 44 39 32             xor    eax, DWORD PTR [rcx+rdi*1+0x32]
+33 44 39 34             xor    eax, DWORD PTR [rcx+rdi*1+0x34]
+33 44 39 35             xor    eax, DWORD PTR [rcx+rdi*1+0x35]
+33 44 39 36             xor    eax, DWORD PTR [rcx+rdi*1+0x36]
+33 44 39 37             xor    eax, DWORD PTR [rcx+rdi*1+0x37]
+33 44 39 38             xor    eax, DWORD PTR [rcx+rdi*1+0x38]
+33 44 39 41             xor    eax, DWORD PTR [rcx+rdi*1+0x41]
+33 44 39 42             xor    eax, DWORD PTR [rcx+rdi*1+0x42]
+33 44 39 43             xor    eax, DWORD PTR [rcx+rdi*1+0x43]
+33 44 39 45             xor    eax, DWORD PTR [rcx+rdi*1+0x45]
+33 44 39 46             xor    eax, DWORD PTR [rcx+rdi*1+0x46]
+33 44 41 30             xor    eax, DWORD PTR [rcx+rax*2+0x30]
+33 44 41 31             xor    eax, DWORD PTR [rcx+rax*2+0x31]
+33 44 41 32             xor    eax, DWORD PTR [rcx+rax*2+0x32]
+33 44 41 34             xor    eax, DWORD PTR [rcx+rax*2+0x34]
+33 44 41 35             xor    eax, DWORD PTR [rcx+rax*2+0x35]
+33 44 41 36             xor    eax, DWORD PTR [rcx+rax*2+0x36]
+33 44 41 37             xor    eax, DWORD PTR [rcx+rax*2+0x37]
+33 44 41 38             xor    eax, DWORD PTR [rcx+rax*2+0x38]
+33 44 41 39             xor    eax, DWORD PTR [rcx+rax*2+0x39]
+33 44 41 42             xor    eax, DWORD PTR [rcx+rax*2+0x42]
+33 44 41 43             xor    eax, DWORD PTR [rcx+rax*2+0x43]
+33 44 41 45             xor    eax, DWORD PTR [rcx+rax*2+0x45]
+33 44 41 46             xor    eax, DWORD PTR [rcx+rax*2+0x46]
+33 44 42 30             xor    eax, DWORD PTR [rdx+rax*2+0x30]
+33 44 42 31             xor    eax, DWORD PTR [rdx+rax*2+0x31]
+33 44 42 32             xor    eax, DWORD PTR [rdx+rax*2+0x32]
+33 44 42 34             xor    eax, DWORD PTR [rdx+rax*2+0x34]
+33 44 42 35             xor    eax, DWORD PTR [rdx+rax*2+0x35]
+33 44 42 36             xor    eax, DWORD PTR [rdx+rax*2+0x36]
+33 44 42 37             xor    eax, DWORD PTR [rdx+rax*2+0x37]
+33 44 42 38             xor    eax, DWORD PTR [rdx+rax*2+0x38]
+33 44 42 39             xor    eax, DWORD PTR [rdx+rax*2+0x39]
+33 44 42 41             xor    eax, DWORD PTR [rdx+rax*2+0x41]
+33 44 42 43             xor    eax, DWORD PTR [rdx+rax*2+0x43]
+33 44 42 45             xor    eax, DWORD PTR [rdx+rax*2+0x45]
+33 44 42 46             xor    eax, DWORD PTR [rdx+rax*2+0x46]
+33 44 43 30             xor    eax, DWORD PTR [rbx+rax*2+0x30]
+33 44 43 31             xor    eax, DWORD PTR [rbx+rax*2+0x31]
+33 44 43 32             xor    eax, DWORD PTR [rbx+rax*2+0x32]
+33 44 43 34             xor    eax, DWORD PTR [rbx+rax*2+0x34]
+33 44 43 35             xor    eax, DWORD PTR [rbx+rax*2+0x35]
+33 44 43 36             xor    eax, DWORD PTR [rbx+rax*2+0x36]
+33 44 43 37             xor    eax, DWORD PTR [rbx+rax*2+0x37]
+33 44 43 38             xor    eax, DWORD PTR [rbx+rax*2+0x38]
+33 44 43 39             xor    eax, DWORD PTR [rbx+rax*2+0x39]
+33 44 43 41             xor    eax, DWORD PTR [rbx+rax*2+0x41]
+33 44 43 42             xor    eax, DWORD PTR [rbx+rax*2+0x42]
+33 44 43 45             xor    eax, DWORD PTR [rbx+rax*2+0x45]
+33 44 43 46             xor    eax, DWORD PTR [rbx+rax*2+0x46]
+33 44 45 30             xor    eax, DWORD PTR [rbp+rax*2+0x30]
+33 44 45 31             xor    eax, DWORD PTR [rbp+rax*2+0x31]
+33 44 45 32             xor    eax, DWORD PTR [rbp+rax*2+0x32]
+33 44 45 34             xor    eax, DWORD PTR [rbp+rax*2+0x34]
+33 44 45 35             xor    eax, DWORD PTR [rbp+rax*2+0x35]
+33 44 45 36             xor    eax, DWORD PTR [rbp+rax*2+0x36]
+33 44 45 37             xor    eax, DWORD PTR [rbp+rax*2+0x37]
+33 44 45 38             xor    eax, DWORD PTR [rbp+rax*2+0x38]
+33 44 45 39             xor    eax, DWORD PTR [rbp+rax*2+0x39]
+33 44 45 41             xor    eax, DWORD PTR [rbp+rax*2+0x41]
+33 44 45 42             xor    eax, DWORD PTR [rbp+rax*2+0x42]
+33 44 45 43             xor    eax, DWORD PTR [rbp+rax*2+0x43]
+33 44 45 46             xor    eax, DWORD PTR [rbp+rax*2+0x46]
+33 44 46 30             xor    eax, DWORD PTR [rsi+rax*2+0x30]
+33 44 46 31             xor    eax, DWORD PTR [rsi+rax*2+0x31]
+33 44 46 32             xor    eax, DWORD PTR [rsi+rax*2+0x32]
+33 44 46 34             xor    eax, DWORD PTR [rsi+rax*2+0x34]
+33 44 46 35             xor    eax, DWORD PTR [rsi+rax*2+0x35]
+33 44 46 36             xor    eax, DWORD PTR [rsi+rax*2+0x36]
+33 44 46 37             xor    eax, DWORD PTR [rsi+rax*2+0x37]
+33 44 46 38             xor    eax, DWORD PTR [rsi+rax*2+0x38]
+33 44 46 39             xor    eax, DWORD PTR [rsi+rax*2+0x39]
+33 44 46 41             xor    eax, DWORD PTR [rsi+rax*2+0x41]
+33 44 46 42             xor    eax, DWORD PTR [rsi+rax*2+0x42]
+33 44 46 43             xor    eax, DWORD PTR [rsi+rax*2+0x43]
+33 44 46 45             xor    eax, DWORD PTR [rsi+rax*2+0x45]
+33 45 30                xor    eax, DWORD PTR [rbp+0x30]
+33 45 31                xor    eax, DWORD PTR [rbp+0x31]
+33 45 32                xor    eax, DWORD PTR [rbp+0x32]
+33 45 34                xor    eax, DWORD PTR [rbp+0x34]
+33 45 35                xor    eax, DWORD PTR [rbp+0x35]
+33 45 36                xor    eax, DWORD PTR [rbp+0x36]
+33 45 37                xor    eax, DWORD PTR [rbp+0x37]
+33 45 38                xor    eax, DWORD PTR [rbp+0x38]
+33 45 39                xor    eax, DWORD PTR [rbp+0x39]
+33 45 41                xor    eax, DWORD PTR [rbp+0x41]
+33 45 42                xor    eax, DWORD PTR [rbp+0x42]
+33 45 43                xor    eax, DWORD PTR [rbp+0x43]
+33 45 44                xor    eax, DWORD PTR [rbp+0x44]
+33 45 46                xor    eax, DWORD PTR [rbp+0x46]
+33 46 30                xor    eax, DWORD PTR [rsi+0x30]
+33 46 31                xor    eax, DWORD PTR [rsi+0x31]
+33 46 32                xor    eax, DWORD PTR [rsi+0x32]
+33 46 34                xor    eax, DWORD PTR [rsi+0x34]
+33 46 35                xor    eax, DWORD PTR [rsi+0x35]
+33 46 36                xor    eax, DWORD PTR [rsi+0x36]
+33 46 37                xor    eax, DWORD PTR [rsi+0x37]
+33 46 38                xor    eax, DWORD PTR [rsi+0x38]
+33 46 39                xor    eax, DWORD PTR [rsi+0x39]
+33 46 41                xor    eax, DWORD PTR [rsi+0x41]
+33 46 42                xor    eax, DWORD PTR [rsi+0x42]
+33 46 43                xor    eax, DWORD PTR [rsi+0x43]
+33 46 44                xor    eax, DWORD PTR [rsi+0x44]
+33 46 45                xor    eax, DWORD PTR [rsi+0x45]
+34 30                   xor    al, 0x30
+34 31                   xor    al, 0x31
+34 32                   xor    al, 0x32
+34 33                   xor    al, 0x33
+34 35                   xor    al, 0x35
+34 36                   xor    al, 0x36
+34 37                   xor    al, 0x37
+34 38                   xor    al, 0x38
+34 39                   xor    al, 0x39
+34 41                   xor    al, 0x41
+34 42                   xor    al, 0x42
+34 43                   xor    al, 0x43
+34 44                   xor    al, 0x44
+34 45                   xor    al, 0x45
+34 46                   xor    al, 0x46
+36 30 31                ss xor BYTE PTR [rcx], dh
+36 30 32                ss xor BYTE PTR [rdx], dh
+36 30 33                ss xor BYTE PTR [rbx], dh
+36 30 34 31             ss xor BYTE PTR [rcx+rsi*1], dh
+36 30 34 32             ss xor BYTE PTR [rdx+rsi*1], dh
+36 30 34 33             ss xor BYTE PTR [rbx+rsi*1], dh
+36 30 34 37             ss xor BYTE PTR [rdi+rsi*1], dh
+36 30 34 38             ss xor BYTE PTR [rax+rdi*1], dh
+36 30 34 39             ss xor BYTE PTR [rcx+rdi*1], dh
+36 30 34 41             ss xor BYTE PTR [rcx+rax*2], dh
+36 30 34 42             ss xor BYTE PTR [rdx+rax*2], dh
+36 30 34 44             ss xor BYTE PTR [rsp+rax*2], dh
+36 30 34 46             ss xor BYTE PTR [rsi+rax*2], dh
+36 30 37                ss xor BYTE PTR [rdi], dh
+36 30 38                ss xor BYTE PTR [rax], bh
+36 30 39                ss xor BYTE PTR [rcx], bh
+36 30 41 31             ss xor BYTE PTR [rcx+0x31], al
+36 30 41 32             ss xor BYTE PTR [rcx+0x32], al
+36 30 41 33             ss xor BYTE PTR [rcx+0x33], al
+36 30 41 34             ss xor BYTE PTR [rcx+0x34], al
+36 30 41 35             ss xor BYTE PTR [rcx+0x35], al
+36 30 41 37             ss xor BYTE PTR [rcx+0x37], al
+36 30 41 38             ss xor BYTE PTR [rcx+0x38], al
+36 30 41 39             ss xor BYTE PTR [rcx+0x39], al
+36 30 41 42             ss xor BYTE PTR [rcx+0x42], al
+36 30 41 44             ss xor BYTE PTR [rcx+0x44], al
+36 30 41 45             ss xor BYTE PTR [rcx+0x45], al
+36 30 41 46             ss xor BYTE PTR [rcx+0x46], al
+36 30 42 31             ss xor BYTE PTR [rdx+0x31], al
+36 30 42 32             ss xor BYTE PTR [rdx+0x32], al
+36 30 42 33             ss xor BYTE PTR [rdx+0x33], al
+36 30 42 34             ss xor BYTE PTR [rdx+0x34], al
+36 30 42 35             ss xor BYTE PTR [rdx+0x35], al
+36 30 42 37             ss xor BYTE PTR [rdx+0x37], al
+36 30 42 38             ss xor BYTE PTR [rdx+0x38], al
+36 30 42 39             ss xor BYTE PTR [rdx+0x39], al
+36 30 42 41             ss xor BYTE PTR [rdx+0x41], al
+36 30 42 43             ss xor BYTE PTR [rdx+0x43], al
+36 30 42 44             ss xor BYTE PTR [rdx+0x44], al
+36 30 42 45             ss xor BYTE PTR [rdx+0x45], al
+36 30 42 46             ss xor BYTE PTR [rdx+0x46], al
+36 30 43 31             ss xor BYTE PTR [rbx+0x31], al
+36 30 43 32             ss xor BYTE PTR [rbx+0x32], al
+36 30 43 33             ss xor BYTE PTR [rbx+0x33], al
+36 30 43 34             ss xor BYTE PTR [rbx+0x34], al
+36 30 43 35             ss xor BYTE PTR [rbx+0x35], al
+36 30 43 37             ss xor BYTE PTR [rbx+0x37], al
+36 30 43 38             ss xor BYTE PTR [rbx+0x38], al
+36 30 43 39             ss xor BYTE PTR [rbx+0x39], al
+36 30 43 41             ss xor BYTE PTR [rbx+0x41], al
+36 30 43 42             ss xor BYTE PTR [rbx+0x42], al
+36 30 43 44             ss xor BYTE PTR [rbx+0x44], al
+36 30 43 45             ss xor BYTE PTR [rbx+0x45], al
+36 30 43 46             ss xor BYTE PTR [rbx+0x46], al
+36 30 45 31             ss xor BYTE PTR [rbp+0x31], al
+36 30 45 32             ss xor BYTE PTR [rbp+0x32], al
+36 30 45 33             ss xor BYTE PTR [rbp+0x33], al
+36 30 45 34             ss xor BYTE PTR [rbp+0x34], al
+36 30 45 35             ss xor BYTE PTR [rbp+0x35], al
+36 30 45 37             ss xor BYTE PTR [rbp+0x37], al
+36 30 45 38             ss xor BYTE PTR [rbp+0x38], al
+36 30 45 39             ss xor BYTE PTR [rbp+0x39], al
+36 30 45 41             ss xor BYTE PTR [rbp+0x41], al
+36 30 45 42             ss xor BYTE PTR [rbp+0x42], al
+36 30 45 43             ss xor BYTE PTR [rbp+0x43], al
+36 30 45 44             ss xor BYTE PTR [rbp+0x44], al
+36 30 45 46             ss xor BYTE PTR [rbp+0x46], al
+36 30 46 31             ss xor BYTE PTR [rsi+0x31], al
+36 30 46 32             ss xor BYTE PTR [rsi+0x32], al
+36 30 46 33             ss xor BYTE PTR [rsi+0x33], al
+36 30 46 34             ss xor BYTE PTR [rsi+0x34], al
+36 30 46 35             ss xor BYTE PTR [rsi+0x35], al
+36 30 46 37             ss xor BYTE PTR [rsi+0x37], al
+36 30 46 38             ss xor BYTE PTR [rsi+0x38], al
+36 30 46 39             ss xor BYTE PTR [rsi+0x39], al
+36 30 46 41             ss xor BYTE PTR [rsi+0x41], al
+36 30 46 42             ss xor BYTE PTR [rsi+0x42], al
+36 30 46 43             ss xor BYTE PTR [rsi+0x43], al
+36 30 46 44             ss xor BYTE PTR [rsi+0x44], al
+36 30 46 45             ss xor BYTE PTR [rsi+0x45], al
+36 31 30                ss xor DWORD PTR [rax], esi
+36 31 32                ss xor DWORD PTR [rdx], esi
+36 31 33                ss xor DWORD PTR [rbx], esi
+36 31 34 30             ss xor DWORD PTR [rax+rsi*1], esi
+36 31 34 32             ss xor DWORD PTR [rdx+rsi*1], esi
+36 31 34 33             ss xor DWORD PTR [rbx+rsi*1], esi
+36 31 34 37             ss xor DWORD PTR [rdi+rsi*1], esi
+36 31 34 38             ss xor DWORD PTR [rax+rdi*1], esi
+36 31 34 39             ss xor DWORD PTR [rcx+rdi*1], esi
+36 31 34 41             ss xor DWORD PTR [rcx+rax*2], esi
+36 31 34 42             ss xor DWORD PTR [rdx+rax*2], esi
+36 31 34 43             ss xor DWORD PTR [rbx+rax*2], esi
+36 31 34 44             ss xor DWORD PTR [rsp+rax*2], esi
+36 31 34 46             ss xor DWORD PTR [rsi+rax*2], esi
+36 31 37                ss xor DWORD PTR [rdi], esi
+36 31 38                ss xor DWORD PTR [rax], edi
+36 31 39                ss xor DWORD PTR [rcx], edi
+36 31 41 30             ss xor DWORD PTR [rcx+0x30], eax
+36 31 41 32             ss xor DWORD PTR [rcx+0x32], eax
+36 31 41 33             ss xor DWORD PTR [rcx+0x33], eax
+36 31 41 34             ss xor DWORD PTR [rcx+0x34], eax
+36 31 41 35             ss xor DWORD PTR [rcx+0x35], eax
+36 31 41 37             ss xor DWORD PTR [rcx+0x37], eax
+36 31 41 38             ss xor DWORD PTR [rcx+0x38], eax
+36 31 41 39             ss xor DWORD PTR [rcx+0x39], eax
+36 31 41 42             ss xor DWORD PTR [rcx+0x42], eax
+36 31 41 43             ss xor DWORD PTR [rcx+0x43], eax
+36 31 41 44             ss xor DWORD PTR [rcx+0x44], eax
+36 31 41 45             ss xor DWORD PTR [rcx+0x45], eax
+36 31 41 46             ss xor DWORD PTR [rcx+0x46], eax
+36 31 42 30             ss xor DWORD PTR [rdx+0x30], eax
+36 31 42 32             ss xor DWORD PTR [rdx+0x32], eax
+36 31 42 33             ss xor DWORD PTR [rdx+0x33], eax
+36 31 42 34             ss xor DWORD PTR [rdx+0x34], eax
+36 31 42 35             ss xor DWORD PTR [rdx+0x35], eax
+36 31 42 37             ss xor DWORD PTR [rdx+0x37], eax
+36 31 42 38             ss xor DWORD PTR [rdx+0x38], eax
+36 31 42 39             ss xor DWORD PTR [rdx+0x39], eax
+36 31 42 41             ss xor DWORD PTR [rdx+0x41], eax
+36 31 42 43             ss xor DWORD PTR [rdx+0x43], eax
+36 31 42 44             ss xor DWORD PTR [rdx+0x44], eax
+36 31 42 45             ss xor DWORD PTR [rdx+0x45], eax
+36 31 42 46             ss xor DWORD PTR [rdx+0x46], eax
+36 31 43 30             ss xor DWORD PTR [rbx+0x30], eax
+36 31 43 32             ss xor DWORD PTR [rbx+0x32], eax
+36 31 43 33             ss xor DWORD PTR [rbx+0x33], eax
+36 31 43 34             ss xor DWORD PTR [rbx+0x34], eax
+36 31 43 35             ss xor DWORD PTR [rbx+0x35], eax
+36 31 43 37             ss xor DWORD PTR [rbx+0x37], eax
+36 31 43 38             ss xor DWORD PTR [rbx+0x38], eax
+36 31 43 39             ss xor DWORD PTR [rbx+0x39], eax
+36 31 43 41             ss xor DWORD PTR [rbx+0x41], eax
+36 31 43 42             ss xor DWORD PTR [rbx+0x42], eax
+36 31 43 44             ss xor DWORD PTR [rbx+0x44], eax
+36 31 43 45             ss xor DWORD PTR [rbx+0x45], eax
+36 31 43 46             ss xor DWORD PTR [rbx+0x46], eax
+36 31 45 30             ss xor DWORD PTR [rbp+0x30], eax
+36 31 45 32             ss xor DWORD PTR [rbp+0x32], eax
+36 31 45 33             ss xor DWORD PTR [rbp+0x33], eax
+36 31 45 35             ss xor DWORD PTR [rbp+0x35], eax
+36 31 45 37             ss xor DWORD PTR [rbp+0x37], eax
+36 31 45 38             ss xor DWORD PTR [rbp+0x38], eax
+36 31 45 39             ss xor DWORD PTR [rbp+0x39], eax
+36 31 45 41             ss xor DWORD PTR [rbp+0x41], eax
+36 31 45 42             ss xor DWORD PTR [rbp+0x42], eax
+36 31 45 43             ss xor DWORD PTR [rbp+0x43], eax
+36 31 45 44             ss xor DWORD PTR [rbp+0x44], eax
+36 31 45 46             ss xor DWORD PTR [rbp+0x46], eax
+36 31 46 30             ss xor DWORD PTR [rsi+0x30], eax
+36 31 46 32             ss xor DWORD PTR [rsi+0x32], eax
+36 31 46 33             ss xor DWORD PTR [rsi+0x33], eax
+36 31 46 34             ss xor DWORD PTR [rsi+0x34], eax
+36 31 46 35             ss xor DWORD PTR [rsi+0x35], eax
+36 31 46 37             ss xor DWORD PTR [rsi+0x37], eax
+36 31 46 38             ss xor DWORD PTR [rsi+0x38], eax
+36 31 46 39             ss xor DWORD PTR [rsi+0x39], eax
+36 31 46 41             ss xor DWORD PTR [rsi+0x41], eax
+36 31 46 42             ss xor DWORD PTR [rsi+0x42], eax
+36 31 46 43             ss xor DWORD PTR [rsi+0x43], eax
+36 31 46 44             ss xor DWORD PTR [rsi+0x44], eax
+36 31 46 45             ss xor DWORD PTR [rsi+0x45], eax
+36 32 30                ss xor dh, BYTE PTR [rax]
+36 32 31                ss xor dh, BYTE PTR [rcx]
+36 32 33                ss xor dh, BYTE PTR [rbx]
+36 32 34 30             ss xor dh, BYTE PTR [rax+rsi*1]
+36 32 34 31             ss xor dh, BYTE PTR [rcx+rsi*1]
+36 32 34 33             ss xor dh, BYTE PTR [rbx+rsi*1]
+36 32 34 37             ss xor dh, BYTE PTR [rdi+rsi*1]
+36 32 34 38             ss xor dh, BYTE PTR [rax+rdi*1]
+36 32 34 39             ss xor dh, BYTE PTR [rcx+rdi*1]
+36 32 34 41             ss xor dh, BYTE PTR [rcx+rax*2]
+36 32 34 42             ss xor dh, BYTE PTR [rdx+rax*2]
+36 32 34 43             ss xor dh, BYTE PTR [rbx+rax*2]
+36 32 34 44             ss xor dh, BYTE PTR [rsp+rax*2]
+36 32 34 46             ss xor dh, BYTE PTR [rsi+rax*2]
+36 32 37                ss xor dh, BYTE PTR [rdi]
+36 32 38                ss xor bh, BYTE PTR [rax]
+36 32 39                ss xor bh, BYTE PTR [rcx]
+36 32 41 30             ss xor al, BYTE PTR [rcx+0x30]
+36 32 41 31             ss xor al, BYTE PTR [rcx+0x31]
+36 32 41 33             ss xor al, BYTE PTR [rcx+0x33]
+36 32 41 34             ss xor al, BYTE PTR [rcx+0x34]
+36 32 41 35             ss xor al, BYTE PTR [rcx+0x35]
+36 32 41 37             ss xor al, BYTE PTR [rcx+0x37]
+36 32 41 38             ss xor al, BYTE PTR [rcx+0x38]
+36 32 41 39             ss xor al, BYTE PTR [rcx+0x39]
+36 32 41 42             ss xor al, BYTE PTR [rcx+0x42]
+36 32 41 43             ss xor al, BYTE PTR [rcx+0x43]
+36 32 41 44             ss xor al, BYTE PTR [rcx+0x44]
+36 32 41 45             ss xor al, BYTE PTR [rcx+0x45]
+36 32 41 46             ss xor al, BYTE PTR [rcx+0x46]
+36 32 42 30             ss xor al, BYTE PTR [rdx+0x30]
+36 32 42 31             ss xor al, BYTE PTR [rdx+0x31]
+36 32 42 33             ss xor al, BYTE PTR [rdx+0x33]
+36 32 42 34             ss xor al, BYTE PTR [rdx+0x34]
+36 32 42 35             ss xor al, BYTE PTR [rdx+0x35]
+36 32 42 37             ss xor al, BYTE PTR [rdx+0x37]
+36 32 42 38             ss xor al, BYTE PTR [rdx+0x38]
+36 32 42 39             ss xor al, BYTE PTR [rdx+0x39]
+36 32 42 41             ss xor al, BYTE PTR [rdx+0x41]
+36 32 42 43             ss xor al, BYTE PTR [rdx+0x43]
+36 32 42 44             ss xor al, BYTE PTR [rdx+0x44]
+36 32 42 45             ss xor al, BYTE PTR [rdx+0x45]
+36 32 42 46             ss xor al, BYTE PTR [rdx+0x46]
+36 32 43 30             ss xor al, BYTE PTR [rbx+0x30]
+36 32 43 31             ss xor al, BYTE PTR [rbx+0x31]
+36 32 43 33             ss xor al, BYTE PTR [rbx+0x33]
+36 32 43 35             ss xor al, BYTE PTR [rbx+0x35]
+36 32 43 37             ss xor al, BYTE PTR [rbx+0x37]
+36 32 43 38             ss xor al, BYTE PTR [rbx+0x38]
+36 32 43 39             ss xor al, BYTE PTR [rbx+0x39]
+36 32 43 41             ss xor al, BYTE PTR [rbx+0x41]
+36 32 43 42             ss xor al, BYTE PTR [rbx+0x42]
+36 32 43 44             ss xor al, BYTE PTR [rbx+0x44]
+36 32 43 45             ss xor al, BYTE PTR [rbx+0x45]
+36 32 43 46             ss xor al, BYTE PTR [rbx+0x46]
+36 32 45 30             ss xor al, BYTE PTR [rbp+0x30]
+36 32 45 31             ss xor al, BYTE PTR [rbp+0x31]
+36 32 45 33             ss xor al, BYTE PTR [rbp+0x33]
+36 32 45 34             ss xor al, BYTE PTR [rbp+0x34]
+36 32 45 35             ss xor al, BYTE PTR [rbp+0x35]
+36 32 45 37             ss xor al, BYTE PTR [rbp+0x37]
+36 32 45 38             ss xor al, BYTE PTR [rbp+0x38]
+36 32 45 39             ss xor al, BYTE PTR [rbp+0x39]
+36 32 45 41             ss xor al, BYTE PTR [rbp+0x41]
+36 32 45 42             ss xor al, BYTE PTR [rbp+0x42]
+36 32 45 43             ss xor al, BYTE PTR [rbp+0x43]
+36 32 45 44             ss xor al, BYTE PTR [rbp+0x44]
+36 32 45 46             ss xor al, BYTE PTR [rbp+0x46]
+36 32 46 30             ss xor al, BYTE PTR [rsi+0x30]
+36 32 46 31             ss xor al, BYTE PTR [rsi+0x31]
+36 32 46 33             ss xor al, BYTE PTR [rsi+0x33]
+36 32 46 34             ss xor al, BYTE PTR [rsi+0x34]
+36 32 46 35             ss xor al, BYTE PTR [rsi+0x35]
+36 32 46 37             ss xor al, BYTE PTR [rsi+0x37]
+36 32 46 38             ss xor al, BYTE PTR [rsi+0x38]
+36 32 46 39             ss xor al, BYTE PTR [rsi+0x39]
+36 32 46 41             ss xor al, BYTE PTR [rsi+0x41]
+36 32 46 42             ss xor al, BYTE PTR [rsi+0x42]
+36 32 46 43             ss xor al, BYTE PTR [rsi+0x43]
+36 32 46 44             ss xor al, BYTE PTR [rsi+0x44]
+36 32 46 45             ss xor al, BYTE PTR [rsi+0x45]
+36 33 30                ss xor esi, DWORD PTR [rax]
+36 33 31                ss xor esi, DWORD PTR [rcx]
+36 33 32                ss xor esi, DWORD PTR [rdx]
+36 33 34 30             ss xor esi, DWORD PTR [rax+rsi*1]
+36 33 34 31             ss xor esi, DWORD PTR [rcx+rsi*1]
+36 33 34 32             ss xor esi, DWORD PTR [rdx+rsi*1]
+36 33 34 37             ss xor esi, DWORD PTR [rdi+rsi*1]
+36 33 34 38             ss xor esi, DWORD PTR [rax+rdi*1]
+36 33 34 39             ss xor esi, DWORD PTR [rcx+rdi*1]
+36 33 34 41             ss xor esi, DWORD PTR [rcx+rax*2]
+36 33 34 42             ss xor esi, DWORD PTR [rdx+rax*2]
+36 33 34 43             ss xor esi, DWORD PTR [rbx+rax*2]
+36 33 34 44             ss xor esi, DWORD PTR [rsp+rax*2]
+36 33 34 46             ss xor esi, DWORD PTR [rsi+rax*2]
+36 33 37                ss xor esi, DWORD PTR [rdi]
+36 33 38                ss xor edi, DWORD PTR [rax]
+36 33 39                ss xor edi, DWORD PTR [rcx]
+36 33 41 30             ss xor eax, DWORD PTR [rcx+0x30]
+36 33 41 31             ss xor eax, DWORD PTR [rcx+0x31]
+36 33 41 32             ss xor eax, DWORD PTR [rcx+0x32]
+36 33 41 34             ss xor eax, DWORD PTR [rcx+0x34]
+36 33 41 35             ss xor eax, DWORD PTR [rcx+0x35]
+36 33 41 37             ss xor eax, DWORD PTR [rcx+0x37]
+36 33 41 38             ss xor eax, DWORD PTR [rcx+0x38]
+36 33 41 39             ss xor eax, DWORD PTR [rcx+0x39]
+36 33 41 42             ss xor eax, DWORD PTR [rcx+0x42]
+36 33 41 43             ss xor eax, DWORD PTR [rcx+0x43]
+36 33 41 44             ss xor eax, DWORD PTR [rcx+0x44]
+36 33 41 45             ss xor eax, DWORD PTR [rcx+0x45]
+36 33 41 46             ss xor eax, DWORD PTR [rcx+0x46]
+36 33 42 30             ss xor eax, DWORD PTR [rdx+0x30]
+36 33 42 31             ss xor eax, DWORD PTR [rdx+0x31]
+36 33 42 32             ss xor eax, DWORD PTR [rdx+0x32]
+36 33 42 34             ss xor eax, DWORD PTR [rdx+0x34]
+36 33 42 35             ss xor eax, DWORD PTR [rdx+0x35]
+36 33 42 37             ss xor eax, DWORD PTR [rdx+0x37]
+36 33 42 38             ss xor eax, DWORD PTR [rdx+0x38]
+36 33 42 39             ss xor eax, DWORD PTR [rdx+0x39]
+36 33 42 41             ss xor eax, DWORD PTR [rdx+0x41]
+36 33 42 43             ss xor eax, DWORD PTR [rdx+0x43]
+36 33 42 44             ss xor eax, DWORD PTR [rdx+0x44]
+36 33 42 45             ss xor eax, DWORD PTR [rdx+0x45]
+36 33 42 46             ss xor eax, DWORD PTR [rdx+0x46]
+36 33 43 30             ss xor eax, DWORD PTR [rbx+0x30]
+36 33 43 31             ss xor eax, DWORD PTR [rbx+0x31]
+36 33 43 32             ss xor eax, DWORD PTR [rbx+0x32]
+36 33 43 34             ss xor eax, DWORD PTR [rbx+0x34]
+36 33 43 35             ss xor eax, DWORD PTR [rbx+0x35]
+36 33 43 37             ss xor eax, DWORD PTR [rbx+0x37]
+36 33 43 38             ss xor eax, DWORD PTR [rbx+0x38]
+36 33 43 39             ss xor eax, DWORD PTR [rbx+0x39]
+36 33 43 41             ss xor eax, DWORD PTR [rbx+0x41]
+36 33 43 42             ss xor eax, DWORD PTR [rbx+0x42]
+36 33 43 44             ss xor eax, DWORD PTR [rbx+0x44]
+36 33 43 45             ss xor eax, DWORD PTR [rbx+0x45]
+36 33 43 46             ss xor eax, DWORD PTR [rbx+0x46]
+36 33 45 30             ss xor eax, DWORD PTR [rbp+0x30]
+36 33 45 31             ss xor eax, DWORD PTR [rbp+0x31]
+36 33 45 32             ss xor eax, DWORD PTR [rbp+0x32]
+36 33 45 34             ss xor eax, DWORD PTR [rbp+0x34]
+36 33 45 35             ss xor eax, DWORD PTR [rbp+0x35]
+36 33 45 37             ss xor eax, DWORD PTR [rbp+0x37]
+36 33 45 38             ss xor eax, DWORD PTR [rbp+0x38]
+36 33 45 39             ss xor eax, DWORD PTR [rbp+0x39]
+36 33 45 41             ss xor eax, DWORD PTR [rbp+0x41]
+36 33 45 42             ss xor eax, DWORD PTR [rbp+0x42]
+36 33 45 43             ss xor eax, DWORD PTR [rbp+0x43]
+36 33 45 44             ss xor eax, DWORD PTR [rbp+0x44]
+36 33 45 46             ss xor eax, DWORD PTR [rbp+0x46]
+36 33 46 30             ss xor eax, DWORD PTR [rsi+0x30]
+36 33 46 31             ss xor eax, DWORD PTR [rsi+0x31]
+36 33 46 32             ss xor eax, DWORD PTR [rsi+0x32]
+36 33 46 34             ss xor eax, DWORD PTR [rsi+0x34]
+36 33 46 35             ss xor eax, DWORD PTR [rsi+0x35]
+36 33 46 37             ss xor eax, DWORD PTR [rsi+0x37]
+36 33 46 38             ss xor eax, DWORD PTR [rsi+0x38]
+36 33 46 39             ss xor eax, DWORD PTR [rsi+0x39]
+36 33 46 41             ss xor eax, DWORD PTR [rsi+0x41]
+36 33 46 42             ss xor eax, DWORD PTR [rsi+0x42]
+36 33 46 43             ss xor eax, DWORD PTR [rsi+0x43]
+36 33 46 44             ss xor eax, DWORD PTR [rsi+0x44]
+36 33 46 45             ss xor eax, DWORD PTR [rsi+0x45]
+36 34 30                ss xor al, 0x30
+36 34 31                ss xor al, 0x31
+36 34 32                ss xor al, 0x32
+36 34 33                ss xor al, 0x33
+36 34 35                ss xor al, 0x35
+36 34 37                ss xor al, 0x37
+36 34 38                ss xor al, 0x38
+36 34 39                ss xor al, 0x39
+36 34 41                ss xor al, 0x41
+36 34 42                ss xor al, 0x42
+36 34 43                ss xor al, 0x43
+36 34 44                ss xor al, 0x44
+36 34 45                ss xor al, 0x45
+36 34 46                ss xor al, 0x46
+36 41 30 31             ss xor BYTE PTR [r9], sil
+36 41 31 38             ss xor DWORD PTR [r8], edi
+36 41 31 39             ss xor DWORD PTR [r9], edi
+36 41 32 30             ss xor sil, BYTE PTR [r8]
+36 41 32 31             ss xor sil, BYTE PTR [r9]
+36 41 32 33             ss xor sil, BYTE PTR [r11]
+36 41 32 37             ss xor sil, BYTE PTR [r15]
+36 41 32 38             ss xor dil, BYTE PTR [r8]
+36 41 32 39             ss xor dil, BYTE PTR [r9]
+36 41 33 30             ss xor esi, DWORD PTR [r8]
+36 41 33 31             ss xor esi, DWORD PTR [r9]
+36 41 33 32             ss xor esi, DWORD PTR [r10]
+36 41 33 37             ss xor esi, DWORD PTR [r15]
+36 41 33 38             ss xor edi, DWORD PTR [r8]
+36 41 33 39             ss xor edi, DWORD PTR [r9]
+36 44 30 31             ss xor BYTE PTR [rcx], r14b
+36 44 30 32             ss xor BYTE PTR [rdx], r14b
+36 44 30 33             ss xor BYTE PTR [rbx], r14b
+36 44 30 37             ss xor BYTE PTR [rdi], r14b
+36 44 30 38             ss xor BYTE PTR [rax], r15b
+36 44 30 39             ss xor BYTE PTR [rcx], r15b
+36 44 31 30             ss xor DWORD PTR [rax], r14d
+36 44 31 32             ss xor DWORD PTR [rdx], r14d
+36 44 31 33             ss xor DWORD PTR [rbx], r14d
+36 44 31 37             ss xor DWORD PTR [rdi], r14d
+36 44 31 38             ss xor DWORD PTR [rax], r15d
+36 44 31 39             ss xor DWORD PTR [rcx], r15d
+36 44 32 30             ss xor r14b, BYTE PTR [rax]
+36 44 32 31             ss xor r14b, BYTE PTR [rcx]
+36 44 32 33             ss xor r14b, BYTE PTR [rbx]
+36 44 32 37             ss xor r14b, BYTE PTR [rdi]
+36 44 32 38             ss xor r15b, BYTE PTR [rax]
+36 44 32 39             ss xor r15b, BYTE PTR [rcx]
+36 44 33 30             ss xor r14d, DWORD PTR [rax]
+36 44 33 31             ss xor r14d, DWORD PTR [rcx]
+36 44 33 32             ss xor r14d, DWORD PTR [rdx]
+36 44 33 37             ss xor r14d, DWORD PTR [rdi]
+36 44 33 38             ss xor r15d, DWORD PTR [rax]
+36 44 33 39             ss xor r15d, DWORD PTR [rcx]
+36 45 30 31             ss xor BYTE PTR [r9], r14b
+36 45 30 32             ss xor BYTE PTR [r10], r14b
+36 45 30 33             ss xor BYTE PTR [r11], r14b
+36 45 30 37             ss xor BYTE PTR [r15], r14b
+36 45 30 38             ss xor BYTE PTR [r8], r15b
+36 45 30 39             ss xor BYTE PTR [r9], r15b
+36 45 31 30             ss xor DWORD PTR [r8], r14d
+36 45 31 32             ss xor DWORD PTR [r10], r14d
+36 45 31 33             ss xor DWORD PTR [r11], r14d
+36 45 31 37             ss xor DWORD PTR [r15], r14d
+36 45 31 38             ss xor DWORD PTR [r8], r15d
+36 45 31 39             ss xor DWORD PTR [r9], r15d
+36 45 32 30             ss xor r14b, BYTE PTR [r8]
+36 45 32 31             ss xor r14b, BYTE PTR [r9]
+36 45 32 33             ss xor r14b, BYTE PTR [r11]
+36 45 32 37             ss xor r14b, BYTE PTR [r15]
+36 45 32 38             ss xor r15b, BYTE PTR [r8]
+36 45 32 39             ss xor r15b, BYTE PTR [r9]
+36 45 33 30             ss xor r14d, DWORD PTR [r8]
+36 45 33 31             ss xor r14d, DWORD PTR [r9]
+36 45 33 32             ss xor r14d, DWORD PTR [r10]
+36 45 33 37             ss xor r14d, DWORD PTR [r15]
+36 45 33 38             ss xor r15d, DWORD PTR [r8]
+36 45 33 39             ss xor r15d, DWORD PTR [r9]
+41 30 31                xor    BYTE PTR [r9], sil
+41 30 32                xor    BYTE PTR [r10], sil
+41 30 33                xor    BYTE PTR [r11], sil
+41 30 34 31             xor    BYTE PTR [r9+rsi*1], sil
+41 30 34 32             xor    BYTE PTR [r10+rsi*1], sil
+41 30 34 33             xor    BYTE PTR [r11+rsi*1], sil
+41 30 34 36             xor    BYTE PTR [r14+rsi*1], sil
+41 30 34 37             xor    BYTE PTR [r15+rsi*1], sil
+41 30 34 38             xor    BYTE PTR [r8+rdi*1], sil
+41 30 34 39             xor    BYTE PTR [r9+rdi*1], sil
+41 30 34 42             xor    BYTE PTR [r10+rax*2], sil
+41 30 34 43             xor    BYTE PTR [r11+rax*2], sil
+41 30 34 44             xor    BYTE PTR [r12+rax*2], sil
+41 30 34 46             xor    BYTE PTR [r14+rax*2], sil
+41 30 36                xor    BYTE PTR [r14], sil
+41 30 37                xor    BYTE PTR [r15], sil
+41 30 38                xor    BYTE PTR [r8], dil
+41 30 39                xor    BYTE PTR [r9], dil
+41 30 42 31             xor    BYTE PTR [r10+0x31], al
+41 30 42 32             xor    BYTE PTR [r10+0x32], al
+41 30 42 33             xor    BYTE PTR [r10+0x33], al
+41 30 42 34             xor    BYTE PTR [r10+0x34], al
+41 30 42 35             xor    BYTE PTR [r10+0x35], al
+41 30 42 36             xor    BYTE PTR [r10+0x36], al
+41 30 42 37             xor    BYTE PTR [r10+0x37], al
+41 30 42 38             xor    BYTE PTR [r10+0x38], al
+41 30 42 39             xor    BYTE PTR [r10+0x39], al
+41 30 42 43             xor    BYTE PTR [r10+0x43], al
+41 30 42 44             xor    BYTE PTR [r10+0x44], al
+41 30 42 45             xor    BYTE PTR [r10+0x45], al
+41 30 42 46             xor    BYTE PTR [r10+0x46], al
+41 30 43 31             xor    BYTE PTR [r11+0x31], al
+41 30 43 32             xor    BYTE PTR [r11+0x32], al
+41 30 43 33             xor    BYTE PTR [r11+0x33], al
+41 30 43 34             xor    BYTE PTR [r11+0x34], al
+41 30 43 35             xor    BYTE PTR [r11+0x35], al
+41 30 43 36             xor    BYTE PTR [r11+0x36], al
+41 30 43 37             xor    BYTE PTR [r11+0x37], al
+41 30 43 38             xor    BYTE PTR [r11+0x38], al
+41 30 43 39             xor    BYTE PTR [r11+0x39], al
+41 30 43 42             xor    BYTE PTR [r11+0x42], al
+41 30 43 44             xor    BYTE PTR [r11+0x44], al
+41 30 43 45             xor    BYTE PTR [r11+0x45], al
+41 30 43 46             xor    BYTE PTR [r11+0x46], al
+41 30 45 31             xor    BYTE PTR [r13+0x31], al
+41 30 45 32             xor    BYTE PTR [r13+0x32], al
+41 30 45 33             xor    BYTE PTR [r13+0x33], al
+41 30 45 34             xor    BYTE PTR [r13+0x34], al
+41 30 45 35             xor    BYTE PTR [r13+0x35], al
+41 30 45 36             xor    BYTE PTR [r13+0x36], al
+41 30 45 37             xor    BYTE PTR [r13+0x37], al
+41 30 45 38             xor    BYTE PTR [r13+0x38], al
+41 30 45 39             xor    BYTE PTR [r13+0x39], al
+41 30 45 42             xor    BYTE PTR [r13+0x42], al
+41 30 45 43             xor    BYTE PTR [r13+0x43], al
+41 30 45 44             xor    BYTE PTR [r13+0x44], al
+41 30 45 46             xor    BYTE PTR [r13+0x46], al
+41 30 46 31             xor    BYTE PTR [r14+0x31], al
+41 30 46 32             xor    BYTE PTR [r14+0x32], al
+41 30 46 33             xor    BYTE PTR [r14+0x33], al
+41 30 46 34             xor    BYTE PTR [r14+0x34], al
+41 30 46 35             xor    BYTE PTR [r14+0x35], al
+41 30 46 36             xor    BYTE PTR [r14+0x36], al
+41 30 46 37             xor    BYTE PTR [r14+0x37], al
+41 30 46 38             xor    BYTE PTR [r14+0x38], al
+41 30 46 39             xor    BYTE PTR [r14+0x39], al
+41 30 46 42             xor    BYTE PTR [r14+0x42], al
+41 30 46 43             xor    BYTE PTR [r14+0x43], al
+41 30 46 44             xor    BYTE PTR [r14+0x44], al
+41 30 46 45             xor    BYTE PTR [r14+0x45], al
+41 31 30                xor    DWORD PTR [r8], esi
+41 31 32                xor    DWORD PTR [r10], esi
+41 31 33                xor    DWORD PTR [r11], esi
+41 31 34 30             xor    DWORD PTR [r8+rsi*1], esi
+41 31 34 32             xor    DWORD PTR [r10+rsi*1], esi
+41 31 34 33             xor    DWORD PTR [r11+rsi*1], esi
+41 31 34 36             xor    DWORD PTR [r14+rsi*1], esi
+41 31 34 37             xor    DWORD PTR [r15+rsi*1], esi
+41 31 34 38             xor    DWORD PTR [r8+rdi*1], esi
+41 31 34 39             xor    DWORD PTR [r9+rdi*1], esi
+41 31 34 42             xor    DWORD PTR [r10+rax*2], esi
+41 31 34 43             xor    DWORD PTR [r11+rax*2], esi
+41 31 34 44             xor    DWORD PTR [r12+rax*2], esi
+41 31 34 46             xor    DWORD PTR [r14+rax*2], esi
+41 31 36                xor    DWORD PTR [r14], esi
+41 31 37                xor    DWORD PTR [r15], esi
+41 31 38                xor    DWORD PTR [r8], edi
+41 31 39                xor    DWORD PTR [r9], edi
+41 31 42 30             xor    DWORD PTR [r10+0x30], eax
+41 31 42 32             xor    DWORD PTR [r10+0x32], eax
+41 31 42 33             xor    DWORD PTR [r10+0x33], eax
+41 31 42 34             xor    DWORD PTR [r10+0x34], eax
+41 31 42 35             xor    DWORD PTR [r10+0x35], eax
+41 31 42 36             xor    DWORD PTR [r10+0x36], eax
+41 31 42 37             xor    DWORD PTR [r10+0x37], eax
+41 31 42 38             xor    DWORD PTR [r10+0x38], eax
+41 31 42 39             xor    DWORD PTR [r10+0x39], eax
+41 31 42 43             xor    DWORD PTR [r10+0x43], eax
+41 31 42 44             xor    DWORD PTR [r10+0x44], eax
+41 31 42 45             xor    DWORD PTR [r10+0x45], eax
+41 31 42 46             xor    DWORD PTR [r10+0x46], eax
+41 31 43 30             xor    DWORD PTR [r11+0x30], eax
+41 31 43 32             xor    DWORD PTR [r11+0x32], eax
+41 31 43 33             xor    DWORD PTR [r11+0x33], eax
+41 31 43 34             xor    DWORD PTR [r11+0x34], eax
+41 31 43 35             xor    DWORD PTR [r11+0x35], eax
+41 31 43 36             xor    DWORD PTR [r11+0x36], eax
+41 31 43 37             xor    DWORD PTR [r11+0x37], eax
+41 31 43 38             xor    DWORD PTR [r11+0x38], eax
+41 31 43 39             xor    DWORD PTR [r11+0x39], eax
+41 31 43 42             xor    DWORD PTR [r11+0x42], eax
+41 31 43 44             xor    DWORD PTR [r11+0x44], eax
+41 31 43 45             xor    DWORD PTR [r11+0x45], eax
+41 31 43 46             xor    DWORD PTR [r11+0x46], eax
+41 31 45 30             xor    DWORD PTR [r13+0x30], eax
+41 31 45 32             xor    DWORD PTR [r13+0x32], eax
+41 31 45 33             xor    DWORD PTR [r13+0x33], eax
+41 31 45 34             xor    DWORD PTR [r13+0x34], eax
+41 31 45 35             xor    DWORD PTR [r13+0x35], eax
+41 31 45 36             xor    DWORD PTR [r13+0x36], eax
+41 31 45 37             xor    DWORD PTR [r13+0x37], eax
+41 31 45 38             xor    DWORD PTR [r13+0x38], eax
+41 31 45 39             xor    DWORD PTR [r13+0x39], eax
+41 31 45 42             xor    DWORD PTR [r13+0x42], eax
+41 31 45 43             xor    DWORD PTR [r13+0x43], eax
+41 31 45 44             xor    DWORD PTR [r13+0x44], eax
+41 31 45 46             xor    DWORD PTR [r13+0x46], eax
+41 31 46 30             xor    DWORD PTR [r14+0x30], eax
+41 31 46 32             xor    DWORD PTR [r14+0x32], eax
+41 31 46 33             xor    DWORD PTR [r14+0x33], eax
+41 31 46 34             xor    DWORD PTR [r14+0x34], eax
+41 31 46 35             xor    DWORD PTR [r14+0x35], eax
+41 31 46 36             xor    DWORD PTR [r14+0x36], eax
+41 31 46 37             xor    DWORD PTR [r14+0x37], eax
+41 31 46 38             xor    DWORD PTR [r14+0x38], eax
+41 31 46 39             xor    DWORD PTR [r14+0x39], eax
+41 31 46 42             xor    DWORD PTR [r14+0x42], eax
+41 31 46 43             xor    DWORD PTR [r14+0x43], eax
+41 31 46 44             xor    DWORD PTR [r14+0x44], eax
+41 31 46 45             xor    DWORD PTR [r14+0x45], eax
+41 32 30                xor    sil, BYTE PTR [r8]
+41 32 31                xor    sil, BYTE PTR [r9]
+41 32 33                xor    sil, BYTE PTR [r11]
+41 32 34 30             xor    sil, BYTE PTR [r8+rsi*1]
+41 32 34 31             xor    sil, BYTE PTR [r9+rsi*1]
+41 32 34 33             xor    sil, BYTE PTR [r11+rsi*1]
+41 32 34 36             xor    sil, BYTE PTR [r14+rsi*1]
+41 32 34 37             xor    sil, BYTE PTR [r15+rsi*1]
+41 32 34 38             xor    sil, BYTE PTR [r8+rdi*1]
+41 32 34 39             xor    sil, BYTE PTR [r9+rdi*1]
+41 32 34 42             xor    sil, BYTE PTR [r10+rax*2]
+41 32 34 43             xor    sil, BYTE PTR [r11+rax*2]
+41 32 34 44             xor    sil, BYTE PTR [r12+rax*2]
+41 32 34 46             xor    sil, BYTE PTR [r14+rax*2]
+41 32 36                xor    sil, BYTE PTR [r14]
+41 32 37                xor    sil, BYTE PTR [r15]
+41 32 38                xor    dil, BYTE PTR [r8]
+41 32 39                xor    dil, BYTE PTR [r9]
+41 32 42 30             xor    al, BYTE PTR [r10+0x30]
+41 32 42 31             xor    al, BYTE PTR [r10+0x31]
+41 32 42 33             xor    al, BYTE PTR [r10+0x33]
+41 32 42 34             xor    al, BYTE PTR [r10+0x34]
+41 32 42 35             xor    al, BYTE PTR [r10+0x35]
+41 32 42 36             xor    al, BYTE PTR [r10+0x36]
+41 32 42 37             xor    al, BYTE PTR [r10+0x37]
+41 32 42 38             xor    al, BYTE PTR [r10+0x38]
+41 32 42 39             xor    al, BYTE PTR [r10+0x39]
+41 32 42 43             xor    al, BYTE PTR [r10+0x43]
+41 32 42 44             xor    al, BYTE PTR [r10+0x44]
+41 32 42 45             xor    al, BYTE PTR [r10+0x45]
+41 32 42 46             xor    al, BYTE PTR [r10+0x46]
+41 32 43 30             xor    al, BYTE PTR [r11+0x30]
+41 32 43 31             xor    al, BYTE PTR [r11+0x31]
+41 32 43 33             xor    al, BYTE PTR [r11+0x33]
+41 32 43 34             xor    al, BYTE PTR [r11+0x34]
+41 32 43 35             xor    al, BYTE PTR [r11+0x35]
+41 32 43 36             xor    al, BYTE PTR [r11+0x36]
+41 32 43 37             xor    al, BYTE PTR [r11+0x37]
+41 32 43 38             xor    al, BYTE PTR [r11+0x38]
+41 32 43 39             xor    al, BYTE PTR [r11+0x39]
+41 32 43 42             xor    al, BYTE PTR [r11+0x42]
+41 32 43 44             xor    al, BYTE PTR [r11+0x44]
+41 32 43 45             xor    al, BYTE PTR [r11+0x45]
+41 32 43 46             xor    al, BYTE PTR [r11+0x46]
+41 32 45 30             xor    al, BYTE PTR [r13+0x30]
+41 32 45 31             xor    al, BYTE PTR [r13+0x31]
+41 32 45 33             xor    al, BYTE PTR [r13+0x33]
+41 32 45 34             xor    al, BYTE PTR [r13+0x34]
+41 32 45 35             xor    al, BYTE PTR [r13+0x35]
+41 32 45 36             xor    al, BYTE PTR [r13+0x36]
+41 32 45 37             xor    al, BYTE PTR [r13+0x37]
+41 32 45 38             xor    al, BYTE PTR [r13+0x38]
+41 32 45 39             xor    al, BYTE PTR [r13+0x39]
+41 32 45 42             xor    al, BYTE PTR [r13+0x42]
+41 32 45 43             xor    al, BYTE PTR [r13+0x43]
+41 32 45 44             xor    al, BYTE PTR [r13+0x44]
+41 32 45 46             xor    al, BYTE PTR [r13+0x46]
+41 32 46 30             xor    al, BYTE PTR [r14+0x30]
+41 32 46 31             xor    al, BYTE PTR [r14+0x31]
+41 32 46 33             xor    al, BYTE PTR [r14+0x33]
+41 32 46 34             xor    al, BYTE PTR [r14+0x34]
+41 32 46 35             xor    al, BYTE PTR [r14+0x35]
+41 32 46 36             xor    al, BYTE PTR [r14+0x36]
+41 32 46 38             xor    al, BYTE PTR [r14+0x38]
+41 32 46 39             xor    al, BYTE PTR [r14+0x39]
+41 32 46 42             xor    al, BYTE PTR [r14+0x42]
+41 32 46 43             xor    al, BYTE PTR [r14+0x43]
+41 32 46 44             xor    al, BYTE PTR [r14+0x44]
+41 32 46 45             xor    al, BYTE PTR [r14+0x45]
+41 33 30                xor    esi, DWORD PTR [r8]
+41 33 31                xor    esi, DWORD PTR [r9]
+41 33 32                xor    esi, DWORD PTR [r10]
+41 33 34 31             xor    esi, DWORD PTR [r9+rsi*1]
+41 33 34 32             xor    esi, DWORD PTR [r10+rsi*1]
+41 33 34 36             xor    esi, DWORD PTR [r14+rsi*1]
+41 33 34 37             xor    esi, DWORD PTR [r15+rsi*1]
+41 33 34 38             xor    esi, DWORD PTR [r8+rdi*1]
+41 33 34 39             xor    esi, DWORD PTR [r9+rdi*1]
+41 33 34 42             xor    esi, DWORD PTR [r10+rax*2]
+41 33 34 43             xor    esi, DWORD PTR [r11+rax*2]
+41 33 34 44             xor    esi, DWORD PTR [r12+rax*2]
+41 33 34 46             xor    esi, DWORD PTR [r14+rax*2]
+41 33 36                xor    esi, DWORD PTR [r14]
+41 33 37                xor    esi, DWORD PTR [r15]
+41 33 38                xor    edi, DWORD PTR [r8]
+41 33 39                xor    edi, DWORD PTR [r9]
+41 33 42 30             xor    eax, DWORD PTR [r10+0x30]
+41 33 42 31             xor    eax, DWORD PTR [r10+0x31]
+41 33 42 32             xor    eax, DWORD PTR [r10+0x32]
+41 33 42 34             xor    eax, DWORD PTR [r10+0x34]
+41 33 42 35             xor    eax, DWORD PTR [r10+0x35]
+41 33 42 36             xor    eax, DWORD PTR [r10+0x36]
+41 33 42 37             xor    eax, DWORD PTR [r10+0x37]
+41 33 42 38             xor    eax, DWORD PTR [r10+0x38]
+41 33 42 39             xor    eax, DWORD PTR [r10+0x39]
+41 33 42 43             xor    eax, DWORD PTR [r10+0x43]
+41 33 42 44             xor    eax, DWORD PTR [r10+0x44]
+41 33 42 45             xor    eax, DWORD PTR [r10+0x45]
+41 33 42 46             xor    eax, DWORD PTR [r10+0x46]
+41 33 43 30             xor    eax, DWORD PTR [r11+0x30]
+41 33 43 31             xor    eax, DWORD PTR [r11+0x31]
+41 33 43 32             xor    eax, DWORD PTR [r11+0x32]
+41 33 43 34             xor    eax, DWORD PTR [r11+0x34]
+41 33 43 35             xor    eax, DWORD PTR [r11+0x35]
+41 33 43 36             xor    eax, DWORD PTR [r11+0x36]
+41 33 43 37             xor    eax, DWORD PTR [r11+0x37]
+41 33 43 38             xor    eax, DWORD PTR [r11+0x38]
+41 33 43 39             xor    eax, DWORD PTR [r11+0x39]
+41 33 43 42             xor    eax, DWORD PTR [r11+0x42]
+41 33 43 44             xor    eax, DWORD PTR [r11+0x44]
+41 33 43 45             xor    eax, DWORD PTR [r11+0x45]
+41 33 43 46             xor    eax, DWORD PTR [r11+0x46]
+41 33 45 30             xor    eax, DWORD PTR [r13+0x30]
+41 33 45 31             xor    eax, DWORD PTR [r13+0x31]
+41 33 45 32             xor    eax, DWORD PTR [r13+0x32]
+41 33 45 34             xor    eax, DWORD PTR [r13+0x34]
+41 33 45 35             xor    eax, DWORD PTR [r13+0x35]
+41 33 45 36             xor    eax, DWORD PTR [r13+0x36]
+41 33 45 37             xor    eax, DWORD PTR [r13+0x37]
+41 33 45 38             xor    eax, DWORD PTR [r13+0x38]
+41 33 45 39             xor    eax, DWORD PTR [r13+0x39]
+41 33 45 42             xor    eax, DWORD PTR [r13+0x42]
+41 33 45 43             xor    eax, DWORD PTR [r13+0x43]
+41 33 45 46             xor    eax, DWORD PTR [r13+0x46]
+41 33 46 30             xor    eax, DWORD PTR [r14+0x30]
+41 33 46 31             xor    eax, DWORD PTR [r14+0x31]
+41 33 46 32             xor    eax, DWORD PTR [r14+0x32]
+41 33 46 34             xor    eax, DWORD PTR [r14+0x34]
+41 33 46 35             xor    eax, DWORD PTR [r14+0x35]
+41 33 46 36             xor    eax, DWORD PTR [r14+0x36]
+41 33 46 37             xor    eax, DWORD PTR [r14+0x37]
+41 33 46 38             xor    eax, DWORD PTR [r14+0x38]
+41 33 46 39             xor    eax, DWORD PTR [r14+0x39]
+41 33 46 42             xor    eax, DWORD PTR [r14+0x42]
+41 33 46 43             xor    eax, DWORD PTR [r14+0x43]
+41 33 46 44             xor    eax, DWORD PTR [r14+0x44]
+41 33 46 45             xor    eax, DWORD PTR [r14+0x45]
+42 30 34 31             xor    BYTE PTR [rcx+r14*1], sil
+42 30 34 32             xor    BYTE PTR [rdx+r14*1], sil
+42 30 34 33             xor    BYTE PTR [rbx+r14*1], sil
+42 30 34 36             xor    BYTE PTR [rsi+r14*1], sil
+42 30 34 37             xor    BYTE PTR [rdi+r14*1], sil
+42 30 34 38             xor    BYTE PTR [rax+r15*1], sil
+42 30 34 39             xor    BYTE PTR [rcx+r15*1], sil
+42 30 34 41             xor    BYTE PTR [rcx+r8*2], sil
+42 30 34 43             xor    BYTE PTR [rbx+r8*2], sil
+42 30 34 44             xor    BYTE PTR [rsp+r8*2], sil
+42 30 34 46             xor    BYTE PTR [rsi+r8*2], sil
+42 31 34 30             xor    DWORD PTR [rax+r14*1], esi
+42 31 34 32             xor    DWORD PTR [rdx+r14*1], esi
+42 31 34 33             xor    DWORD PTR [rbx+r14*1], esi
+42 31 34 36             xor    DWORD PTR [rsi+r14*1], esi
+42 31 34 37             xor    DWORD PTR [rdi+r14*1], esi
+42 31 34 38             xor    DWORD PTR [rax+r15*1], esi
+42 31 34 39             xor    DWORD PTR [rcx+r15*1], esi
+42 31 34 41             xor    DWORD PTR [rcx+r8*2], esi
+42 31 34 43             xor    DWORD PTR [rbx+r8*2], esi
+42 31 34 44             xor    DWORD PTR [rsp+r8*2], esi
+42 31 34 46             xor    DWORD PTR [rsi+r8*2], esi
+42 32 34 30             xor    sil, BYTE PTR [rax+r14*1]
+42 32 34 31             xor    sil, BYTE PTR [rcx+r14*1]
+42 32 34 33             xor    sil, BYTE PTR [rbx+r14*1]
+42 32 34 36             xor    sil, BYTE PTR [rsi+r14*1]
+42 32 34 37             xor    sil, BYTE PTR [rdi+r14*1]
+42 32 34 38             xor    sil, BYTE PTR [rax+r15*1]
+42 32 34 39             xor    sil, BYTE PTR [rcx+r15*1]
+42 32 34 41             xor    sil, BYTE PTR [rcx+r8*2]
+42 32 34 43             xor    sil, BYTE PTR [rbx+r8*2]
+42 32 34 44             xor    sil, BYTE PTR [rsp+r8*2]
+42 33 34 30             xor    esi, DWORD PTR [rax+r14*1]
+42 33 34 31             xor    esi, DWORD PTR [rcx+r14*1]
+42 33 34 32             xor    esi, DWORD PTR [rdx+r14*1]
+42 33 34 36             xor    esi, DWORD PTR [rsi+r14*1]
+42 33 34 37             xor    esi, DWORD PTR [rdi+r14*1]
+42 33 34 38             xor    esi, DWORD PTR [rax+r15*1]
+42 33 34 39             xor    esi, DWORD PTR [rcx+r15*1]
+42 33 34 41             xor    esi, DWORD PTR [rcx+r8*2]
+42 33 34 43             xor    esi, DWORD PTR [rbx+r8*2]
+42 33 34 44             xor    esi, DWORD PTR [rsp+r8*2]
+42 33 34 46             xor    esi, DWORD PTR [rsi+r8*2]
+43 30 34 31             xor    BYTE PTR [r9+r14*1], sil
+43 30 34 32             xor    BYTE PTR [r10+r14*1], sil
+43 30 34 33             xor    BYTE PTR [r11+r14*1], sil
+43 30 34 36             xor    BYTE PTR [r14+r14*1], sil
+43 30 34 37             xor    BYTE PTR [r15+r14*1], sil
+43 30 34 38             xor    BYTE PTR [r8+r15*1], sil
+43 30 34 39             xor    BYTE PTR [r9+r15*1], sil
+43 30 34 41             xor    BYTE PTR [r9+r8*2], sil
+43 30 34 42             xor    BYTE PTR [r10+r8*2], sil
+43 30 34 44             xor    BYTE PTR [r12+r8*2], sil
+43 30 34 46             xor    BYTE PTR [r14+r8*2], sil
+43 31 34 30             xor    DWORD PTR [r8+r14*1], esi
+43 31 34 32             xor    DWORD PTR [r10+r14*1], esi
+43 31 34 33             xor    DWORD PTR [r11+r14*1], esi
+43 31 34 36             xor    DWORD PTR [r14+r14*1], esi
+43 31 34 37             xor    DWORD PTR [r15+r14*1], esi
+43 31 34 38             xor    DWORD PTR [r8+r15*1], esi
+43 31 34 39             xor    DWORD PTR [r9+r15*1], esi
+43 31 34 41             xor    DWORD PTR [r9+r8*2], esi
+43 31 34 42             xor    DWORD PTR [r10+r8*2], esi
+43 31 34 44             xor    DWORD PTR [r12+r8*2], esi
+43 31 34 46             xor    DWORD PTR [r14+r8*2], esi
+43 32 34 30             xor    sil, BYTE PTR [r8+r14*1]
+43 32 34 31             xor    sil, BYTE PTR [r9+r14*1]
+43 32 34 33             xor    sil, BYTE PTR [r11+r14*1]
+43 32 34 36             xor    sil, BYTE PTR [r14+r14*1]
+43 32 34 37             xor    sil, BYTE PTR [r15+r14*1]
+43 32 34 38             xor    sil, BYTE PTR [r8+r15*1]
+43 32 34 39             xor    sil, BYTE PTR [r9+r15*1]
+43 32 34 41             xor    sil, BYTE PTR [r9+r8*2]
+43 32 34 42             xor    sil, BYTE PTR [r10+r8*2]
+43 32 34 44             xor    sil, BYTE PTR [r12+r8*2]
+43 32 34 46             xor    sil, BYTE PTR [r14+r8*2]
+43 33 34 30             xor    esi, DWORD PTR [r8+r14*1]
+43 33 34 31             xor    esi, DWORD PTR [r9+r14*1]
+43 33 34 32             xor    esi, DWORD PTR [r10+r14*1]
+43 33 34 36             xor    esi, DWORD PTR [r14+r14*1]
+43 33 34 37             xor    esi, DWORD PTR [r15+r14*1]
+43 33 34 38             xor    esi, DWORD PTR [r8+r15*1]
+43 33 34 39             xor    esi, DWORD PTR [r9+r15*1]
+43 33 34 41             xor    esi, DWORD PTR [r9+r8*2]
+43 33 34 42             xor    esi, DWORD PTR [r10+r8*2]
+43 33 34 44             xor    esi, DWORD PTR [r12+r8*2]
+43 33 34 46             xor    esi, DWORD PTR [r14+r8*2]
+44 30 31                xor    BYTE PTR [rcx], r14b
+44 30 32                xor    BYTE PTR [rdx], r14b
+44 30 33                xor    BYTE PTR [rbx], r14b
+44 30 34 31             xor    BYTE PTR [rcx+rsi*1], r14b
+44 30 34 32             xor    BYTE PTR [rdx+rsi*1], r14b
+44 30 34 33             xor    BYTE PTR [rbx+rsi*1], r14b
+44 30 34 36             xor    BYTE PTR [rsi+rsi*1], r14b
+44 30 34 37             xor    BYTE PTR [rdi+rsi*1], r14b
+44 30 34 38             xor    BYTE PTR [rax+rdi*1], r14b
+44 30 34 39             xor    BYTE PTR [rcx+rdi*1], r14b
+44 30 34 41             xor    BYTE PTR [rcx+rax*2], r14b
+44 30 34 42             xor    BYTE PTR [rdx+rax*2], r14b
+44 30 34 43             xor    BYTE PTR [rbx+rax*2], r14b
+44 30 34 46             xor    BYTE PTR [rsi+rax*2], r14b
+44 30 36                xor    BYTE PTR [rsi], r14b
+44 30 37                xor    BYTE PTR [rdi], r14b
+44 30 38                xor    BYTE PTR [rax], r15b
+44 30 39                xor    BYTE PTR [rcx], r15b
+44 30 41 31             xor    BYTE PTR [rcx+0x31], r8b
+44 30 41 32             xor    BYTE PTR [rcx+0x32], r8b
+44 30 41 33             xor    BYTE PTR [rcx+0x33], r8b
+44 30 41 34             xor    BYTE PTR [rcx+0x34], r8b
+44 30 41 35             xor    BYTE PTR [rcx+0x35], r8b
+44 30 41 36             xor    BYTE PTR [rcx+0x36], r8b
+44 30 41 37             xor    BYTE PTR [rcx+0x37], r8b
+44 30 41 38             xor    BYTE PTR [rcx+0x38], r8b
+44 30 41 39             xor    BYTE PTR [rcx+0x39], r8b
+44 30 41 42             xor    BYTE PTR [rcx+0x42], r8b
+44 30 41 43             xor    BYTE PTR [rcx+0x43], r8b
+44 30 41 45             xor    BYTE PTR [rcx+0x45], r8b
+44 30 41 46             xor    BYTE PTR [rcx+0x46], r8b
+44 30 42 31             xor    BYTE PTR [rdx+0x31], r8b
+44 30 42 32             xor    BYTE PTR [rdx+0x32], r8b
+44 30 42 33             xor    BYTE PTR [rdx+0x33], r8b
+44 30 42 34             xor    BYTE PTR [rdx+0x34], r8b
+44 30 42 35             xor    BYTE PTR [rdx+0x35], r8b
+44 30 42 36             xor    BYTE PTR [rdx+0x36], r8b
+44 30 42 37             xor    BYTE PTR [rdx+0x37], r8b
+44 30 42 38             xor    BYTE PTR [rdx+0x38], r8b
+44 30 42 39             xor    BYTE PTR [rdx+0x39], r8b
+44 30 42 41             xor    BYTE PTR [rdx+0x41], r8b
+44 30 42 43             xor    BYTE PTR [rdx+0x43], r8b
+44 30 42 45             xor    BYTE PTR [rdx+0x45], r8b
+44 30 42 46             xor    BYTE PTR [rdx+0x46], r8b
+44 30 43 31             xor    BYTE PTR [rbx+0x31], r8b
+44 30 43 32             xor    BYTE PTR [rbx+0x32], r8b
+44 30 43 33             xor    BYTE PTR [rbx+0x33], r8b
+44 30 43 34             xor    BYTE PTR [rbx+0x34], r8b
+44 30 43 35             xor    BYTE PTR [rbx+0x35], r8b
+44 30 43 36             xor    BYTE PTR [rbx+0x36], r8b
+44 30 43 37             xor    BYTE PTR [rbx+0x37], r8b
+44 30 43 38             xor    BYTE PTR [rbx+0x38], r8b
+44 30 43 39             xor    BYTE PTR [rbx+0x39], r8b
+44 30 43 41             xor    BYTE PTR [rbx+0x41], r8b
+44 30 43 42             xor    BYTE PTR [rbx+0x42], r8b
+44 30 43 45             xor    BYTE PTR [rbx+0x45], r8b
+44 30 43 46             xor    BYTE PTR [rbx+0x46], r8b
+44 30 45 31             xor    BYTE PTR [rbp+0x31], r8b
+44 30 45 32             xor    BYTE PTR [rbp+0x32], r8b
+44 30 45 33             xor    BYTE PTR [rbp+0x33], r8b
+44 30 45 34             xor    BYTE PTR [rbp+0x34], r8b
+44 30 45 35             xor    BYTE PTR [rbp+0x35], r8b
+44 30 45 36             xor    BYTE PTR [rbp+0x36], r8b
+44 30 45 37             xor    BYTE PTR [rbp+0x37], r8b
+44 30 45 38             xor    BYTE PTR [rbp+0x38], r8b
+44 30 45 39             xor    BYTE PTR [rbp+0x39], r8b
+44 30 45 41             xor    BYTE PTR [rbp+0x41], r8b
+44 30 45 42             xor    BYTE PTR [rbp+0x42], r8b
+44 30 45 43             xor    BYTE PTR [rbp+0x43], r8b
+44 30 45 46             xor    BYTE PTR [rbp+0x46], r8b
+44 30 46 31             xor    BYTE PTR [rsi+0x31], r8b
+44 30 46 32             xor    BYTE PTR [rsi+0x32], r8b
+44 30 46 33             xor    BYTE PTR [rsi+0x33], r8b
+44 30 46 34             xor    BYTE PTR [rsi+0x34], r8b
+44 30 46 35             xor    BYTE PTR [rsi+0x35], r8b
+44 30 46 36             xor    BYTE PTR [rsi+0x36], r8b
+44 30 46 37             xor    BYTE PTR [rsi+0x37], r8b
+44 30 46 38             xor    BYTE PTR [rsi+0x38], r8b
+44 30 46 39             xor    BYTE PTR [rsi+0x39], r8b
+44 30 46 41             xor    BYTE PTR [rsi+0x41], r8b
+44 30 46 42             xor    BYTE PTR [rsi+0x42], r8b
+44 30 46 43             xor    BYTE PTR [rsi+0x43], r8b
+44 30 46 45             xor    BYTE PTR [rsi+0x45], r8b
+44 31 30                xor    DWORD PTR [rax], r14d
+44 31 32                xor    DWORD PTR [rdx], r14d
+44 31 33                xor    DWORD PTR [rbx], r14d
+44 31 34 30             xor    DWORD PTR [rax+rsi*1], r14d
+44 31 34 32             xor    DWORD PTR [rdx+rsi*1], r14d
+44 31 34 33             xor    DWORD PTR [rbx+rsi*1], r14d
+44 31 34 36             xor    DWORD PTR [rsi+rsi*1], r14d
+44 31 34 37             xor    DWORD PTR [rdi+rsi*1], r14d
+44 31 34 38             xor    DWORD PTR [rax+rdi*1], r14d
+44 31 34 39             xor    DWORD PTR [rcx+rdi*1], r14d
+44 31 34 41             xor    DWORD PTR [rcx+rax*2], r14d
+44 31 34 42             xor    DWORD PTR [rdx+rax*2], r14d
+44 31 34 43             xor    DWORD PTR [rbx+rax*2], r14d
+44 31 34 46             xor    DWORD PTR [rsi+rax*2], r14d
+44 31 36                xor    DWORD PTR [rsi], r14d
+44 31 37                xor    DWORD PTR [rdi], r14d
+44 31 38                xor    DWORD PTR [rax], r15d
+44 31 39                xor    DWORD PTR [rcx], r15d
+44 31 41 30             xor    DWORD PTR [rcx+0x30], r8d
+44 31 41 32             xor    DWORD PTR [rcx+0x32], r8d
+44 31 41 33             xor    DWORD PTR [rcx+0x33], r8d
+44 31 41 34             xor    DWORD PTR [rcx+0x34], r8d
+44 31 41 35             xor    DWORD PTR [rcx+0x35], r8d
+44 31 41 36             xor    DWORD PTR [rcx+0x36], r8d
+44 31 41 37             xor    DWORD PTR [rcx+0x37], r8d
+44 31 41 38             xor    DWORD PTR [rcx+0x38], r8d
+44 31 41 39             xor    DWORD PTR [rcx+0x39], r8d
+44 31 41 42             xor    DWORD PTR [rcx+0x42], r8d
+44 31 41 43             xor    DWORD PTR [rcx+0x43], r8d
+44 31 41 45             xor    DWORD PTR [rcx+0x45], r8d
+44 31 41 46             xor    DWORD PTR [rcx+0x46], r8d
+44 31 42 30             xor    DWORD PTR [rdx+0x30], r8d
+44 31 42 32             xor    DWORD PTR [rdx+0x32], r8d
+44 31 42 33             xor    DWORD PTR [rdx+0x33], r8d
+44 31 42 34             xor    DWORD PTR [rdx+0x34], r8d
+44 31 42 35             xor    DWORD PTR [rdx+0x35], r8d
+44 31 42 36             xor    DWORD PTR [rdx+0x36], r8d
+44 31 42 37             xor    DWORD PTR [rdx+0x37], r8d
+44 31 42 38             xor    DWORD PTR [rdx+0x38], r8d
+44 31 42 39             xor    DWORD PTR [rdx+0x39], r8d
+44 31 42 41             xor    DWORD PTR [rdx+0x41], r8d
+44 31 42 43             xor    DWORD PTR [rdx+0x43], r8d
+44 31 42 45             xor    DWORD PTR [rdx+0x45], r8d
+44 31 42 46             xor    DWORD PTR [rdx+0x46], r8d
+44 31 43 30             xor    DWORD PTR [rbx+0x30], r8d
+44 31 43 32             xor    DWORD PTR [rbx+0x32], r8d
+44 31 43 33             xor    DWORD PTR [rbx+0x33], r8d
+44 31 43 34             xor    DWORD PTR [rbx+0x34], r8d
+44 31 43 35             xor    DWORD PTR [rbx+0x35], r8d
+44 31 43 36             xor    DWORD PTR [rbx+0x36], r8d
+44 31 43 38             xor    DWORD PTR [rbx+0x38], r8d
+44 31 43 39             xor    DWORD PTR [rbx+0x39], r8d
+44 31 43 41             xor    DWORD PTR [rbx+0x41], r8d
+44 31 43 42             xor    DWORD PTR [rbx+0x42], r8d
+44 31 43 45             xor    DWORD PTR [rbx+0x45], r8d
+44 31 43 46             xor    DWORD PTR [rbx+0x46], r8d
+44 31 45 30             xor    DWORD PTR [rbp+0x30], r8d
+44 31 45 32             xor    DWORD PTR [rbp+0x32], r8d
+44 31 45 33             xor    DWORD PTR [rbp+0x33], r8d
+44 31 45 34             xor    DWORD PTR [rbp+0x34], r8d
+44 31 45 35             xor    DWORD PTR [rbp+0x35], r8d
+44 31 45 36             xor    DWORD PTR [rbp+0x36], r8d
+44 31 45 37             xor    DWORD PTR [rbp+0x37], r8d
+44 31 45 38             xor    DWORD PTR [rbp+0x38], r8d
+44 31 45 39             xor    DWORD PTR [rbp+0x39], r8d
+44 31 45 41             xor    DWORD PTR [rbp+0x41], r8d
+44 31 45 42             xor    DWORD PTR [rbp+0x42], r8d
+44 31 45 43             xor    DWORD PTR [rbp+0x43], r8d
+44 31 45 46             xor    DWORD PTR [rbp+0x46], r8d
+44 31 46 30             xor    DWORD PTR [rsi+0x30], r8d
+44 31 46 32             xor    DWORD PTR [rsi+0x32], r8d
+44 31 46 33             xor    DWORD PTR [rsi+0x33], r8d
+44 31 46 34             xor    DWORD PTR [rsi+0x34], r8d
+44 31 46 35             xor    DWORD PTR [rsi+0x35], r8d
+44 31 46 36             xor    DWORD PTR [rsi+0x36], r8d
+44 31 46 37             xor    DWORD PTR [rsi+0x37], r8d
+44 31 46 38             xor    DWORD PTR [rsi+0x38], r8d
+44 31 46 39             xor    DWORD PTR [rsi+0x39], r8d
+44 31 46 41             xor    DWORD PTR [rsi+0x41], r8d
+44 31 46 42             xor    DWORD PTR [rsi+0x42], r8d
+44 31 46 43             xor    DWORD PTR [rsi+0x43], r8d
+44 31 46 45             xor    DWORD PTR [rsi+0x45], r8d
+44 32 30                xor    r14b, BYTE PTR [rax]
+44 32 31                xor    r14b, BYTE PTR [rcx]
+44 32 33                xor    r14b, BYTE PTR [rbx]
+44 32 34 30             xor    r14b, BYTE PTR [rax+rsi*1]
+44 32 34 31             xor    r14b, BYTE PTR [rcx+rsi*1]
+44 32 34 33             xor    r14b, BYTE PTR [rbx+rsi*1]
+44 32 34 36             xor    r14b, BYTE PTR [rsi+rsi*1]
+44 32 34 37             xor    r14b, BYTE PTR [rdi+rsi*1]
+44 32 34 38             xor    r14b, BYTE PTR [rax+rdi*1]
+44 32 34 39             xor    r14b, BYTE PTR [rcx+rdi*1]
+44 32 34 41             xor    r14b, BYTE PTR [rcx+rax*2]
+44 32 34 42             xor    r14b, BYTE PTR [rdx+rax*2]
+44 32 34 43             xor    r14b, BYTE PTR [rbx+rax*2]
+44 32 34 46             xor    r14b, BYTE PTR [rsi+rax*2]
+44 32 36                xor    r14b, BYTE PTR [rsi]
+44 32 37                xor    r14b, BYTE PTR [rdi]
+44 32 38                xor    r15b, BYTE PTR [rax]
+44 32 39                xor    r15b, BYTE PTR [rcx]
+44 32 41 30             xor    r8b, BYTE PTR [rcx+0x30]
+44 32 41 31             xor    r8b, BYTE PTR [rcx+0x31]
+44 32 41 33             xor    r8b, BYTE PTR [rcx+0x33]
+44 32 41 34             xor    r8b, BYTE PTR [rcx+0x34]
+44 32 41 35             xor    r8b, BYTE PTR [rcx+0x35]
+44 32 41 36             xor    r8b, BYTE PTR [rcx+0x36]
+44 32 41 37             xor    r8b, BYTE PTR [rcx+0x37]
+44 32 41 38             xor    r8b, BYTE PTR [rcx+0x38]
+44 32 41 39             xor    r8b, BYTE PTR [rcx+0x39]
+44 32 41 42             xor    r8b, BYTE PTR [rcx+0x42]
+44 32 41 43             xor    r8b, BYTE PTR [rcx+0x43]
+44 32 41 45             xor    r8b, BYTE PTR [rcx+0x45]
+44 32 41 46             xor    r8b, BYTE PTR [rcx+0x46]
+44 32 42 30             xor    r8b, BYTE PTR [rdx+0x30]
+44 32 42 31             xor    r8b, BYTE PTR [rdx+0x31]
+44 32 42 33             xor    r8b, BYTE PTR [rdx+0x33]
+44 32 42 34             xor    r8b, BYTE PTR [rdx+0x34]
+44 32 42 35             xor    r8b, BYTE PTR [rdx+0x35]
+44 32 42 36             xor    r8b, BYTE PTR [rdx+0x36]
+44 32 42 37             xor    r8b, BYTE PTR [rdx+0x37]
+44 32 42 38             xor    r8b, BYTE PTR [rdx+0x38]
+44 32 42 39             xor    r8b, BYTE PTR [rdx+0x39]
+44 32 42 41             xor    r8b, BYTE PTR [rdx+0x41]
+44 32 42 43             xor    r8b, BYTE PTR [rdx+0x43]
+44 32 42 45             xor    r8b, BYTE PTR [rdx+0x45]
+44 32 42 46             xor    r8b, BYTE PTR [rdx+0x46]
+44 32 43 30             xor    r8b, BYTE PTR [rbx+0x30]
+44 32 43 31             xor    r8b, BYTE PTR [rbx+0x31]
+44 32 43 33             xor    r8b, BYTE PTR [rbx+0x33]
+44 32 43 34             xor    r8b, BYTE PTR [rbx+0x34]
+44 32 43 35             xor    r8b, BYTE PTR [rbx+0x35]
+44 32 43 36             xor    r8b, BYTE PTR [rbx+0x36]
+44 32 43 37             xor    r8b, BYTE PTR [rbx+0x37]
+44 32 43 38             xor    r8b, BYTE PTR [rbx+0x38]
+44 32 43 39             xor    r8b, BYTE PTR [rbx+0x39]
+44 32 43 41             xor    r8b, BYTE PTR [rbx+0x41]
+44 32 43 42             xor    r8b, BYTE PTR [rbx+0x42]
+44 32 43 45             xor    r8b, BYTE PTR [rbx+0x45]
+44 32 43 46             xor    r8b, BYTE PTR [rbx+0x46]
+44 32 45 30             xor    r8b, BYTE PTR [rbp+0x30]
+44 32 45 31             xor    r8b, BYTE PTR [rbp+0x31]
+44 32 45 33             xor    r8b, BYTE PTR [rbp+0x33]
+44 32 45 34             xor    r8b, BYTE PTR [rbp+0x34]
+44 32 45 35             xor    r8b, BYTE PTR [rbp+0x35]
+44 32 45 36             xor    r8b, BYTE PTR [rbp+0x36]
+44 32 45 37             xor    r8b, BYTE PTR [rbp+0x37]
+44 32 45 38             xor    r8b, BYTE PTR [rbp+0x38]
+44 32 45 39             xor    r8b, BYTE PTR [rbp+0x39]
+44 32 45 41             xor    r8b, BYTE PTR [rbp+0x41]
+44 32 45 42             xor    r8b, BYTE PTR [rbp+0x42]
+44 32 45 43             xor    r8b, BYTE PTR [rbp+0x43]
+44 32 45 46             xor    r8b, BYTE PTR [rbp+0x46]
+44 32 46 30             xor    r8b, BYTE PTR [rsi+0x30]
+44 32 46 31             xor    r8b, BYTE PTR [rsi+0x31]
+44 32 46 33             xor    r8b, BYTE PTR [rsi+0x33]
+44 32 46 34             xor    r8b, BYTE PTR [rsi+0x34]
+44 32 46 35             xor    r8b, BYTE PTR [rsi+0x35]
+44 32 46 36             xor    r8b, BYTE PTR [rsi+0x36]
+44 32 46 37             xor    r8b, BYTE PTR [rsi+0x37]
+44 32 46 38             xor    r8b, BYTE PTR [rsi+0x38]
+44 32 46 41             xor    r8b, BYTE PTR [rsi+0x41]
+44 32 46 42             xor    r8b, BYTE PTR [rsi+0x42]
+44 32 46 43             xor    r8b, BYTE PTR [rsi+0x43]
+44 32 46 45             xor    r8b, BYTE PTR [rsi+0x45]
+44 33 30                xor    r14d, DWORD PTR [rax]
+44 33 31                xor    r14d, DWORD PTR [rcx]
+44 33 32                xor    r14d, DWORD PTR [rdx]
+44 33 34 30             xor    r14d, DWORD PTR [rax+rsi*1]
+44 33 34 31             xor    r14d, DWORD PTR [rcx+rsi*1]
+44 33 34 36             xor    r14d, DWORD PTR [rsi+rsi*1]
+44 33 34 37             xor    r14d, DWORD PTR [rdi+rsi*1]
+44 33 34 38             xor    r14d, DWORD PTR [rax+rdi*1]
+44 33 34 39             xor    r14d, DWORD PTR [rcx+rdi*1]
+44 33 34 41             xor    r14d, DWORD PTR [rcx+rax*2]
+44 33 34 42             xor    r14d, DWORD PTR [rdx+rax*2]
+44 33 34 43             xor    r14d, DWORD PTR [rbx+rax*2]
+44 33 34 46             xor    r14d, DWORD PTR [rsi+rax*2]
+44 33 36                xor    r14d, DWORD PTR [rsi]
+44 33 37                xor    r14d, DWORD PTR [rdi]
+44 33 38                xor    r15d, DWORD PTR [rax]
+44 33 39                xor    r15d, DWORD PTR [rcx]
+44 33 41 30             xor    r8d, DWORD PTR [rcx+0x30]
+44 33 41 31             xor    r8d, DWORD PTR [rcx+0x31]
+44 33 41 32             xor    r8d, DWORD PTR [rcx+0x32]
+44 33 41 34             xor    r8d, DWORD PTR [rcx+0x34]
+44 33 41 35             xor    r8d, DWORD PTR [rcx+0x35]
+44 33 41 36             xor    r8d, DWORD PTR [rcx+0x36]
+44 33 41 37             xor    r8d, DWORD PTR [rcx+0x37]
+44 33 41 38             xor    r8d, DWORD PTR [rcx+0x38]
+44 33 41 39             xor    r8d, DWORD PTR [rcx+0x39]
+44 33 41 42             xor    r8d, DWORD PTR [rcx+0x42]
+44 33 41 43             xor    r8d, DWORD PTR [rcx+0x43]
+44 33 41 45             xor    r8d, DWORD PTR [rcx+0x45]
+44 33 41 46             xor    r8d, DWORD PTR [rcx+0x46]
+44 33 42 30             xor    r8d, DWORD PTR [rdx+0x30]
+44 33 42 31             xor    r8d, DWORD PTR [rdx+0x31]
+44 33 42 32             xor    r8d, DWORD PTR [rdx+0x32]
+44 33 42 34             xor    r8d, DWORD PTR [rdx+0x34]
+44 33 42 35             xor    r8d, DWORD PTR [rdx+0x35]
+44 33 42 36             xor    r8d, DWORD PTR [rdx+0x36]
+44 33 42 37             xor    r8d, DWORD PTR [rdx+0x37]
+44 33 42 38             xor    r8d, DWORD PTR [rdx+0x38]
+44 33 42 39             xor    r8d, DWORD PTR [rdx+0x39]
+44 33 42 41             xor    r8d, DWORD PTR [rdx+0x41]
+44 33 42 43             xor    r8d, DWORD PTR [rdx+0x43]
+44 33 42 45             xor    r8d, DWORD PTR [rdx+0x45]
+44 33 42 46             xor    r8d, DWORD PTR [rdx+0x46]
+44 33 43 30             xor    r8d, DWORD PTR [rbx+0x30]
+44 33 43 31             xor    r8d, DWORD PTR [rbx+0x31]
+44 33 43 32             xor    r8d, DWORD PTR [rbx+0x32]
+44 33 43 34             xor    r8d, DWORD PTR [rbx+0x34]
+44 33 43 35             xor    r8d, DWORD PTR [rbx+0x35]
+44 33 43 36             xor    r8d, DWORD PTR [rbx+0x36]
+44 33 43 37             xor    r8d, DWORD PTR [rbx+0x37]
+44 33 43 38             xor    r8d, DWORD PTR [rbx+0x38]
+44 33 43 39             xor    r8d, DWORD PTR [rbx+0x39]
+44 33 43 41             xor    r8d, DWORD PTR [rbx+0x41]
+44 33 43 42             xor    r8d, DWORD PTR [rbx+0x42]
+44 33 43 45             xor    r8d, DWORD PTR [rbx+0x45]
+44 33 43 46             xor    r8d, DWORD PTR [rbx+0x46]
+44 33 45 30             xor    r8d, DWORD PTR [rbp+0x30]
+44 33 45 31             xor    r8d, DWORD PTR [rbp+0x31]
+44 33 45 32             xor    r8d, DWORD PTR [rbp+0x32]
+44 33 45 34             xor    r8d, DWORD PTR [rbp+0x34]
+44 33 45 35             xor    r8d, DWORD PTR [rbp+0x35]
+44 33 45 36             xor    r8d, DWORD PTR [rbp+0x36]
+44 33 45 37             xor    r8d, DWORD PTR [rbp+0x37]
+44 33 45 38             xor    r8d, DWORD PTR [rbp+0x38]
+44 33 45 39             xor    r8d, DWORD PTR [rbp+0x39]
+44 33 45 41             xor    r8d, DWORD PTR [rbp+0x41]
+44 33 45 42             xor    r8d, DWORD PTR [rbp+0x42]
+44 33 45 43             xor    r8d, DWORD PTR [rbp+0x43]
+44 33 45 46             xor    r8d, DWORD PTR [rbp+0x46]
+44 33 46 31             xor    r8d, DWORD PTR [rsi+0x31]
+44 33 46 32             xor    r8d, DWORD PTR [rsi+0x32]
+44 33 46 34             xor    r8d, DWORD PTR [rsi+0x34]
+44 33 46 35             xor    r8d, DWORD PTR [rsi+0x35]
+44 33 46 36             xor    r8d, DWORD PTR [rsi+0x36]
+44 33 46 37             xor    r8d, DWORD PTR [rsi+0x37]
+44 33 46 38             xor    r8d, DWORD PTR [rsi+0x38]
+44 33 46 39             xor    r8d, DWORD PTR [rsi+0x39]
+44 33 46 41             xor    r8d, DWORD PTR [rsi+0x41]
+44 33 46 42             xor    r8d, DWORD PTR [rsi+0x42]
+44 33 46 43             xor    r8d, DWORD PTR [rsi+0x43]
+44 33 46 45             xor    r8d, DWORD PTR [rsi+0x45]
+45 30 31                xor    BYTE PTR [r9], r14b
+45 30 32                xor    BYTE PTR [r10], r14b
+45 30 33                xor    BYTE PTR [r11], r14b
+45 30 34 31             xor    BYTE PTR [r9+rsi*1], r14b
+45 30 34 32             xor    BYTE PTR [r10+rsi*1], r14b
+45 30 34 33             xor    BYTE PTR [r11+rsi*1], r14b
+45 30 34 36             xor    BYTE PTR [r14+rsi*1], r14b
+45 30 34 37             xor    BYTE PTR [r15+rsi*1], r14b
+45 30 34 38             xor    BYTE PTR [r8+rdi*1], r14b
+45 30 34 39             xor    BYTE PTR [r9+rdi*1], r14b
+45 30 34 41             xor    BYTE PTR [r9+rax*2], r14b
+45 30 34 42             xor    BYTE PTR [r10+rax*2], r14b
+45 30 34 43             xor    BYTE PTR [r11+rax*2], r14b
+45 30 34 44             xor    BYTE PTR [r12+rax*2], r14b
+45 30 34 46             xor    BYTE PTR [r14+rax*2], r14b
+45 30 36                xor    BYTE PTR [r14], r14b
+45 30 37                xor    BYTE PTR [r15], r14b
+45 30 38                xor    BYTE PTR [r8], r15b
+45 30 39                xor    BYTE PTR [r9], r15b
+45 30 41 31             xor    BYTE PTR [r9+0x31], r8b
+45 30 41 32             xor    BYTE PTR [r9+0x32], r8b
+45 30 41 33             xor    BYTE PTR [r9+0x33], r8b
+45 30 41 34             xor    BYTE PTR [r9+0x34], r8b
+45 30 41 35             xor    BYTE PTR [r9+0x35], r8b
+45 30 41 36             xor    BYTE PTR [r9+0x36], r8b
+45 30 41 37             xor    BYTE PTR [r9+0x37], r8b
+45 30 41 38             xor    BYTE PTR [r9+0x38], r8b
+45 30 41 39             xor    BYTE PTR [r9+0x39], r8b
+45 30 41 42             xor    BYTE PTR [r9+0x42], r8b
+45 30 41 43             xor    BYTE PTR [r9+0x43], r8b
+45 30 41 44             xor    BYTE PTR [r9+0x44], r8b
+45 30 41 46             xor    BYTE PTR [r9+0x46], r8b
+45 30 42 31             xor    BYTE PTR [r10+0x31], r8b
+45 30 42 32             xor    BYTE PTR [r10+0x32], r8b
+45 30 42 33             xor    BYTE PTR [r10+0x33], r8b
+45 30 42 34             xor    BYTE PTR [r10+0x34], r8b
+45 30 42 35             xor    BYTE PTR [r10+0x35], r8b
+45 30 42 36             xor    BYTE PTR [r10+0x36], r8b
+45 30 42 37             xor    BYTE PTR [r10+0x37], r8b
+45 30 42 38             xor    BYTE PTR [r10+0x38], r8b
+45 30 42 39             xor    BYTE PTR [r10+0x39], r8b
+45 30 42 41             xor    BYTE PTR [r10+0x41], r8b
+45 30 42 43             xor    BYTE PTR [r10+0x43], r8b
+45 30 42 44             xor    BYTE PTR [r10+0x44], r8b
+45 30 42 46             xor    BYTE PTR [r10+0x46], r8b
+45 30 43 31             xor    BYTE PTR [r11+0x31], r8b
+45 30 43 32             xor    BYTE PTR [r11+0x32], r8b
+45 30 43 33             xor    BYTE PTR [r11+0x33], r8b
+45 30 43 34             xor    BYTE PTR [r11+0x34], r8b
+45 30 43 35             xor    BYTE PTR [r11+0x35], r8b
+45 30 43 36             xor    BYTE PTR [r11+0x36], r8b
+45 30 43 37             xor    BYTE PTR [r11+0x37], r8b
+45 30 43 38             xor    BYTE PTR [r11+0x38], r8b
+45 30 43 41             xor    BYTE PTR [r11+0x41], r8b
+45 30 43 42             xor    BYTE PTR [r11+0x42], r8b
+45 30 43 44             xor    BYTE PTR [r11+0x44], r8b
+45 30 43 46             xor    BYTE PTR [r11+0x46], r8b
+45 30 46 31             xor    BYTE PTR [r14+0x31], r8b
+45 30 46 32             xor    BYTE PTR [r14+0x32], r8b
+45 30 46 33             xor    BYTE PTR [r14+0x33], r8b
+45 30 46 34             xor    BYTE PTR [r14+0x34], r8b
+45 30 46 35             xor    BYTE PTR [r14+0x35], r8b
+45 30 46 36             xor    BYTE PTR [r14+0x36], r8b
+45 30 46 37             xor    BYTE PTR [r14+0x37], r8b
+45 30 46 38             xor    BYTE PTR [r14+0x38], r8b
+45 30 46 39             xor    BYTE PTR [r14+0x39], r8b
+45 30 46 41             xor    BYTE PTR [r14+0x41], r8b
+45 30 46 42             xor    BYTE PTR [r14+0x42], r8b
+45 30 46 43             xor    BYTE PTR [r14+0x43], r8b
+45 30 46 44             xor    BYTE PTR [r14+0x44], r8b
+45 31 30                xor    DWORD PTR [r8], r14d
+45 31 32                xor    DWORD PTR [r10], r14d
+45 31 33                xor    DWORD PTR [r11], r14d
+45 31 34 30             xor    DWORD PTR [r8+rsi*1], r14d
+45 31 34 32             xor    DWORD PTR [r10+rsi*1], r14d
+45 31 34 33             xor    DWORD PTR [r11+rsi*1], r14d
+45 31 34 36             xor    DWORD PTR [r14+rsi*1], r14d
+45 31 34 37             xor    DWORD PTR [r15+rsi*1], r14d
+45 31 34 38             xor    DWORD PTR [r8+rdi*1], r14d
+45 31 34 39             xor    DWORD PTR [r9+rdi*1], r14d
+45 31 34 41             xor    DWORD PTR [r9+rax*2], r14d
+45 31 34 42             xor    DWORD PTR [r10+rax*2], r14d
+45 31 34 43             xor    DWORD PTR [r11+rax*2], r14d
+45 31 34 44             xor    DWORD PTR [r12+rax*2], r14d
+45 31 34 46             xor    DWORD PTR [r14+rax*2], r14d
+45 31 36                xor    DWORD PTR [r14], r14d
+45 31 37                xor    DWORD PTR [r15], r14d
+45 31 38                xor    DWORD PTR [r8], r15d
+45 31 39                xor    DWORD PTR [r9], r15d
+45 31 41 30             xor    DWORD PTR [r9+0x30], r8d
+45 31 41 32             xor    DWORD PTR [r9+0x32], r8d
+45 31 41 33             xor    DWORD PTR [r9+0x33], r8d
+45 31 41 34             xor    DWORD PTR [r9+0x34], r8d
+45 31 41 35             xor    DWORD PTR [r9+0x35], r8d
+45 31 41 36             xor    DWORD PTR [r9+0x36], r8d
+45 31 41 37             xor    DWORD PTR [r9+0x37], r8d
+45 31 41 38             xor    DWORD PTR [r9+0x38], r8d
+45 31 41 39             xor    DWORD PTR [r9+0x39], r8d
+45 31 41 42             xor    DWORD PTR [r9+0x42], r8d
+45 31 41 43             xor    DWORD PTR [r9+0x43], r8d
+45 31 41 44             xor    DWORD PTR [r9+0x44], r8d
+45 31 41 46             xor    DWORD PTR [r9+0x46], r8d
+45 31 42 30             xor    DWORD PTR [r10+0x30], r8d
+45 31 42 32             xor    DWORD PTR [r10+0x32], r8d
+45 31 42 33             xor    DWORD PTR [r10+0x33], r8d
+45 31 42 34             xor    DWORD PTR [r10+0x34], r8d
+45 31 42 35             xor    DWORD PTR [r10+0x35], r8d
+45 31 42 36             xor    DWORD PTR [r10+0x36], r8d
+45 31 42 37             xor    DWORD PTR [r10+0x37], r8d
+45 31 42 38             xor    DWORD PTR [r10+0x38], r8d
+45 31 42 39             xor    DWORD PTR [r10+0x39], r8d
+45 31 42 41             xor    DWORD PTR [r10+0x41], r8d
+45 31 42 43             xor    DWORD PTR [r10+0x43], r8d
+45 31 42 44             xor    DWORD PTR [r10+0x44], r8d
+45 31 42 46             xor    DWORD PTR [r10+0x46], r8d
+45 31 43 30             xor    DWORD PTR [r11+0x30], r8d
+45 31 43 32             xor    DWORD PTR [r11+0x32], r8d
+45 31 43 33             xor    DWORD PTR [r11+0x33], r8d
+45 31 43 34             xor    DWORD PTR [r11+0x34], r8d
+45 31 43 35             xor    DWORD PTR [r11+0x35], r8d
+45 31 43 36             xor    DWORD PTR [r11+0x36], r8d
+45 31 43 37             xor    DWORD PTR [r11+0x37], r8d
+45 31 43 38             xor    DWORD PTR [r11+0x38], r8d
+45 31 43 39             xor    DWORD PTR [r11+0x39], r8d
+45 31 43 41             xor    DWORD PTR [r11+0x41], r8d
+45 31 43 42             xor    DWORD PTR [r11+0x42], r8d
+45 31 43 44             xor    DWORD PTR [r11+0x44], r8d
+45 31 43 46             xor    DWORD PTR [r11+0x46], r8d
+45 31 46 30             xor    DWORD PTR [r14+0x30], r8d
+45 31 46 32             xor    DWORD PTR [r14+0x32], r8d
+45 31 46 33             xor    DWORD PTR [r14+0x33], r8d
+45 31 46 34             xor    DWORD PTR [r14+0x34], r8d
+45 31 46 35             xor    DWORD PTR [r14+0x35], r8d
+45 31 46 36             xor    DWORD PTR [r14+0x36], r8d
+45 31 46 37             xor    DWORD PTR [r14+0x37], r8d
+45 31 46 38             xor    DWORD PTR [r14+0x38], r8d
+45 31 46 39             xor    DWORD PTR [r14+0x39], r8d
+45 31 46 41             xor    DWORD PTR [r14+0x41], r8d
+45 31 46 42             xor    DWORD PTR [r14+0x42], r8d
+45 31 46 43             xor    DWORD PTR [r14+0x43], r8d
+45 31 46 44             xor    DWORD PTR [r14+0x44], r8d
+45 32 30                xor    r14b, BYTE PTR [r8]
+45 32 31                xor    r14b, BYTE PTR [r9]
+45 32 33                xor    r14b, BYTE PTR [r11]
+45 32 34 30             xor    r14b, BYTE PTR [r8+rsi*1]
+45 32 34 31             xor    r14b, BYTE PTR [r9+rsi*1]
+45 32 34 33             xor    r14b, BYTE PTR [r11+rsi*1]
+45 32 34 36             xor    r14b, BYTE PTR [r14+rsi*1]
+45 32 34 37             xor    r14b, BYTE PTR [r15+rsi*1]
+45 32 34 38             xor    r14b, BYTE PTR [r8+rdi*1]
+45 32 34 39             xor    r14b, BYTE PTR [r9+rdi*1]
+45 32 34 41             xor    r14b, BYTE PTR [r9+rax*2]
+45 32 34 42             xor    r14b, BYTE PTR [r10+rax*2]
+45 32 34 43             xor    r14b, BYTE PTR [r11+rax*2]
+45 32 34 44             xor    r14b, BYTE PTR [r12+rax*2]
+45 32 34 46             xor    r14b, BYTE PTR [r14+rax*2]
+45 32 36                xor    r14b, BYTE PTR [r14]
+45 32 37                xor    r14b, BYTE PTR [r15]
+45 32 38                xor    r15b, BYTE PTR [r8]
+45 32 39                xor    r15b, BYTE PTR [r9]
+45 32 41 30             xor    r8b, BYTE PTR [r9+0x30]
+45 32 41 31             xor    r8b, BYTE PTR [r9+0x31]
+45 32 41 33             xor    r8b, BYTE PTR [r9+0x33]
+45 32 41 34             xor    r8b, BYTE PTR [r9+0x34]
+45 32 41 35             xor    r8b, BYTE PTR [r9+0x35]
+45 32 41 36             xor    r8b, BYTE PTR [r9+0x36]
+45 32 41 37             xor    r8b, BYTE PTR [r9+0x37]
+45 32 41 38             xor    r8b, BYTE PTR [r9+0x38]
+45 32 41 39             xor    r8b, BYTE PTR [r9+0x39]
+45 32 41 42             xor    r8b, BYTE PTR [r9+0x42]
+45 32 41 43             xor    r8b, BYTE PTR [r9+0x43]
+45 32 41 44             xor    r8b, BYTE PTR [r9+0x44]
+45 32 41 46             xor    r8b, BYTE PTR [r9+0x46]
+45 32 42 30             xor    r8b, BYTE PTR [r10+0x30]
+45 32 42 31             xor    r8b, BYTE PTR [r10+0x31]
+45 32 42 33             xor    r8b, BYTE PTR [r10+0x33]
+45 32 42 34             xor    r8b, BYTE PTR [r10+0x34]
+45 32 42 35             xor    r8b, BYTE PTR [r10+0x35]
+45 32 42 36             xor    r8b, BYTE PTR [r10+0x36]
+45 32 42 37             xor    r8b, BYTE PTR [r10+0x37]
+45 32 42 38             xor    r8b, BYTE PTR [r10+0x38]
+45 32 42 39             xor    r8b, BYTE PTR [r10+0x39]
+45 32 42 41             xor    r8b, BYTE PTR [r10+0x41]
+45 32 42 43             xor    r8b, BYTE PTR [r10+0x43]
+45 32 42 44             xor    r8b, BYTE PTR [r10+0x44]
+45 32 42 46             xor    r8b, BYTE PTR [r10+0x46]
+45 32 43 30             xor    r8b, BYTE PTR [r11+0x30]
+45 32 43 31             xor    r8b, BYTE PTR [r11+0x31]
+45 32 43 33             xor    r8b, BYTE PTR [r11+0x33]
+45 32 43 34             xor    r8b, BYTE PTR [r11+0x34]
+45 32 43 35             xor    r8b, BYTE PTR [r11+0x35]
+45 32 43 36             xor    r8b, BYTE PTR [r11+0x36]
+45 32 43 37             xor    r8b, BYTE PTR [r11+0x37]
+45 32 43 38             xor    r8b, BYTE PTR [r11+0x38]
+45 32 43 39             xor    r8b, BYTE PTR [r11+0x39]
+45 32 43 41             xor    r8b, BYTE PTR [r11+0x41]
+45 32 43 42             xor    r8b, BYTE PTR [r11+0x42]
+45 32 43 44             xor    r8b, BYTE PTR [r11+0x44]
+45 32 43 46             xor    r8b, BYTE PTR [r11+0x46]
+45 32 46 30             xor    r8b, BYTE PTR [r14+0x30]
+45 32 46 31             xor    r8b, BYTE PTR [r14+0x31]
+45 32 46 33             xor    r8b, BYTE PTR [r14+0x33]
+45 32 46 34             xor    r8b, BYTE PTR [r14+0x34]
+45 32 46 35             xor    r8b, BYTE PTR [r14+0x35]
+45 32 46 36             xor    r8b, BYTE PTR [r14+0x36]
+45 32 46 37             xor    r8b, BYTE PTR [r14+0x37]
+45 32 46 38             xor    r8b, BYTE PTR [r14+0x38]
+45 32 46 39             xor    r8b, BYTE PTR [r14+0x39]
+45 32 46 41             xor    r8b, BYTE PTR [r14+0x41]
+45 32 46 42             xor    r8b, BYTE PTR [r14+0x42]
+45 32 46 43             xor    r8b, BYTE PTR [r14+0x43]
+45 33 30                xor    r14d, DWORD PTR [r8]
+45 33 31                xor    r14d, DWORD PTR [r9]
+45 33 32                xor    r14d, DWORD PTR [r10]
+45 33 36                xor    r14d, DWORD PTR [r14]
+45 33 37                xor    r14d, DWORD PTR [r15]
+45 33 38                xor    r15d, DWORD PTR [r8]
+45 33 39                xor    r15d, DWORD PTR [r9]
+46 30 34 31             xor    BYTE PTR [rcx+r14*1], r14b
+46 30 34 32             xor    BYTE PTR [rdx+r14*1], r14b
+46 30 34 33             xor    BYTE PTR [rbx+r14*1], r14b
+46 30 34 36             xor    BYTE PTR [rsi+r14*1], r14b
+46 30 34 37             xor    BYTE PTR [rdi+r14*1], r14b
+46 30 34 38             xor    BYTE PTR [rax+r15*1], r14b
+46 30 34 39             xor    BYTE PTR [rcx+r15*1], r14b
+46 30 34 41             xor    BYTE PTR [rcx+r8*2], r14b
+46 30 34 42             xor    BYTE PTR [rdx+r8*2], r14b
+46 30 34 43             xor    BYTE PTR [rbx+r8*2], r14b
+46 30 34 44             xor    BYTE PTR [rsp+r8*2], r14b
+46 31 34 30             xor    DWORD PTR [rax+r14*1], r14d
+46 31 34 32             xor    DWORD PTR [rdx+r14*1], r14d
+46 31 34 33             xor    DWORD PTR [rbx+r14*1], r14d
+46 31 34 36             xor    DWORD PTR [rsi+r14*1], r14d
+46 31 34 37             xor    DWORD PTR [rdi+r14*1], r14d
+46 31 34 38             xor    DWORD PTR [rax+r15*1], r14d
+46 31 34 39             xor    DWORD PTR [rcx+r15*1], r14d
+46 31 34 41             xor    DWORD PTR [rcx+r8*2], r14d
+46 31 34 42             xor    DWORD PTR [rdx+r8*2], r14d
+46 31 34 43             xor    DWORD PTR [rbx+r8*2], r14d
+46 31 34 44             xor    DWORD PTR [rsp+r8*2], r14d
+46 32 34 30             xor    r14b, BYTE PTR [rax+r14*1]
+46 32 34 31             xor    r14b, BYTE PTR [rcx+r14*1]
+46 32 34 33             xor    r14b, BYTE PTR [rbx+r14*1]
+46 32 34 36             xor    r14b, BYTE PTR [rsi+r14*1]
+46 32 34 37             xor    r14b, BYTE PTR [rdi+r14*1]
+46 32 34 38             xor    r14b, BYTE PTR [rax+r15*1]
+46 32 34 39             xor    r14b, BYTE PTR [rcx+r15*1]
+46 32 34 41             xor    r14b, BYTE PTR [rcx+r8*2]
+46 32 34 42             xor    r14b, BYTE PTR [rdx+r8*2]
+46 32 34 43             xor    r14b, BYTE PTR [rbx+r8*2]
+46 32 34 44             xor    r14b, BYTE PTR [rsp+r8*2]
+46 33 34 30             xor    r14d, DWORD PTR [rax+r14*1]
+46 33 34 31             xor    r14d, DWORD PTR [rcx+r14*1]
+46 33 34 32             xor    r14d, DWORD PTR [rdx+r14*1]
+46 33 34 36             xor    r14d, DWORD PTR [rsi+r14*1]
+46 33 34 37             xor    r14d, DWORD PTR [rdi+r14*1]
+46 33 34 38             xor    r14d, DWORD PTR [rax+r15*1]
+46 33 34 39             xor    r14d, DWORD PTR [rcx+r15*1]
+46 33 34 41             xor    r14d, DWORD PTR [rcx+r8*2]
+46 33 34 42             xor    r14d, DWORD PTR [rdx+r8*2]
+46 33 34 43             xor    r14d, DWORD PTR [rbx+r8*2]
+46 33 34 44             xor    r14d, DWORD PTR [rsp+r8*2]

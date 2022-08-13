@@ -55,7 +55,7 @@ syscall
 
 
 shellcode = ''
-for bitty in range(len(stager)):
+or bitty in range(len(stager)):
     a = find_valid(stager[bitty])
 
     if a[0] in opts:
