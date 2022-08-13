@@ -52,6 +52,8 @@ rbx: 0x0
 
 <h2>Valid Optcodes</h2>
 Since we have a rather limited charset of "0123456789ABCDEF" I wanted to know all possible instructions using these opcodes. I noticed most of these were XOR instructions so wrote a script to get all possible permutations of these bytes. I then used the pwn.disasm module to disassemble them. One thing to note is that I padded it with a lot of nops so opcodes didn't collide with each other
+
+
 ```python 
 from pwn import *
 from itertools import permutations
